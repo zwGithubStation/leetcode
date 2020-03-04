@@ -76,8 +76,6 @@ int reverse(int x){
 
 	if (x == MAX_RESIVABLE || x == MIN_RESIVABLE)
 		return x;
-
-	if 
 	
 	if (x < 0)
 	{
