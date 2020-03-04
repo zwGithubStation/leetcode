@@ -1,13 +1,20 @@
 
 /*
  * Copyright (C) ZWP
+
  * Problem: Sum https://leetcode-cn.com/problems/two-sum/
+
+   baseline solve	  :baseline
+   C hash-based solve :baseline-hash in C
+
+   compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g sum.c -o sum
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <limits.h>
 
 /* baseline */
 /*
@@ -43,6 +50,7 @@ typedef enum return_code{
 	FAIL = 1
 }RETURN_CODE;
 
+//could be replaced by INT_MAX
 typedef enum element_status{
 	FREE = 0,
 	OCCUPIED = 1
@@ -98,7 +106,8 @@ int find_element(HASH_TABLE* table, int data, int* index)
 {
 	assert(table != NULL);
 
-	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
+	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
+	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;  
 	int search_head = pos_suppose;
 
 	do
@@ -124,6 +133,7 @@ int insert_element(HASH_TABLE* table, int data, int index)
 {
 	assert(table != NULL);
 
+	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
 	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
 	int search_head = pos_suppose;
 
