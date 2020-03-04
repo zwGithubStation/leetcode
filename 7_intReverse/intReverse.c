@@ -10,28 +10,47 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_RESIVABLE (2147447412)
-#define MIN_RESIVABLE (-2147447412)
+#define POSTIVE_MAX (2147483647)
+#define NEGATIVE_MAX (-2147483648)
 
-#define MIN_DECLUDE (1000047412)
+//#define MAX_RESIVABLE (2147447412)
+//#define MIN_RESIVABLE (-2147447412)
+
+#define PRE_TEST_MIN (1000000000)
 
 void fill_array(int *dec_array, int x, int *lenght)
 {
 	int i = 0;
 
-	if (x > 1000047412)
+	if (x > PRE_TEST_MIN)
 	{
 		int pre_test = x % 100000;
-		int array_test[5] = {0};
-		int length_test;
-		fill_array(array_test, pre_test, &length_test);
-		pre_test = rebuild_int(array_test, length_test);
+		int pre_array_test[5] = {0};
+		int pre_length_test;
+		fill_array(pre_array_test, pre_test, &pre_length_test);
+		pre_test = rebuild_int(pre_array_test, pre_length_test);
 		if (pre_test > 21474)
 		{
+			*lenght = 0;
 			memset(dec_array, 0, sizeof(int)*10);
 			return;
 		}
+		if (pre_test == 21474)
+		{
+			int post_test = x / 100000;
+			int post_array_test[5] = {0};
+			int post_length_test;
+			fill_array(post_array_test, post_test, &post_length_test);
+			post_test = rebuild_int(post_array_test, post_length_test);
+			if (post_test >= 83647)
+			{
+				*lenght = 0;
+				memset(dec_array, 0, sizeof(int)*10);
+				return;
+			}
+		}
 	}
+	
 	while (x / 10 > 0)
 	{
 		dec_array[i++] = x % 10;
@@ -71,12 +90,9 @@ int rebuild_int(int *dec_array, int lenght)
 int reverse(int x){
 	int dec_array[10] = {0};
 	int abs_x,length,negative_flag = 0;
-	
-	if (x > MAX_RESIVABLE || x < MIN_RESIVABLE)
-		return 0;
 
-	if (x == MAX_RESIVABLE || x == MIN_RESIVABLE)
-		return x;
+	if (x == NEGATIVE_MAX)
+		return 0;
 	
 	if (x < 0)
 	{
@@ -98,6 +114,8 @@ int main()
 	int x4 = 29003100;
 	int x5 = 2147483111;
 	int x6 = 1534236469;
+	int x7 = -2147483648;  //-2147447412
+	int x8 = -2147483647;
 
 	int x1_res = reverse(x1);
 	int x2_res = reverse(x2);
@@ -105,6 +123,8 @@ int main()
 	int x4_res = reverse(x4);
 	int x5_res = reverse(x5);
 	int x6_res = reverse(x6);
+	int x7_res = reverse(x7);
+	int x8_res = reverse(x8);
 
 	printf("%d reverse is %d\n", x1, x1_res);
 	printf("%d reverse is %d\n", x2, x2_res);
@@ -112,6 +132,8 @@ int main()
 	printf("%d reverse is %d\n", x4, x4_res);
 	printf("%d reverse is %d\n", x5, x5_res);
 	printf("%d reverse is %d\n", x6, x6_res);
+	printf("%d reverse is %d\n", x7, x7_res);
+	printf("%d reverse is %d\n", x8, x8_res);
 	return 0;
 }
 
