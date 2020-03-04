@@ -98,19 +98,21 @@ int main()
 	int x3 = 1000000;
 	int x4 = 29003100;
 	int x5 = 2147483111;
-	
+	int x6 = 1534236469;
 
 	int x1_res = reverse(x1);
 	int x2_res = reverse(x2);
 	int x3_res = reverse(x3);
 	int x4_res = reverse(x4);
 	int x5_res = reverse(x5);
+	int x6_res = reverse(x6);
 
 	printf("%d reverse is %d\n", x1, x1_res);
 	printf("%d reverse is %d\n", x2, x2_res);
 	printf("%d reverse is %d\n", x3, x3_res);
 	printf("%d reverse is %d\n", x4, x4_res);
 	printf("%d reverse is %d\n", x5, x5_res);
+	printf("%d reverse is %d\n", x6, x6_res);
 	return 0;
 }
 
