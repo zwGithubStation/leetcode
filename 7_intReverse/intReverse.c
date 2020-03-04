@@ -26,7 +26,7 @@ void fill_array(int *dec_array, int x, int *lenght)
 
 	for (i = 0; i < 10; i++)
 		printf("%d ",dec_array[i]);
-	printf("\n");
+	printf("  length = %d\n", *lenght);
 }
 
 int rebuild_int(int *dec_array, int lenght)
