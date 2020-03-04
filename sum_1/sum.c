@@ -6,8 +6,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 
 /* baseline */
+/*
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 	int i,j,match_left,match_right;
 	int *result_array = (int *)malloc(sizeof(int)*2);
@@ -32,6 +35,152 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 	*returnSize = 0;
 	return NULL;
 }
+*/
+
+/* baseline-hash in C */
+typedef enum return_code{
+	OK = 0,
+	FAIL = 1
+}RETURN_CODE;
+
+typedef enum element_status{
+	FREE = 0,
+	OCCUPIED = 1
+}STATUS;
+
+typedef struct element{
+	STATUS 	status; 
+	int 	data;
+	int 	index;
+}ELEMENT;
+
+typedef struct hash_table{
+	ELEMENT *table;
+	int 	 size;
+}HASH_TABLE;
+
+HASH_TABLE* hask_table_init(int size)
+{
+	HASH_TABLE *table;
+
+	if (size <= 0)
+	{
+		return NULL;
+	}
+
+	table = (HASH_TABLE *)malloc(sizeof(HASH_TABLE));
+	if (NULL == table)
+	{
+		return NULL;
+	}
+
+	table->size = size;
+	table->table = (ELEMENT *)malloc(sizeof(ELEMENT) * size);
+	if (NULL == table->table)
+	{
+		free(table);
+		return NULL;
+	}
+
+	memset(table->table, 0, sizeof(ELEMENT) * size); //default status:free(0)
+	return table;
+}
+
+void hask_table_free(HASH_TABLE* table)
+{
+	assert(table != NULL);
+
+	free(table->table);
+	free(table);
+}
+
+int find_element(HASH_TABLE* table, int data, int* index)
+{
+	assert(table != NULL);
+
+	int pos_suppose = data % table->size;
+	int search_head = pos_suppose;
+
+	do
+	{
+		if (table->table[pos_suppose].status == FREE)
+		{
+			return FAIL;
+		}
+
+		if  (table->table[pos_suppose].data == data)
+		{
+			*index = table->table[pos_suppose].index;
+			return OK;
+		}
+
+		pos_suppose = (pos_suppose+1) % table->size;
+	}while(pos_suppose != search_head);
+
+	return FAIL;
+}
+
+int insert_element(HASH_TABLE* table, int data, int index)
+{
+	assert(table != NULL);
+
+	int pos_suppose = data % table->size;
+	int search_head = pos_suppose;
+
+	do
+	{
+		if (table->table[pos_suppose].status == FREE)
+		{
+			table->table[pos_suppose].data  = data; 
+			table->table[pos_suppose].index  = index;
+			table->table[pos_suppose].status = OCCUPIED;
+			return OK;
+		}
+
+		pos_suppose = (pos_suppose+1) % table->size;
+	}while(pos_suppose != search_head);
+
+	return FAIL;
+}
+
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+	int i,add_right,match_left,match_right;
+	int *result_array = (int *)malloc(sizeof(int)*2);
+	
+	HASH_TABLE *table = hask_table_init(numsSize * 2);
+	if (NULL == table)
+	{
+		free(result_array);
+		*returnSize = 0;
+		return NULL;
+	}
+
+	for (i = 0 ; i < numsSize; i++)
+	{
+		add_right = target - nums[i];
+		if (OK == find_element(table, add_right, &match_right))
+		{
+			result_array[0] = match_right;
+			result_array[1] = i;
+			hask_table_free(table);
+			*returnSize = 2;
+			return result_array;
+		}
+
+		(void)insert_element(table, nums[i], i);
+	}
+		
+	free(result_array);
+	hask_table_free(table);
+	*returnSize = 0;
+	return NULL;
+}
+
+
 
 
 int main()
