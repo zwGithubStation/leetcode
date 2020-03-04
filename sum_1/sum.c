@@ -61,7 +61,7 @@ typedef struct hash_table{
 
 HASH_TABLE* hask_table_init(int size)
 {
-	HASH_TABLE *table;
+	HASH_TABLE *table = NULL;
 
 	if (size <= 0)
 	{
@@ -98,7 +98,7 @@ int find_element(HASH_TABLE* table, int data, int* index)
 {
 	assert(table != NULL);
 
-	int pos_suppose = (data == 0) ? 0 : data % table->size;
+	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
 	int search_head = pos_suppose;
 
 	do
@@ -124,7 +124,7 @@ int insert_element(HASH_TABLE* table, int data, int index)
 {
 	assert(table != NULL);
 
-	int pos_suppose = (data == 0) ? 0 : data % table->size;
+	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
 	int search_head = pos_suppose;
 
 	do
