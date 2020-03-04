@@ -43,7 +43,9 @@ int rebuild_int(int *dec_array, int lenght)
 	{
 		result += dec_array[i];
 		if (i != lenght - 1)
-			result += result*10;
+		{
+			result *= 10;
+		}
 	}
 
 	return result;
