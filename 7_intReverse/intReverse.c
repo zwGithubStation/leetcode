@@ -12,9 +12,25 @@
 #define MAX_RESIVABLE (2147447412)
 #define MIN_RESIVABLE (-2147447412)
 
+#define MIN_DECLUDE (1000047412)
+
 void fill_array(int *dec_array, int x, int *lenght)
 {
 	int i = 0;
+
+	if (x > 1000047412)
+	{
+		int pre_test = x % 100000;
+		int array_test[5] = {0};
+		int length_test;
+		fill_array(array_test, pre_test, &length_test);
+		pre_test = rebuild_int(array_test, length_test);
+		if (pre_test > 21474)
+		{
+			memset(dec_array, 0, sizeof(int)*10);
+			return;
+		}
+	}
 	while (x / 10 > 0)
 	{
 		dec_array[i++] = x % 10;
@@ -24,9 +40,9 @@ void fill_array(int *dec_array, int x, int *lenght)
 	dec_array[i++] = x % 10;
 	*lenght = i;
 
-	for (i = 0; i < 10; i++)
-		printf("%d ",dec_array[i]);
-	printf("  length = %d\n", *lenght);
+	//for (i = 0; i < 10; i++)
+	//	printf("%d ",dec_array[i]);
+	//printf("  length = %d\n", *lenght);
 }
 
 int rebuild_int(int *dec_array, int lenght)
@@ -61,6 +77,8 @@ int reverse(int x){
 	if (x == MAX_RESIVABLE || x == MIN_RESIVABLE)
 		return x;
 
+	if 
+	
 	if (x < 0)
 	{
 		x = abs(x);
