@@ -64,7 +64,7 @@ int reverse(int x){
 	fill_array(dec_array, x, &length);
 	x = rebuild_int(dec_array, length);
 
-	return negative_flag == 0 ? x ? (0 - x);
+	return negative_flag == 0 ? x ? (0-x);
 }
 
 int main()
