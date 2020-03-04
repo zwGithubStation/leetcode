@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_RESIVABLE (2147447412)
 #define MIN_RESIVABLE (-2147447412)
