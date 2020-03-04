@@ -4,6 +4,8 @@
 
  * Problem: https://leetcode-cn.com/problems/reverse-integer/
 
+   solve  : if not big enough(<1000000000),just reverse; 
+   			if big enough(>1000000000), make sure reversed head-5-integer && tail-5-integer match require.
  */
 
 #include <stdio.h>
@@ -12,9 +14,6 @@
 
 #define POSTIVE_MAX (2147483647)
 #define NEGATIVE_MAX (-2147483648)
-
-//#define MAX_RESIVABLE (2147447412)
-//#define MIN_RESIVABLE (-2147447412)
 
 #define PRE_TEST_MIN (1000000000)
 
@@ -29,13 +28,13 @@ void fill_array(int *dec_array, int x, int *lenght)
 		int pre_length_test;
 		fill_array(pre_array_test, pre_test, &pre_length_test);
 		pre_test = rebuild_int(pre_array_test, pre_length_test);
-		if (pre_test > 21474)
+		if (pre_test > 21474) //reversed head-5-integer bigger than legal
 		{
 			*lenght = 0;
 			memset(dec_array, 0, sizeof(int)*10);
 			return;
 		}
-		if (pre_test == 21474)
+		if (pre_test == 21474) //reversed head-5-integer equal MAX_INT, make sure tail-5-integer not overflow
 		{
 			int post_test = x / 100000;
 			int post_array_test[5] = {0};
@@ -60,9 +59,7 @@ void fill_array(int *dec_array, int x, int *lenght)
 	dec_array[i++] = x % 10;
 	*lenght = i;
 
-	//for (i = 0; i < 10; i++)
-	//	printf("%d ",dec_array[i]);
-	//printf("  length = %d\n", *lenght);
+	return;
 }
 
 int rebuild_int(int *dec_array, int lenght)
