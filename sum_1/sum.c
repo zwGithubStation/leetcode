@@ -98,7 +98,7 @@ int find_element(HASH_TABLE* table, int data, int* index)
 {
 	assert(table != NULL);
 
-	int pos_suppose = data % table->size;
+	int pos_suppose = (data == 0) ? 0 : data % table->size;
 	int search_head = pos_suppose;
 
 	do
@@ -124,7 +124,7 @@ int insert_element(HASH_TABLE* table, int data, int index)
 {
 	assert(table != NULL);
 
-	int pos_suppose = data % table->size;
+	int pos_suppose = (data == 0) ? 0 : data % table->size;
 	int search_head = pos_suppose;
 
 	do
