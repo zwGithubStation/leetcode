@@ -13,6 +13,13 @@ https://leetcode-cn.com/problems/two-sum/
 
 **整数反转**  
 https://leetcode-cn.com/problems/reverse-integer/   
+注意点：    
 1.边界判断  
 2.传入函数的&param，注意未付初值时函数内是否不做处理，返回无效值  
 3.分析简单策略　  
+
+**回文数**  
+https://leetcode-cn.com/problems/palindrome-number/   
+注意点：   
+1.简洁方式实现   
+2.有效剪纸避免错误覆盖(e.g.100000)   
