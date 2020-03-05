@@ -15,12 +15,12 @@
 #include <limits.h>
 
 char * longestCommonPrefix(char ** strs, int strsSize){
-	int i,j,tem,lenghtMin = INT_MAX;
+	int i,j,tem,lenghtMin = 0;
 	char *result = NULL;
 	for (i = 0; i < strsSize; i++)
 	{
 		tem = strlen(strs[i]);
-		if (tem < lenghtMin)
+		if (tem < lenghtMin || lenghtMin== 0)
 			lenghtMin = tem;
 	}
 
