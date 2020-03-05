@@ -4,7 +4,8 @@
 
  * Problem: https://leetcode-cn.com/problems/palindrome-number/
 
-   solve  : 
+   solve  : 1.baseline (rebuild into a array, judge if head equals to tail)
+   			2.cleanway (break x into head-half integer and make the reversed-tail-half integer, judge if they are the same without consider the middle element)
 
    compile: gcc -std=c99 -fsanitize=address -fno-omit-frame-pointer -O1 -g palindrome.c
  */
@@ -14,6 +15,8 @@
 #include <stdbool.h>
 #include <limits.h>
 
+/* baseline */
+/*
 bool isPalindromeArray(int *array, int lenght)
 {
 	int i = 0;
@@ -47,6 +50,29 @@ bool isPalindrome(int x)
 
 	return isPalindromeArray(array, lenght);
 }
+*/
+
+/*cleanway*/
+bool isPalindrome(int x)
+{
+	int pos,tailReversed = 0;
+
+	if (x < 0)
+		return false;
+
+	if (x == 0)
+		return true;
+	
+	while (x > tailReversed)
+	{
+		pos = x % 10;
+		tailReversed = tailReversed*10 + pos;
+		x = x / 10;
+	}
+
+	return (x == tailReversed) || (x == tailReversed/10);
+}
+
 
 int main()
 {
