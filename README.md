@@ -23,3 +23,10 @@ https://leetcode-cn.com/problems/palindrome-number/
 注意点：   
 1.简洁方式实现   
 2.有效剪纸避免错误覆盖(e.g.100000)   
+
+
+**最长公共前缀**  
+https://leetcode-cn.com/problems/longest-common-prefix/   
+注意点：   
+1.初值设定与否，会影响特殊情况下的赋值逻辑   
+**2.官网的诸多方法**  
