@@ -43,7 +43,7 @@ char * longestCommonPrefix(char ** strs, int strsSize){
 
 int main()
 {
-	char strs[6][20] = {"strings", "strategy", "studio", "sting", "stripper", "steam"};
+	char *strs[20] = {"strings", "strategy", "studio", "sting", "stripper", "steam"};
 	char *result = NULL;
 
 	result = longestCommonPrefix(strs, 6);
