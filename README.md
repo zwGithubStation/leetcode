@@ -29,4 +29,11 @@ https://leetcode-cn.com/problems/palindrome-number/
 https://leetcode-cn.com/problems/longest-common-prefix/   
 注意点：   
 1.初值设定与否，会影响特殊情况下的赋值逻辑   
-**2.官网的诸多方法**  
+**2.官网的诸多方法**    
+
+**有效括号字符串**  
+https://leetcode-cn.com/problems/valid-parentheses/   
+注意点：   
+1.stack简单应用的清晰实现代码(逻辑要清晰)   
+
+ 

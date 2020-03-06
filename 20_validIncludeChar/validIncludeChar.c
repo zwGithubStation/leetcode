@@ -27,7 +27,7 @@ void chunkArray(char *s, int *lenght)
 	i = 0;
 	j = 0;
 
-	printf("old string:%s\n", s);
+	//printf("old string:%s\n", s);
 
 	while (i < old_length)
 	{
@@ -46,7 +46,7 @@ void chunkArray(char *s, int *lenght)
 	s[j] = '\0';
 	*lenght = strlen(s);
 
-	printf("after chunk string:%s\n", s);
+	//printf("after chunk string:%s\n", s);
 }
 
 void changeToBlank(char *s, int lenght, int *blank_cnt)
@@ -57,7 +57,7 @@ void changeToBlank(char *s, int lenght, int *blank_cnt)
 	{	
 		if (MATCH_CHAR(s[i],s[i+1]))
 		{
-			printf("found touch equal:%c %c\n", s[i], s[i+1]);
+			//printf("found touch equal:%c %c\n", s[i], s[i+1]);
 			s[i] = BLANK_CHAR;
 			s[i+1] = BLANK_CHAR;
 			i = i+2;
@@ -79,7 +79,7 @@ bool isValid(char *s){
 
 	if (length % 2 != 0)
 	{
-		printf("not even length!\n");
+		//printf("not even length!\n");
 		return false;
 	}
 		
@@ -135,8 +135,6 @@ bool isValid(char *s){
 			stack[++j] = s[i++];
 		}
 	}
-
-	//printf("stack is:%s\n",&stack[1]);
 
 	return j == -1;
 }
