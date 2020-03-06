@@ -104,6 +104,8 @@ bool isValid(char *s){
 //cleanway
 bool isValid(char *s){
 	int length = strlen(s);
+	char stack[length+1] = {0};
+	int i,j;
 
 	if (length == 0)
 		return true;
@@ -112,9 +114,7 @@ bool isValid(char *s){
 	{
 		return false;
 	}
-	
-	char stack[length+1] = {0};
-	int i,j;
+
 	i = 0;
 	j = 0;
 
