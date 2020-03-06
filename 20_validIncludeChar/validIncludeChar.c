@@ -36,6 +36,8 @@ void chunkArray(char *s, int *lenght)
 	i = 0;
 	j = 0;
 
+	printf("old string:%s\n", s);
+
 	while (i < old_length)
 	{
 		if (s[i] == BLANK_CHAR)
@@ -52,6 +54,8 @@ void chunkArray(char *s, int *lenght)
 
 	s[j] = '\0';
 	*lenght = strlen(s);
+
+	printf("after chunk string:%s\n", s);
 }
 
 bool changeToBlank(char *s, int lenght, int *blank_cnt)
@@ -109,9 +113,9 @@ int main()
 
 	bool result = isValid(strs);
 	if (result == true)
-		printf("strs is valid");
+		printf("strs is valid\n");
 	else
-		printf("strs is invalid");
+		printf("strs is invalid\n");
 	
 	return 0;
 }
