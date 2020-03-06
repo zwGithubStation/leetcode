@@ -129,6 +129,8 @@ bool isValid(char *s){
 		}	
 	}
 
+	printf("stack is:%s\n",stack);
+
 	return strlen(stack) == 0;
 }
 
