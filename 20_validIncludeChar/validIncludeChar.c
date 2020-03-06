@@ -16,6 +16,8 @@
 
 #define BLANK_CHAR 'c'
 
+#define MATCH_CHAR(x, y) ((x == '[' && y == ']') || (x == '(' && y == ')') || (x == '{' && y == '}'))
+
 /*
 bool isAllBlank(char *s, int lenght)
 {
@@ -58,18 +60,17 @@ void chunkArray(char *s, int *lenght)
 	printf("after chunk string:%s\n", s);
 }
 
-bool changeToBlank(char *s, int lenght, int *blank_cnt)
+void changeToBlank(char *s, int lenght, int *blank_cnt)
 {
-	bool res = false;
 	int i = 0;
 	*blank_cnt = 0;
 	while(i < lenght-1)
 	{	
-		if (s[i] == s[i+1])
+		if (MATCH_CHAR(s[i],s[i+1]))
 		{
+			printf("found touch equal:%c %c\n", s[i], s[i+1]);
 			s[i] = BLANK_CHAR;
 			s[i+1] = BLANK_CHAR;
-			res = true;
 			i = i+2;
 			*blank_cnt = *blank_cnt + 2;
 			continue;
@@ -77,7 +78,8 @@ bool changeToBlank(char *s, int lenght, int *blank_cnt)
 
 		i = i+1;
 	}
-	return res;
+	
+	return;
 }
 
 bool isValid(char *s){
@@ -87,7 +89,11 @@ bool isValid(char *s){
 		return true;
 
 	if (length % 2 != 0)
+	{
+		printf("not even length!\n");
 		return false;
+	}
+		
 
 	while(1)
 	{
@@ -110,7 +116,7 @@ bool isValid(char *s){
 int main()
 {
 	char strs[60] = "{[([{[{}()]}])({([{()}])})({[{}]})]}";
-
+	
 	bool result = isValid(strs);
 	if (result == true)
 		printf("strs is valid\n");
