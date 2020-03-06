@@ -28,8 +28,8 @@ struct ListNode {
 
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 	struct ListNode* cur, *comp;
-	cur = l1 ? l2 : l1->val <= l2->val;
-	comp = l1 ? l2 : cur != l1;
+	cur = l1->val <= l2->val ? l1 : l2;
+	comp = cur != l1 ? l1 : l2; 
 
 	return cur;
 	
