@@ -113,7 +113,7 @@ bool isValid(char *s){
 		return false;
 	}
 	
-	char stack[length+1] = {'\0'};
+	char stack[length+1] = {0};
 	int i,j;
 	i = 0;
 	j = 0;
