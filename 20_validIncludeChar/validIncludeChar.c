@@ -122,11 +122,13 @@ bool isValid(char *s){
 	while(s[i] != '\0')
 	{
 		stack[j] = s[i];
-		if (MATCH_CHAR(stack[j], s[i+1]))
+		if (j != 0 && MATCH_CHAR(stack[j], stack[j-1]))
 		{
 			stack[j] = '\0';
+			stack[j-1] = '\0';
+			j--;
 			i++;
-		}	
+		}
 		else
 		{
 			i++;
