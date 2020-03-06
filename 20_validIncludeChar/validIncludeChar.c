@@ -104,7 +104,7 @@ bool isValid(char *s){
 //cleanway
 bool isValid(char *s){
 	int length = strlen(s);
-	char stack[length+1];
+	char stack[length+2];
 	int i,j;
 
 	if (length == 0)
@@ -115,18 +115,18 @@ bool isValid(char *s){
 		return false;
 	}
 
-	memset(stack, 0, sizeof(char)*(length+1));
+	memset(stack, 0, sizeof(char)*(length+2));
 	i = 0;
-	j = 0;
+	j = 1;
 
 	while(s[i] != '\0')
 	{
 		stack[j] = s[i];
-		if (j != 0 && MATCH_CHAR(stack[j], stack[j-1]))
+		if (MATCH_CHAR(stack[j], stack[j-1]))
 		{
 			stack[j] = '\0';
 			stack[j-1] = '\0';
-			j--;
+			j = j-2;
 			i++;
 		}
 		else
@@ -136,9 +136,9 @@ bool isValid(char *s){
 		}
 	}
 
-	printf("stack is:%s\n",stack);
+	printf("stack is:%s\n",&stack[1]);
 
-	return strlen(stack) == 0;
+	return stack[1] == '\0';
 }
 
 int main()
