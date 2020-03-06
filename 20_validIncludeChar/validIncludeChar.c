@@ -107,7 +107,7 @@ int main()
 {
 	char strs[60] = "{[([{[{}()]}])({([{()}])})({[{}]})]}";
 
-	result = isValid(strs);
+	bool result = isValid(strs);
 	if (result == true)
 		printf("strs is valid");
 	else
