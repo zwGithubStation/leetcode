@@ -27,11 +27,39 @@ struct ListNode {
 
 
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
-	struct ListNode* cur, *comp;
+	struct ListNode* result = NULL;
+	struct ListNode* cur, *comp, *pre, *post;
+
+	if (l1 == NULL)
+		return l2;
+
+	if (l2 == NULL)
+		return l1;
+
+	if (l2 == NULL && l1 == NULL)
+		return NULL;
+	
 	cur = l1->val <= l2->val ? l1 : l2;
 	comp = cur != l1 ? l1 : l2; 
-
-	return cur;
+	result = cur;
+	while (cur != NULL)
+	{
+		if (comp == NULL || (comp != NULL && cur->val <= comp->val))
+		{
+			pre = cur;
+			cur = cur->next;
+			
+		}
+		else
+		{
+			post = cur; //record next loop cmp-to-who
+			pre->next = comp;
+			cur = comp;
+			comp = post;
+		}
+	}
+	
+	return result;
 	
 }
 
