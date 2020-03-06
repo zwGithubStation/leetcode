@@ -117,28 +117,28 @@ bool isValid(char *s){
 
 	memset(stack, 0, sizeof(char)*(length+2));
 	i = 0;
-	j = 1;
-
+	j = -1;
+	
 	while(s[i] != '\0')
 	{
-		stack[j] = s[i];
-		if (MATCH_CHAR(stack[j], stack[j-1]))
+		if (j == -1)
 		{
-			stack[j] = '\0';
-			stack[j-1] = '\0';
-			j = j-2;
+			stack[++j] = s[i++];
+		}
+		else if (MATCH_CHAR(stack[j], s[i]))
+		{
+			stack[j--] = '\0';
 			i++;
 		}
 		else
 		{
-			i++;
-			j++;
+			stack[++j] = s[i++];
 		}
 	}
 
-	printf("stack is:%s\n",&stack[1]);
+	//printf("stack is:%s\n",&stack[1]);
 
-	return stack[1] == '\0';
+	return j == -1;
 }
 
 int main()
