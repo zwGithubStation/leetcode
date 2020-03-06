@@ -4,7 +4,8 @@
 
  * Problem: https://leetcode-cn.com/problems/valid-parentheses/
 
-   solve  : 
+   solve  : baseline(each round trunk the adjacent MATCH 2 chars, and finally get a NULL string)
+   			cleanway(stack)
 
    compile: gcc -std=c99 -fsanitize=address -fno-omit-frame-pointer -O1 -g validIncludeChar.c
  */
@@ -19,19 +20,7 @@
 #define MATCH_CHAR(x, y) ((x == '[' && y == ']') || (x == '(' && y == ')') || (x == '{' && y == '}'))
 
 /*
-bool isAllBlank(char *s, int lenght)
-{
-	int i;
-	for (i = 0; i < lenght; i++)
-	{
-		if (s[i] != BLANK_CHAR)
-			return false;
-	}
-
-	return true;
-}
-*/
-
+//baseline
 void chunkArray(char *s, int *lenght)
 {
 	int i,j,old_length = *lenght;
@@ -110,8 +99,37 @@ bool isValid(char *s){
 
 	return true;
 }
+*/
 
+//cleanway
+bool isValid(char *s){
+	int length = strlen(s);
 
+	if (length == 0)
+		return true;
+
+	if (length % 2 != 0)
+	{
+		return false;
+	}
+	
+	char stack[length+1] = {'\0'};
+	int i,j;
+	i = 0;
+	j = 0;
+
+	while(s[i] != '\0')
+	{
+		char left = s[i];
+		stack[j++] = s[i++];
+		if (MATCH_CHAR(left, s[i]))
+		{
+			stack[j--] = '\0';
+		}	
+	}
+
+	return strlen(stack) == 0;
+}
 
 int main()
 {
