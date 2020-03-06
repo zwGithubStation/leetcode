@@ -76,7 +76,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
 
 //official
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
-	struct ListNode* result = (ListNode *)malloc(sizeof(struct ListNode));
+	struct ListNode* result = (struct ListNode *)malloc(sizeof(struct ListNode));
 	struct ListNode* cur = result;
 		
 	result->next = NULL;
