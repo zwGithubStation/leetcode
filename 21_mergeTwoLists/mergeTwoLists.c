@@ -27,7 +27,7 @@
 struct ListNode {
    int val;     
    struct ListNode *next;
- };
+};
 
 //self-solve
 /*
