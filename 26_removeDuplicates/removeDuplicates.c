@@ -17,7 +17,7 @@ int removeDuplicates(int* nums, int numsSize){
 	j = 1;
 	while (i < numsSize)
 	{
-		while (j < numsSize && nums[j] !== nums[i])
+		while (j < numsSize && nums[j] == nums[i])
 		{
 			j++;
 		}
