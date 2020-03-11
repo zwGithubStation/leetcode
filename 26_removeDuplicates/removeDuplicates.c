@@ -35,6 +35,7 @@ int removeDuplicates(int* nums, int numsSize){
 
 int main()
 {
+	int  i;
 	int test_array1[20] = {1,2,2,2,3,3,4,5,6,7,7,7};
 	int test_array2[20] = {1,2,2,2,3,3,4,5,6,7,7,7,8};
 
@@ -43,13 +44,13 @@ int main()
 	
 	printf("%d %d\n", result1, result2);
 
-	for (int i = 0; i < result1; i++)
+	for (i = 0; i < result1; i++)
 	{
 		printf("%d ", test_array1[i]);
 	}
 	printf("\n");
 
-	for (int i = 0; i < result2; i++)
+	for (i = 0; i < result2; i++)
 	{
 		printf("%d ", test_array2[i]);
 	}
