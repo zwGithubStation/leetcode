@@ -40,7 +40,7 @@ int main()
 	int test_array2[20] = {1,2,2,2,3,3,4,5,6,7,7,7,8};
 
 	int result1 = removeDuplicates(test_array1, 12);
-	int result2 = removeDuplicates(test_array1, 13);
+	int result2 = removeDuplicates(test_array2, 13);
 	
 	printf("%d %d\n", result1, result2);
 
