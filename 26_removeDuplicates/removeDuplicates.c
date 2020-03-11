@@ -10,8 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int 
-(int* nums, int numsSize){
+int removeDuplicates(int* nums, int numsSize){
 	int i,j;
 	
 	i = 0;
