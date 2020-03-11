@@ -43,6 +43,18 @@ int main()
 	
 	printf("%d %d\n", result1, result2);
 
+	for (int i = 0; i < result1; i++)
+	{
+		printf("%d ", test_array1[i]);
+	}
+	printf("\n");
+
+	for (int i = 0; i < result2; i++)
+	{
+		printf("%d ", test_array2[i]);
+	}
+	printf("\n");
+
 	return 0;
 }
 
