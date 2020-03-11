@@ -51,6 +51,8 @@ https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
 
 **实现strStr()**   
 https://leetcode-cn.com/problems/implement-strstr/   
+注意点：  
+**1.C语言的标准库函数(e.g.strncmp的实现及其性能点)**   
 
 
 **最大子序和**  
