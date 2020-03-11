@@ -30,6 +30,8 @@ int removeDuplicates(int* nums, int numsSize){
 		i++;
 		nums[i] = nums[j];
 	}
+
+	return 0;
 }
 
 

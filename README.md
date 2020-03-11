@@ -44,6 +44,9 @@ https://leetcode-cn.com/problems/merge-two-sorted-lists/
 
 **删除排序数组中的重复项**  
 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/  
+注意点：  
+1.还是边界条件的满足    
+2.先实例演算清楚，再着手实现  
   
 
 **实现strStr()**   
