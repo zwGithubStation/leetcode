@@ -62,7 +62,8 @@ https://leetcode-cn.com/problems/maximum-subarray/
 
 
 **最后一个单词的长度**   
-https://leetcode-cn.com/problems/length-of-last-word/  
+https://leetcode-cn.com/problems/length-of-last-word/   
+无特殊注意点，再次强调变量的初值设定问题   
 
 **加一**   
 https://leetcode-cn.com/problems/plus-one/  
