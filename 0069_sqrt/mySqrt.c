@@ -43,17 +43,17 @@ int binaryFind(int start, int end, int x)
 	while (start <= end)
 	{
 		target = start + (end-start)/2;
-		printf("start(%d) end(%d) target(%d)\n", start, end, target);
+		//printf("start(%d) end(%d) target(%d)\n", start, end, target);
 		left = target * target;
 		if (left <= x)
 		{
 			start = target+1;
-			printf("start(%d) end(%d) target(%d)\n", start, end, target);
+			//printf("start(%d) end(%d) target(%d)\n", start, end, target);
 		}
 		else
 		{
 			end = target-1;
-			printf("start(%d) end(%d) target(%d)\n", start, end, target);
+			//printf("start(%d) end(%d) target(%d)\n", start, end, target);
 		}
 	}
 
@@ -102,7 +102,7 @@ int mySqrt(int x){
 
 int main()
 {
-	int x = 8;
+	int x = 15498368;
 	int ret = mySqrt(x);
 	printf ("%d sqrt is %d\n",x, ret);
 	return 0;
