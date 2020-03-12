@@ -57,6 +57,8 @@ https://leetcode-cn.com/problems/implement-strstr/
 
 **最大子序和**  
 https://leetcode-cn.com/problems/maximum-subarray/   
+注意点：  
+1.三种方式的算式理解   
 
 
 **最后一个单词的长度**   
