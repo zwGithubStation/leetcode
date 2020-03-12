@@ -46,9 +46,15 @@ int binaryFind(int start, int end, int x)
 		printf("start(%d) end(%d) target(%d)\n", start, end, target);
 		left = target * target;
 		if (left <= x)
-			start = target;
+		{
+			start = target+1;
+			printf("start(%d) end(%d) target(%d)\n", start, end, target);
+		}
 		else
+		{
 			end = target-1;
+			printf("start(%d) end(%d) target(%d)\n", start, end, target);
+		}
 	}
 
 	return left;
