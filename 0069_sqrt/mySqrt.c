@@ -57,7 +57,7 @@ int binaryFind(int start, int end, int x)
 		}
 	}
 
-	return left;
+	return end;
 }
 
 int mySqrt(int x){
