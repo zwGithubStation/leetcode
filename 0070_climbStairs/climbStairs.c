@@ -62,7 +62,7 @@ int climbStairs(int n){
 
 int main()
 {
-	int test = 4;
+	int test = 35;
 	int returnSize;
 	returnSize = climbStairs(test);
 	printf("%d:%d\n", test, returnSize);
