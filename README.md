@@ -17,7 +17,11 @@ https://leetcode-cn.com/problems/add-two-numbers/
 2.是否有其他更优逻辑   
 **3.多个指针的赋值相互影响的问题** 
 
-**3 无重复字符的最长子串**
+**3 无重复字符的最长子串**  
+https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/    
+注意点：  
+**1.滑动窗口和优化滑动窗口的细化理解**  
+**2.空间消耗过大 是否直接使用数组**   
 
 **5 最长回文子串**  
 

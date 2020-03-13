@@ -2,53 +2,20 @@
 /*
  * Copyright (C) ZWP
 
- * Problem: Sum https://leetcode-cn.com/problems/two-sum/
+ * Problem: https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 
    baseline solve	  :baseline
-   C hash-based solve :baseline-hash in C
 
-   compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g sum.c -o sum
+   compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g lengthOfLSS.c -o lengthOfLSS
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <assert.h>
+#include <string.h>
 #include <limits.h>
 
-/* baseline */
-/*
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-	int i,j,match_left,match_right;
-	int *result_array = (int *)malloc(sizeof(int)*2);
-	
-	for (i = 0 ; i < numsSize-1; i++)
-	{
-		match_left = nums[i];
-		match_right = target - match_left;
-		for (j = i+1; j < numsSize; j++)
-		{
-			if (nums[j] == match_right)
-			{
-				result_array[0] = i;
-				result_array[1] = j;
-				*returnSize = 2;
-				return result_array;
-			}
-		}
-	}
-
-	free(result_array);
-	*returnSize = 0;
-	return NULL;
-}
-*/
-
 /* baseline-hash in C */
-typedef enum return_code{
-	OK = 0,
-	FAIL = 1
-}RETURN_CODE;
 
 //could be replaced by INT_MAX
 typedef enum element_status{
@@ -58,7 +25,7 @@ typedef enum element_status{
 
 typedef struct element{
 	STATUS 	status; 
-	int 	data;
+	char 	data;
 	int 	index;
 }ELEMENT;
 
@@ -102,105 +69,87 @@ void hask_table_free(HASH_TABLE* table)
 	free(table);
 }
 
-int find_element(HASH_TABLE* table, int data, int* index)
+bool find_element(HASH_TABLE* table, char data, int *index)
 {
 	assert(table != NULL);
 
 	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
-	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;  
+	int pos_suppose = data - '\0';  
 	int search_head = pos_suppose;
 
-	do
+	if (table->table[pos_suppose].status == FREE)
+		return false;
+	else
 	{
-		if (table->table[pos_suppose].status == FREE)
-		{
-			return FAIL;
-		}
-
-		if  (table->table[pos_suppose].data == data)
-		{
-			*index = table->table[pos_suppose].index;
-			return OK;
-		}
-
-		pos_suppose = (pos_suppose+1) % table->size;
-	}while(pos_suppose != search_head);
-
-	return FAIL;
+		*index = table->table[pos_suppose].index;
+		return true;
+	}
 }
 
-int insert_element(HASH_TABLE* table, int data, int index)
+void update_element(HASH_TABLE* table, int data, int index)
 {
 	assert(table != NULL);
 
 	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
-	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
+	int pos_suppose = data - '\0';  
 	int search_head = pos_suppose;
 
-	do
-	{
-		if (table->table[pos_suppose].status == FREE)
-		{
-			table->table[pos_suppose].data  = data; 
-			table->table[pos_suppose].index  = index;
-			table->table[pos_suppose].status = OCCUPIED;
-			return OK;
-		}
-
-		pos_suppose = (pos_suppose+1) % table->size;
-	}while(pos_suppose != search_head);
-
-	return FAIL;
+	table->table[pos_suppose].data  = data; 
+	table->table[pos_suppose].index  = index;
+	table->table[pos_suppose].status = OCCUPIED;
+	return;	
 }
 
+void delete_element(HASH_TABLE* table, int data)
+{
+	assert(table != NULL);
 
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-	int i,add_right,match_left,match_right;
-	int *result_array = (int *)malloc(sizeof(int)*2);
-	
-	HASH_TABLE *table = hask_table_init(numsSize * 2);
-	if (NULL == table)
-	{
-		free(result_array);
-		*returnSize = 0;
-		return NULL;
-	}
+	int pos_suppose = data - '\0';  
+	assert(table->table[pos_suppose].status == OCCUPIED);
 
-	for (i = 0 ; i < numsSize; i++)
-	{
-		add_right = target - nums[i];
-		if (OK == find_element(table, add_right, &match_right))
-		{
-			result_array[0] = match_right;
-			result_array[1] = i;
-			hask_table_free(table);
-			*returnSize = 2;
-			return result_array;
-		}
-
-		(void)insert_element(table, nums[i], i);
-	}
-		
-	free(result_array);
-	hask_table_free(table);
-	*returnSize = 0;
-	return NULL;
+	table->table[pos_suppose].status = FREE;
+	return;	
 }
 
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
 
+int lengthOfLongestSubstring(char * s){
+	HASH_TABLE *table = hask_table_init(256);
+	int i,j,ans,index,length;
 
+	i = 0;
+	j = 0;
+	ans = 0;
+	length = strlen(s);
+
+	if (length == 0)
+		return 0;
+
+	while (i < length && j < length)
+	{
+		if (!find_element(table, s[j], &index))
+		{
+			update_element(table,s[j],j+1);
+			ans = MAX(ans, j-i+1);
+		}
+		else if (index < i)
+		{
+			update_element(table,s[j],j+1);
+			ans = MAX(ans, j-i+1);
+		}
+		else
+		{
+			i = index;
+			update_element(table, s[j],j+1);
+		}
+		j++;
+	}
+
+	return ans;
+}
 
 int main()
 {
-	int test_array[10] = {2, 2, 3, 4, 5, 6, 7};
-	int *result = NULL;
-	int returnSize;
-	result = twoSum(test_array, 7, 7, &returnSize);
-	printf("%d %d\n", result[0], result[1]);
-	free(result);
 	return 0;
 }
 
