@@ -110,7 +110,10 @@ https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
 注意点：  
 简单的测试基本操作；策略明晰则代码简洁，思考为什么提交4次才成功   
 
-**88 合并两个有序数组**
+**88 合并两个有序数组**  
+https://leetcode-cn.com/problems/merge-sorted-array/  
+注意点：  
+**1.TO-DO 其他推荐方法细品其中思路**
 
 **100 相同的树**
 
