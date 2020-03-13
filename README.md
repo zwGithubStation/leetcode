@@ -10,7 +10,11 @@ https://leetcode-cn.com/problems/two-sum/
 4.使用<limits.h>的INT_MAX/INT_MIN做初值，可以不用另设初始状态值   
 5.-fno-omit-frame-pointer编译选项优化的基本原理   
 
-**2 两数相加**  
+**2 两数相加**   
+https://leetcode-cn.com/problems/add-two-numbers/  
+注意点：  
+1.代码稍显冗余，是否有同样逻辑下的简洁实现   
+2.是否有其他更优逻辑   
 
 **3 无重复字符的最长子串**
 
@@ -118,9 +122,14 @@ https://leetcode-cn.com/problems/merge-sorted-array/
 **100 相同的树**  
 https://leetcode-cn.com/problems/same-tree/  
 注意点：  
-**1.基本的树递归逻辑，关注评论中的可关注点及可优化点**  
+**1.基本的树逻辑，关注评论中的可关注点及可优化点**  
+**2.递归与迭代**     
 
 **101对称二叉树**  
+https://leetcode-cn.com/problems/symmetric-tree/  
+注意点：  
+**1.基本的树逻辑，关注评论中的可关注点及可优化点**
+**2.递归与迭代**     
 
 
 
