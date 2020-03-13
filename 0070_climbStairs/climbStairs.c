@@ -4,8 +4,9 @@
 
  * Problem: https://leetcode-cn.com/problems/climbing-stairs/
 
-   baseline solve	  :baseline
-   C hash-based solve :baseline-hash in C
+   baseline solve  :S(n) = C(n,0) + C(n-1,1) + .... + C(n/2,n/2) (偶数)
+   					S(n) = C(n,0) + C(n-1,1) + .... + C(n/2+1,n/2-1) (奇数)
+   					C(x,y)的计算根据公式特征，采取一乘一除的方式，尽量避免溢出
 
    compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g climbStairs.c -o climbStairs
  */

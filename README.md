@@ -99,7 +99,11 @@ https://leetcode-cn.com/problems/sqrtx/
 2.注意边界条件跳出的判断(e.g. recursive中最终返回那个iter)   
 
 **70 爬楼梯**  
-
+https://leetcode-cn.com/problems/climbing-stairs/   
+注意点：  
+1.使用公式法时,常规的累积乘方式很容易溢出,根据公式的规律,采取乘一个然后除一个的方式进行计算  
+2.(int)A/B 和 (int)(A/B)的概念可不一样呦....    
+**3.TO-DO 其他推荐方法细品其中思路**
 
 **83 删除排序链表中的重复元素**
 
