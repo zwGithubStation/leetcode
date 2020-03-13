@@ -17,7 +17,7 @@
 
 int combine(int x, int y)
 {
-	int i;
+	long long i;
 	long long x1 = (long long)x;
 	long long y1 = (long long)y;
 	long long divide = 1;
@@ -42,6 +42,7 @@ int climbStairs(int n){
 	
 	while (i >= j)
 	{
+		
 		ret += combine(i--, j++);
 	}
 
