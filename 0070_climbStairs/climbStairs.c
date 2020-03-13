@@ -31,7 +31,6 @@ int combine(int x, int y)
 		divide *= x1--;
 		divide_by *= y1--;
 	}
-
 	return (int)divide/divide_by;
 }
 
