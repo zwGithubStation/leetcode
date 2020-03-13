@@ -18,16 +18,18 @@
 int combine(int x, int y)
 {
 	int i;
+	long long x1 = (long long)x;
+	long long y1 = (long long)y;
 	long long divide = 1;
 	long long divide_by = 1;
 	
-	if (y == 0 || x == y)
+	if (y1 == 0 || x1 == y1)
 		return 1;
 
-	for (i = y; i > 0; i--)
+	for (i = y1; i > 0; i--)
 	{
-		divide *= (long long)x--;
-		divide_by *= (long long)y--;
+		divide *= x1--;
+		divide_by *= y1--;
 	}
 
 	return (int)divide/divide_by;
