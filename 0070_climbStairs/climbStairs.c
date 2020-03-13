@@ -18,19 +18,19 @@
 int combine(int x, int y)
 {
 	int i;
-	int divide = 1;
-	int divide_by = 1;
+	long long divide = 1;
+	long long divide_by = 1;
 	
 	if (y == 0 || x == y)
 		return 1;
 
 	for (i = y; i > 0; i--)
 	{
-		divide *= x--;
-		divide_by *= y--;
+		divide *= (long long)x--;
+		divide_by *= (long long)y--;
 	}
 
-	return divide/divide_by;
+	return (int)divide/divide_by;
 }
 
 int climbStairs(int n){
