@@ -20,8 +20,7 @@ int combine(int x, int y)
 	long long i;
 	long long x1 = (long long)x;
 	long long y1 = (long long)y;
-	long long divide = 1;
-	long long divide_by = 1;
+	long long ret = 1;
 	
 	if (y1 == 0 || x1 == y1)
 	{
@@ -33,13 +32,13 @@ int combine(int x, int y)
 		y1 = x1 - y1;
 	}
 
-	for (i = y1; i > 0; i--)
+	for (i = 1; i <= y1; i++)
 	{
-		divide *= x1--;
-		divide_by *= y1--;
+		ret *= x1--;
+		ret /= i;
 	}
 
-	return (int)(divide/divide_by);
+	return (int)ret;
 	
 }
 
