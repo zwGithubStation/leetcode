@@ -33,7 +33,6 @@ int combine(int x, int y)
 	}
 
 	return (int)divide/divide_by;
-	
 }
 
 int climbStairs(int n){
