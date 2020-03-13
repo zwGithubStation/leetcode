@@ -4,6 +4,11 @@
 
  * Problem: https://leetcode-cn.com/problems/sqrtx/
 
+   baseline
+   baseline-binary
+   recursive
+   Newton-alg
+
    compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g mySqrt.c -o mySqrt
  */
 
@@ -66,16 +71,19 @@ int mySqrt(int x){
 	if (LEVEL_1(x))
 	{
 		ret = binaryFind(0, 1000, x);
+		//ret = loopFind(0, 1000, x);
 		return ret;
 	}
 	else if (LEVEL_2(x))
 	{
 		ret = binaryFind(1001, 10000, x);
+		//ret = loopFind(1001, 10000, x);
 		return ret;
 	}
 	else if (LEVEL_3(x))
 	{
 		ret = binaryFind(10001, 46340, x);
+		//ret = loopFind(10001, 46340, x);
 		return ret;
 	}
 	else
@@ -95,9 +103,40 @@ int mySqrt(int x){
 	left = (int)exp(0.5*log(x));
 	right = left+1;
 
-	return (long long )right * (long long )right > (long long )x ? left ? right;
+	return (long long )right * (long long )right > (long long )x ? left : right;
 }
 */
+
+
+//recursive
+//sqrt(x) = 2*sqrt(x/4) = sqrt(x >> 2) << 1;
+int mySqrtRecursive(int x){
+	int left,right;
+	if (x < 2)
+		return x;
+	
+	left = mysqrt(x >> 2) << 1;
+	right = left+1;
+
+	return (long long )right * (long long )right > (long long )x ? left : right;
+}
+
+//Newton-alg
+//X[k+1] = 0.5*(x[k] + x/x[k])  if x[0] = x, x[k]ÊÕÁ²ÓÚx^0.5
+int mySqrtNewton(int x){
+	double x0,x1;
+	x0 = (double)x;
+	x1 = 0.5*(x0 + x/x0);
+
+	while(fabs(x0 - x1) >= 1)
+	{
+		x0 = x1;
+		x1 = 0.5*(x0 + x/x0);
+	}
+
+	return (int)x1;
+}
+
 
 
 int main()

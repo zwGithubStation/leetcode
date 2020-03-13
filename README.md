@@ -94,8 +94,13 @@ https://leetcode-cn.com/problems/plus-one/
 无特殊注意点   
 
 **69 x的平方根**  
+https://leetcode-cn.com/problems/sqrtx/   
+注意点：  
+**1.四种方法(baseline,baseline-binary,recursive,Newton)细品其中思路**  
+2.注意边界条件跳出的判断(e.g. recursive中最终返回那个iter)   
 
-**70 爬楼梯**
+**70 爬楼梯**  
+
 
 **83 删除排序链表中的重复元素**
 
