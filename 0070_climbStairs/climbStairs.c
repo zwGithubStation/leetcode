@@ -35,7 +35,7 @@ int combine(int x, int y)
 		divide_by *= y1--;
 	}
 
-	printf("C(%d,%d) = (%ll / %ll) = %d\n",x, y, divide, divide_by, (int)divide/divide_by);
+	printf("C(%d,%d) = (%lld / %lld) = %d\n",x, y, divide, divide_by, (int)divide/divide_by);
 	return (int)divide/divide_by;
 	
 }
