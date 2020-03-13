@@ -25,8 +25,12 @@ int combine(int x, int y)
 	
 	if (y1 == 0 || x1 == y1)
 	{
-		printf("C(%d,%d) = 1\n",x, y);
 		return 1;
+	}
+
+	if (y1 >= x1/2)
+	{
+		y1 = x1 - y1;
 	}
 
 	for (i = y1; i > 0; i--)
@@ -35,7 +39,6 @@ int combine(int x, int y)
 		divide_by *= y1--;
 	}
 
-	printf("C(%d,%d) = (%lld / %lld) = %d\n",x, y, divide, divide_by, (int)(divide/divide_by));
 	return (int)(divide/divide_by);
 	
 }
@@ -43,16 +46,11 @@ int combine(int x, int y)
 int climbStairs(int n){
 	int i = n;
 	int j = 0;
-	int tem,ret = 0;
+	int ret = 0;
 	
 	while (i >= j)
 	{
-		printf("calc C(%d,%d)\n",i, j);
-		tem = combine(i, j);
-		printf("calc C(%d,%d) = %d\n",i, j, tem);
-		ret += tem;
-		i--;
-		j++;
+		ret += combine(i--, j++);
 	}
 
 	return ret;
