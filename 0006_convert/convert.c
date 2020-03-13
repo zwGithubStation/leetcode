@@ -2,12 +2,11 @@
 /*
  * Copyright (C) ZWP
 
- * Problem: Sum https://leetcode-cn.com/problems/two-sum/
+ * Problem: https://leetcode-cn.com/problems/zigzag-conversion/
 
    baseline solve	  :baseline
-   C hash-based solve :baseline-hash in C
 
-   compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g sum.c -o sum
+   compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g convert.c -o convert
  */
 
 #include <stdio.h>
@@ -16,181 +15,69 @@
 #include <assert.h>
 #include <limits.h>
 
-/* baseline */
-/*
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-	int i,j,match_left,match_right;
-	int *result_array = (int *)malloc(sizeof(int)*2);
+char * convert(char * s, int numRows){
+	int len,column,i,j,k;
+	char *ret;
+	int high_tmp,low_tmp,mid_tmp1,mid_tmp2;
 	
-	for (i = 0 ; i < numsSize-1; i++)
+	if (!s)
+		return NULL;
+	
+	len = strlen(s);
+	j = 0;
+	ret = (char *)malloc(sizeof(char)*(len+1));
+
+	if (numRows == 1 || len <= numRows)
 	{
-		match_left = nums[i];
-		match_right = target - match_left;
-		for (j = i+1; j < numsSize; j++)
+		memcpy(ret, s, sizeof(char)*len);
+		ret[len] = '\0';
+		return ret;
+	}
+
+	column = 0;
+	while (column*(numRows - 1) < len)
+		column += 2;
+
+	k = 0;
+
+	for (i = 0; i < numRows; i++)
+	{
+		for (j = 0; j <= column; j=j+2)
 		{
-			if (nums[j] == match_right)
+			if (i == 0)
 			{
-				result_array[0] = i;
-				result_array[1] = j;
-				*returnSize = 2;
-				return result_array;
+				high_tmp = j*(numRows-1);
+				if (high_tmp < len)
+					ret[k++] = s[high_tmp];
+			}
+			else if (i == numRows-1)
+			{
+				low_tmp = (j+1)*(numRows-1);
+				if (low_tmp < len)
+				{
+					ret[k++] = s[low_tmp];
+				}
+			}
+			else
+			{
+				mid_tmp1 = j*(numRows-1)-i;
+				mid_tmp2 = j*(numRows-1)+i;
+				if (mid_tmp1 > 0 && mid_tmp1 < len)
+				{
+					ret[k++] = s[mid_tmp1];
+				}
+
+				if (mid_tmp2 > 0 && mid_tmp2 < len)
+				{
+					ret[k++] = s[mid_tmp2];
+				}
 			}
 		}
 	}
 
-	free(result_array);
-	*returnSize = 0;
-	return NULL;
+	ret[len] = '\0';
+	return ret;
 }
-*/
-
-/* baseline-hash in C */
-typedef enum return_code{
-	OK = 0,
-	FAIL = 1
-}RETURN_CODE;
-
-//could be replaced by INT_MAX
-typedef enum element_status{
-	FREE = 0,
-	OCCUPIED = 1
-}STATUS;
-
-typedef struct element{
-	STATUS 	status; 
-	int 	data;
-	int 	index;
-}ELEMENT;
-
-typedef struct hash_table{
-	ELEMENT *table;
-	int 	 size;
-}HASH_TABLE;
-
-HASH_TABLE* hask_table_init(int size)
-{
-	HASH_TABLE *table = NULL;
-
-	if (size <= 0)
-	{
-		return NULL;
-	}
-
-	table = (HASH_TABLE *)malloc(sizeof(HASH_TABLE));
-	if (NULL == table)
-	{
-		return NULL;
-	}
-
-	table->size = size;
-	table->table = (ELEMENT *)malloc(sizeof(ELEMENT) * size);
-	if (NULL == table->table)
-	{
-		free(table);
-		return NULL;
-	}
-
-	memset(table->table, 0, sizeof(ELEMENT) * size); //default status:free(0)
-	return table;
-}
-
-void hask_table_free(HASH_TABLE* table)
-{
-	assert(table != NULL);
-
-	free(table->table);
-	free(table);
-}
-
-int find_element(HASH_TABLE* table, int data, int* index)
-{
-	assert(table != NULL);
-
-	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
-	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;  
-	int search_head = pos_suppose;
-
-	do
-	{
-		if (table->table[pos_suppose].status == FREE)
-		{
-			return FAIL;
-		}
-
-		if  (table->table[pos_suppose].data == data)
-		{
-			*index = table->table[pos_suppose].index;
-			return OK;
-		}
-
-		pos_suppose = (pos_suppose+1) % table->size;
-	}while(pos_suppose != search_head);
-
-	return FAIL;
-}
-
-int insert_element(HASH_TABLE* table, int data, int index)
-{
-	assert(table != NULL);
-
-	//abs: make sure table->table[pos_suppose] not beyond valid size in negative division scenario£¬which will cause heapMem overflow
-	int pos_suppose = (abs(data) == 0) ? 0 : abs(data) % table->size;
-	int search_head = pos_suppose;
-
-	do
-	{
-		if (table->table[pos_suppose].status == FREE)
-		{
-			table->table[pos_suppose].data  = data; 
-			table->table[pos_suppose].index  = index;
-			table->table[pos_suppose].status = OCCUPIED;
-			return OK;
-		}
-
-		pos_suppose = (pos_suppose+1) % table->size;
-	}while(pos_suppose != search_head);
-
-	return FAIL;
-}
-
-
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
-	int i,add_right,match_left,match_right;
-	int *result_array = (int *)malloc(sizeof(int)*2);
-	
-	HASH_TABLE *table = hask_table_init(numsSize * 2);
-	if (NULL == table)
-	{
-		free(result_array);
-		*returnSize = 0;
-		return NULL;
-	}
-
-	for (i = 0 ; i < numsSize; i++)
-	{
-		add_right = target - nums[i];
-		if (OK == find_element(table, add_right, &match_right))
-		{
-			result_array[0] = match_right;
-			result_array[1] = i;
-			hask_table_free(table);
-			*returnSize = 2;
-			return result_array;
-		}
-
-		(void)insert_element(table, nums[i], i);
-	}
-		
-	free(result_array);
-	hask_table_free(table);
-	*returnSize = 0;
-	return NULL;
-}
-
-
 
 
 int main()

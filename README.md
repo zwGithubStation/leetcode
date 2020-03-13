@@ -25,7 +25,11 @@ https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 
 **5 最长回文子串**  
 
-**6 Z字形变换**   
+**6 Z字形变换**  
+https://leetcode-cn.com/problems/zigzag-conversion/   
+注意点： 
+1.数学方法的思想理清,边界条件仍要清晰  
+2.其他优雅的方法细化理解    
 
 **7 整数反转**  
 https://leetcode-cn.com/problems/reverse-integer/   
