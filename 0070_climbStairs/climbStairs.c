@@ -22,7 +22,6 @@ int combine(int x, int y)
 	long long y1 = (long long)y;
 	long long divide = 1;
 	long long divide_by = 1;
-	long long ret;
 	
 	if (y1 == 0 || x1 == y1)
 	{
@@ -36,9 +35,8 @@ int combine(int x, int y)
 		divide_by *= y1--;
 	}
 
-	printf("C(%d,%d) = (%lld / %lld) = %lld\n",x, y, divide, divide_by, divide/divide_by);
-	ret = divide/divide_by;
-	return (int)ret;
+	printf("C(%d,%d) = (%lld / %lld) = %d\n",x, y, divide, divide_by, (int)(divide/divide_by));
+	return (int)(divide/divide_by);
 	
 }
 
