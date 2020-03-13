@@ -105,7 +105,10 @@ https://leetcode-cn.com/problems/climbing-stairs/
 2.(int)A/B 和 (int)(A/B)的概念可不一样呦....    
 **3.TO-DO 其他推荐方法细品其中思路**
 
-**83 删除排序链表中的重复元素**
+**83 删除排序链表中的重复元素**  
+https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/  
+注意点：  
+简单的测试基本操作；策略明晰则代码简洁，思考为什么提交4次才成功   
 
 **88 合并两个有序数组**
 
