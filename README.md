@@ -118,7 +118,7 @@ https://leetcode-cn.com/problems/merge-sorted-array/
 **100 相同的树**  
 https://leetcode-cn.com/problems/same-tree/  
 注意点：  
-基本的树递归逻辑，关注评论中的可关注点  
+**1.基本的树递归逻辑，关注评论中的可关注点及可优化点**  
 
 **101对称二叉树**  
 
