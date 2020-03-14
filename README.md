@@ -38,7 +38,10 @@ https://leetcode-cn.com/problems/reverse-integer/
 2.传入函数的&param，注意未付初值时函数内是否不做处理，返回无效值  
 3.分析简单策略　   
 
-**8 字符串转换整数**   
+**8 字符串转换整数**  
+https://leetcode-cn.com/problems/string-to-integer-atoi/  
+注意点：  
+1.简单的字符串处理,着重于各个边界条件的判断正确性和异常用例的覆盖性    
 
 **9 回文数**  
 https://leetcode-cn.com/problems/palindrome-number/   
