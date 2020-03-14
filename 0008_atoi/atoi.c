@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <stdbool.h>
 
 #define IS_VALID_DIGID(x) ((x) >= '0' && (x) <= '9')
 #define IS_VALID_NON_ZERO_DIGID(x) ((x) > '0' && (x) <= '9')
