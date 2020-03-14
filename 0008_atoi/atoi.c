@@ -4,6 +4,7 @@
 
  * Problem: https://leetcode-cn.com/problems/string-to-integer-atoi/
 
+ * compile: gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g atoi.c -o atoi
  */
 
 #include <stdio.h>
