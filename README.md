@@ -80,7 +80,10 @@ https://leetcode-cn.com/problems/merge-two-sorted-lists/
 
 **22 括号生成**  
 
-**24 两两交换链表中的节点** 
+**24 两两交换链表中的节点**  
+https://leetcode-cn.com/problems/swap-nodes-in-pairs/  
+注意点：  
+简单的链表操作,关注评论中是否有可借鉴之处  
 
 **26 删除排序数组中的重复项**  
 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/  
