@@ -20,13 +20,14 @@
 bool isPalindrome(char * s, int len, int startPos)
 {
 	int i, j;
+	bool ret;
 	
 	for (i = startPos, j = 1; i < startPos + len/2; i++, j++)
 	{
-		if (s[i] != s[startPos+len-j]);
+		if (s[i] != s[startPos+len-j])
 			return false;
 	}
-	
+
 	return true;
 }
 char * longestPalindrome(char * s){
