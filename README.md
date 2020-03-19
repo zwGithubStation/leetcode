@@ -66,6 +66,9 @@ https://leetcode-cn.com/problems/longest-common-prefix/
 **18 四数之和**  
 
 **19 删除链表的倒数第N个节点**   
+https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/    
+注意点：  
+简单的链表操作,关注目的是否是常量数组形式记录指针集,关注评论中是否有可借鉴之处      
 
 **20 有效括号字符串**  
 https://leetcode-cn.com/problems/valid-parentheses/   
