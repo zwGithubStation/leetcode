@@ -24,6 +24,11 @@ https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 **2.空间消耗过大 是否直接使用数组**   
 
 **5 最长回文子串**  
+https://leetcode-cn.com/problems/longest-palindromic-substring/  
+注意点：  
+**1.基本方法、动态规划、暴力法的逻辑理解**    
+**2.空间由平方到n级的缩减策略理解**  
+**3.马拉车算法的理解实现**       
 
 **6 Z字形变换**  
 https://leetcode-cn.com/problems/zigzag-conversion/   

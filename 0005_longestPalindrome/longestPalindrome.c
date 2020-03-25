@@ -75,7 +75,7 @@ char * longestPalindrome(char * s){
 //LCS
 char * longestPalindromeLCS(char * s){
 	int maxLen,endPos,len,i,j;
-	int **lenMatrix;
+	int *lenRecord;
 	char *reverse;
 	char *ret;
 
@@ -85,13 +85,9 @@ char * longestPalindromeLCS(char * s){
 	len = strlen(s);
 	if (len == 1)
 		return s;
-
-	lenMatrix = (int **)malloc(sizeof(int *)*len);
-	for (i = 0; i < len; i++)
-	{
-		lenMatrix[i] = (int *)malloc(sizeof(int)*len);
-		memset(lenMatrix[i], 0, sizeof(int)*len);
-	}
+	
+	lenRecord = (int *)malloc(sizeof(int)*len);
+	memset(lenRecord, 0, sizeof(int)*len);
 
 	reverse = (char *)malloc(sizeof(char)*(len+1));
 	for (i = 0; i < len; i++)
@@ -101,33 +97,33 @@ char * longestPalindromeLCS(char * s){
 	maxLen = 0;
 	for(i = 0; i < len; i++)
 	{
-		for(j = 0; j < len; j++)
+		for(j = len-1; j >=0; j--)
 		{
 			if (reverse[j] == s[i])
 			{
 				if (i == 0 || j == 0)
-					lenMatrix[i][j] = 1;
+					lenRecord[j] = 1;
 				else
 				{
-					lenMatrix[i][j] = lenMatrix[i-1][j-1]+1;
+					lenRecord[j] = lenRecord[j-1]+1;
 				}
 
-				if ((len-j-1)+ lenMatrix[i][j] -1 == i)
+			}else{
+				lenRecord[j]= 0;
+			}
+
+			if (lenRecord[j] > maxLen)   
+			{
+				if ((len-j-1)+ lenRecord[j] -1 == i)
 				{
-					if (lenMatrix[i][j] > maxLen)
-					{
-						maxLen = lenMatrix[i][j];
-						endPos = i;
-					}
+					maxLen = lenRecord[j];
+					endPos = i;
 				}
 			}
 		}
 	}
 
-	for (i = 0; i < len; i++)
-	{
-		free(lenMatrix[i]);
-	}
+	free(lenRecord);
 	free(reverse);
 
 	if (maxLen == 0)
@@ -144,12 +140,107 @@ char * longestPalindromeLCS(char * s){
 
 //force-enhanced
 char * longestPalindromeFE(char * s){
-	
+	int maxLen,endPos,len,i,j;
+	int *lenRecord;
+	char *ret;
+
+	if (!s)
+		return NULL;
+
+	len = strlen(s);
+	if (len == 1)
+		return s;
+
+	lenRecord = (int *)malloc(sizeof(int)*len);
+	memset(lenRecord, 0, sizeof(int)*len);
+
+	maxLen = 0;
+	for (i = len-1; i>=0; i--)
+	{
+		for (j = len-1; j >=i; j--)
+		{
+			lenRecord[j] = (s[i] == s[j] && (j - i < 3 || lenRecord[j-1] == 1)) ? 1 : 0;
+			if (lenRecord[j] == 1 && j-i+1 > maxLen)
+			{
+				maxLen = j-i+1;
+				endPos = j;
+			}
+		}
+	}
+
+	ret = (char *)malloc(sizeof(char)*(maxLen+1));
+	memcpy(ret, &s[endPos-maxLen+1], maxLen);
+	ret[maxLen] = '\0';
+
+	return ret;
 }
 
 //expand-mid
-char * longestPalindromeEM(char * s){
+int expandCenterEven(char * s, int left, int right, int* startPos)
+{
+	int i,j,len;
+
+	len = strlen(s);
 	
+	while (left >= 0 && right < len && s[left] == s[right])
+	{
+		left--;
+		right++;
+	}
+
+	if (right - left == 1)
+		return 0;
+
+	*startPos = left+1;
+	return right-left-1;
+}
+
+int expandCenterOdd(char * s, int left, int right, int* startPos)
+{
+	int i,j,len;
+
+	len = strlen(s);
+	
+	while (left >= 0 && right < len && s[left] == s[right])
+	{
+		left--;
+		right++;
+	}
+
+	*startPos = left+1;
+	return right-left-1;
+}
+
+
+char * longestPalindromeEM(char * s){
+	int maxLen,startPos,len,lenTmp,len1,len2,start1,start2,i,j;
+	char *ret;
+
+	if (!s)
+		return NULL;
+
+	len = strlen(s);
+	if (len == 1)
+		return s;
+
+	maxLen = 0;
+	for (i = 0; i < len; i++)
+	{
+		len1 = expandCenterOdd(s, i, i, &start1);
+		len2 = expandCenterEven(s, i, i+1, &start2);
+		lenTmp = len1 > len2 ? len1 : len2;
+		if (lenTmp > maxLen)
+		{
+			maxLen = lenTmp;
+			startPos = len1 > len2 ? start1 : start2;
+		}
+	}
+
+	ret = (char *)malloc(sizeof(char)*(maxLen+1));
+	memcpy(ret, &s[startPos], maxLen);
+	ret[maxLen] = '\0';
+
+	return ret;
 }
 
 
