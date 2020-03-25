@@ -74,7 +74,8 @@ char * longestPalindrome(char * s){
 
 //LCS
 char * longestPalindromeLCS(char * s){
-	int maxLen,startPos,len;
+	int maxLen,startPos,len,i;
+	int **lenMatrix;
 
 	if (!s)
 		return NULL;
@@ -83,9 +84,13 @@ char * longestPalindromeLCS(char * s){
 	if (len == 1)
 		return s;
 
-	int lenMatrix[len][len] = {0};
+	lenMatrix = (int **)malloc(sizeof(int *)*len);
+	for (i = 0; i < len; i++)
+	{
+		lenMatrix[i] = (int *)malloc(sizeof(int)*len);
+	}
 
-	return lenMatrix[0];
+	return NULL;
 }
 
 //force-enhanced
