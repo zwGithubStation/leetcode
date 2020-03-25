@@ -74,8 +74,10 @@ char * longestPalindrome(char * s){
 
 //LCS
 char * longestPalindromeLCS(char * s){
-	int maxLen,startPos,len,i;
+	int maxLen,endPos,len,i,j;
 	int **lenMatrix;
+	char *reverse;
+	char *ret;
 
 	if (!s)
 		return NULL;
@@ -88,9 +90,56 @@ char * longestPalindromeLCS(char * s){
 	for (i = 0; i < len; i++)
 	{
 		lenMatrix[i] = (int *)malloc(sizeof(int)*len);
+		memset(lenMatrix[i], 0, sizeof(int)*len);
 	}
 
-	return NULL;
+	reverse = (char *)malloc(sizeof(char)*(len+1));
+	for (i = 0; i < len; i++)
+		reverse[i] = s[len-i-1];
+	reverse[len] = '\0';
+
+	maxLen = 0;
+	for(i = 0; i < len; i++)
+	{
+		for(j = 0; j < len; j++)
+		{
+			if (reverse[j] == s[i])
+			{
+				if (i == 0 || j == 0)
+					lenMatrix[i][j] = 1;
+				else
+				{
+					lenMatrix[i][j] = lenMatrix[i-1][j-1]+1;
+				}
+
+				if ((len-j-1)+ lenMatrix[i][j] -1 == i)
+				{
+					if (lenMatrix[i][j] > maxLen)
+					{
+						maxLen = lenMatrix[i][j];
+						endPos = i;
+					}
+				}
+			}
+		}
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		free(lenMatrix[i]);
+	}
+	free(reverse);
+
+	if (maxLen == 0)
+	{
+		return "";
+	}
+
+	ret = (char *)malloc(sizeof(char)*(maxLen+1));
+	memcpy(ret, &s[endPos-maxLen+1], maxLen);
+	ret[maxLen] = '\0';
+
+	return ret;
 }
 
 //force-enhanced
