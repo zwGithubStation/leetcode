@@ -12,23 +12,53 @@
 #include <stdbool.h>
 #include <limits.h>
 
+//baseline
 int maxArea(int* height, int heightSize){
+	int i,j;
+	int ver,herz,curSize,maxSize=0;
+	for (i = 0; i < heightSize-1; i++)
+	{
+		for (j = i+1; j < heightSize; j++)
+		{
+			herz = j - i;
+			ver = height[i] > height[j] ? height[j] : height[i];
+			curSize = herz * ver;
+			if (curSize > maxSize)
+				maxSize = curSize;
+		}
+	}
 
+	return maxSize;
 }
+
+//double ptr
+int maxArea(int* height, int heightSize){
+	int i,j;
+	int ver,curSize,maxSize=0;
+
+	i = 0;
+	j = heightSize - 1;
+
+	while (i < j)
+	{
+		ver = height[i] >= height[j] ? height[j] : height[i];
+		curSize = (j - i) * ver;
+		
+		if (curSize > maxSize)
+			maxSize = curSize;
+		
+		if (height[i] < height[j])
+			i++;
+		else
+			j--;
+	}
+
+	return maxSize;
+}
+
 
 int main()
 {
-	int input;
-	bool result;
-	while (scanf("%d", &input) != EOF)
-	{
-		result = isPalindrome(input);
-		if (true == result)
-			printf("%d is a palindrome!\n", input);
-		else
-			printf("%d is not a palindrome!\n", input);
-	}
-	
 	return 0;
 }
 

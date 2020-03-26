@@ -55,6 +55,9 @@ https://leetcode-cn.com/problems/palindrome-number/
 2.有效剪纸避免错误覆盖(e.g.100000) 
 
 **11 盛最多水的容器**  
+https://leetcode-cn.com/problems/container-with-most-water/   
+注意点：   
+1.双指针法的合理解释理解(见题解之：O(n) 双指针解法：理解正确性、图解原理（C++/Java）)   
 
 **14 最长公共前缀**  
 https://leetcode-cn.com/problems/longest-common-prefix/   
