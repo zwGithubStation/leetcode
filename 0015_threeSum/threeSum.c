@@ -99,9 +99,10 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		*returnSize = 0;
 		return NULL;
 	}
-		
 
 	quickSort(nums, 0, numsSize-1);
+	for (i = 0; i < numsSize; i++)
+		printf("%d ", nums[i]);
 
 	retNums = numsSize/2;
 
@@ -131,11 +132,13 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		{
 			if (nums[i] + nums[left] + nums[right] == 0)
 			{
+				printf("find one answer:");
 				ret[cnt][0] = nums[i];
 				ret[cnt][1] = nums[left];
 				ret[cnt][2] = nums[right];
 				cnt++;
 				*returnSize = cnt;
+				printf("[%d %d %d], now cnt=%d", nums[i], nums[left], nums[right], cnt);
 
 				while (left < numsSize-1 && nums[left] == nums[left+1])
 					left++;
