@@ -139,6 +139,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 				ret[cnt][2] = nums[right];
 				printf("[%d %d %d]\n", nums[i], nums[left], nums[right]);
 				cnt++;
+				*returnSize = cnt*3;
 
 				while (left < numsSize-1 && nums[left] == nums[left+1])
 					left++;
