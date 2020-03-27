@@ -113,8 +113,16 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		*(returnColumnSizes[i]) = 3;
 	}
 
+	*returnSize = 0;
+
 	for (i = 0; i <= numsSize-3; i++)
 	{
+		if (nums[i] > 0)
+			return ret;
+
+		if (i > 0 && nums[i] == nums[i-1])
+			continue;
+			
 		left = i+1;
 		right = numsSize-1;
 		while (left < right)
@@ -128,7 +136,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 				while (left < numsSize-1 && nums[left] == nums[left+1])
 					left++;
-				while (right > 0 && nums[right] == nums[right+1])
+				while (right > 0 && nums[right] == nums[right-1])
 					right--;
 			}else if (nums[i] + nums[left] + nums[right] < 0)
 			{
@@ -150,23 +158,31 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 int main()
 {	
-	int test[100] = {0};
+	int test[6] = {-1,0,1,2,-1,-4};
 	int i;
+	int **ret;
+	int **returnColumnSizes;
+	int cnt;
 
-	for (i = 0; i < 100; i++)
-		test[i] = rand()%100;
+	//for (i = 0; i < 100; i++)
+	//	test[i] = rand()%100;
 
-	for (i = 0; i < 100; i++)
-		printf("%d ", test[i]);
+	//for (i = 0; i < 100; i++)
+	//	printf("%d ", test[i]);
 
-	printf("\n");
+	//printf("\n");
 
-	quickSort(test, 0, 99);
+	//quickSort(test, 0, 99);
 
-	for (i = 0; i < 100; i++)
-		printf("%d ", test[i]);
+	//for (i = 0; i < 100; i++)
+	//	printf("%d ", test[i]);
 
-	printf("\n");
+	//printf("\n");
+
+	ret = threeSum(test, 6, &cnt, returnColumnSizes);
+
+	printf("%d\n", cnt);
+	
 	return 0;
 }
 
