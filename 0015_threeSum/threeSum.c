@@ -119,7 +119,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 	*returnSize = 0;
 
-	for (i = 0; i <= numsSize-3; i++)
+	for (i = 0; i < numsSize; i++)
 	{
 		if (nums[i] > 0)
 			return ret;
@@ -133,9 +133,11 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		{
 			if (nums[i] + nums[left] + nums[right] == 0)
 			{
+				printf("one answer find:\n");
 				ret[cnt][0] = nums[i];
 				ret[cnt][1] = nums[left];
 				ret[cnt][2] = nums[right];
+				printf("[%d %d %d]\n", nums[i], nums[left], nums[right]);
 				cnt++;
 
 				while (left < numsSize-1 && nums[left] == nums[left+1])
