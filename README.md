@@ -66,6 +66,11 @@ https://leetcode-cn.com/problems/longest-common-prefix/
 **2.官网的诸多理论方法**  
 
 **15 三数之和**  
+https://leetcode-cn.com/problems/3sum/  
+注意点：   
+**1.排序+寻结果策略的算法理解**  
+**2.代码溢出点的排查注意：1.多个去重场景的考虑；2.存储结果内存与数组规模的关系**   
+**3.C标准的qsort/bsort的使用和自实现；可重入及线程安全性扩展理解**   
 
 **16 最接近的三数之和**  
 
