@@ -90,7 +90,61 @@ void quickSort(int *a, int left, int right)
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
-	return NULL;
+	int retNums,i,left,right,cnt = 0;
+	int **ret = NULL;
+
+	if (numsSize < 3)
+		return NULL;
+
+	quickSort(nums, 0, numsSize-1);
+
+	if (nums[0] > 0)
+		return NULL;
+
+	retNums = numsSize/2;
+
+	ret = (int **)malloc(sizeof(int *)*retNums);
+	returnColumnSizes = (int *)malloc(sizeof(int *)*retNums);
+
+	for (i = 0; i < retNums; i++)
+	{
+		ret[i] = (int *)malloc(sizeof(int)*3);
+		returnColumnSizes[i] = (int *)malloc(sizeof(int)*1);
+		*(returnColumnSizes[i]) = 3;
+	}
+
+	for (i = 0; i <= numsSize-3; i++)
+	{
+		left = i+1;
+		right = numsSize-1;
+		while (left < right)
+		{
+			if (nums[i] + nums[left] + nums[right] == 0)
+			{
+				ret[cnt][0] = nums[i];
+				ret[cnt][1] = nums[left];
+				ret[cnt][2] = nums[right];
+				cnt++;
+
+				while (left < numsSize-1 && nums[left] == nums[left+1])
+					left++;
+				while (right > 0 && nums[right] == nums[right+1])
+					right--;
+			}else if (nums[i] + nums[left] + nums[right] < 0)
+			{
+				left++;
+			}else
+			{
+				right--;
+			}	
+		}
+	}
+
+	if (cnt == 0)
+		return NULL;
+
+	returnSize = cnt*3;
+	return ret;
 }
 
 
