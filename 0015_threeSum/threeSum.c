@@ -101,6 +101,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 	}
 
 	quickSort(nums, 0, numsSize-1);
+	
 	for (i = 0; i < numsSize; i++)
 		printf("%d ", nums[i]);
 
@@ -184,18 +185,22 @@ int main()
 
 	//printf("\n");
 
-	ret = threeSum(test, 17, &cnt, &returnColumnSizes);
+//	ret = threeSum(test, 17, &cnt, &returnColumnSizes);
 
-	printf("%d\n", cnt);
-	for (i = 0; i < cnt; i++)
-	{
-		printf("one answer array with size(%d)\n", returnColumnSizes[i]);
-		for (j = 0; j < returnColumnSizes[i]; j++)
-		{
-			printf("%d ", ret[i][j]);
-		}
-		printf("\n");
-	}
+//	printf("%d\n", cnt);
+//	for (i = 0; i < cnt; i++)
+//	{
+//		printf("one answer array with size(%d)\n", returnColumnSizes[i]);
+//		for (j = 0; j < returnColumnSizes[i]; j++)
+//		{
+//			printf("%d ", ret[i][j]);
+//		}
+//		printf("\n");
+//	}
+
+	quickSort(test, 0, 16);
+	for (i = 0; i < 17; i++)
+		printf("%d ", test[i]);
 	
 	return 0;
 }
