@@ -54,6 +54,35 @@ void sort(int *a, int left, int right)
                        /*当然最后可能会出现很多分左右，直到每一组的i = j 为止*/
 }
 
+void quickSort(int *a, int left, int right)
+{
+	int i,j,key;
+
+	if (left >= right)
+		return;
+	
+	i = left;
+	j = right;
+	key = a[left];
+
+	while (i < j)
+	{
+		while (i < j && key <= a[j])
+			j--;
+
+		a[i] = a[j];
+
+		while (i < j && key >= a[i])
+			i++;
+
+		a[j] = a[i];
+	}
+
+	a[i] = key;
+	quickSort(a, left, i-1);
+	quickSort(a, i+1, right);
+}
+
 
 /**
  * Return an array of arrays of size *returnSize.
@@ -78,7 +107,7 @@ int main()
 
 	printf("\n");
 
-	sort(test, 0, 99);
+	quickSort(test, 0, 99);
 
 	for (i = 0; i < 100; i++)
 		printf("%d ", test[i]);
