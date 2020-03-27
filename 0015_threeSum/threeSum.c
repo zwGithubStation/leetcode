@@ -181,6 +181,7 @@ int main()
 	printf("%d\n", cnt);
 	for (i = 0; i < cnt; i++)
 	{
+		printf("one answer array with size(%d)\n", *(returnColumnSizes[i]));
 		for (j = 0; j < *(returnColumnSizes[i]); j++)
 		{
 			printf("%d ", ret[i][j]);
