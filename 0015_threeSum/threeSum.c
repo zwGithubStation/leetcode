@@ -95,7 +95,11 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 	int *retColumnSizes = NULL;
 
 	if (numsSize < 3)
+	{
+		*returnSize = 0;
 		return NULL;
+	}
+		
 
 	quickSort(nums, 0, numsSize-1);
 
@@ -156,7 +160,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 int main()
 {	
-	int test[6] = {-1,0,1,2,-1,-4};
+	int test[] = {-1,-2,-3,4,1,3,0,3,-2,1,-2,2,-1,1,-5,4,-3};
 	int i,j;
 	int **ret;
 	int *returnColumnSizes;
@@ -177,7 +181,7 @@ int main()
 
 	//printf("\n");
 
-	ret = threeSum(test, 6, &cnt, &returnColumnSizes);
+	ret = threeSum(test, 17, &cnt, &returnColumnSizes);
 
 	printf("%d\n", cnt);
 	for (i = 0; i < cnt; i++)
