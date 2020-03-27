@@ -92,6 +92,7 @@ void quickSort(int *a, int left, int right)
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
 	int retNums,i,left,right,cnt = 0;
 	int **ret = NULL;
+	int *retColumnSizes = NULL;
 
 	if (numsSize < 3)
 		return NULL;
@@ -101,16 +102,16 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 	retNums = numsSize/2;
 
 	ret = (int **)malloc(sizeof(int *)*retNums);
-	returnColumnSizes = (int **)malloc(sizeof(int *)*retNums);
+	retColumnSizes = (int *)malloc(sizeof(int)*retNums);
 
 	for (i = 0; i < retNums; i++)
 	{
 		ret[i] = (int *)malloc(sizeof(int)*3);
-		returnColumnSizes[i] = (int *)malloc(sizeof(int)*1);
-		*(returnColumnSizes[i]) = 3;
+		retColumnSizes[i] = 3;
 	}
 
 	*returnSize = 0;
+	*returnColumnSizes = retColumnSizes;
 
 	for (i = 0; i < numsSize; i++)
 	{
@@ -158,7 +159,7 @@ int main()
 	int test[6] = {-1,0,1,2,-1,-4};
 	int i,j;
 	int **ret;
-	int **returnColumnSizes;
+	int *returnColumnSizes;
 	int cnt;
 
 	//for (i = 0; i < 100; i++)
@@ -176,13 +177,13 @@ int main()
 
 	//printf("\n");
 
-	ret = threeSum(test, 6, &cnt, returnColumnSizes);
+	ret = threeSum(test, 6, &cnt, &returnColumnSizes);
 
 	printf("%d\n", cnt);
 	for (i = 0; i < cnt; i++)
 	{
-		printf("one answer array with size(%d)\n", *(returnColumnSizes[i]));
-		for (j = 0; j < *(returnColumnSizes[i]); j++)
+		printf("one answer array with size(%d)\n", returnColumnSizes[i]);
+		for (j = 0; j < returnColumnSizes[i]; j++)
 		{
 			printf("%d ", ret[i][j]);
 		}
