@@ -157,6 +157,8 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		}
 	}
 
+	printf("get answer cnt:%d\n",cnt);
+
 	if (cnt == 0)
 		return NULL;
 
