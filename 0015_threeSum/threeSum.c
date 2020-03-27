@@ -143,7 +143,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 	if (cnt == 0)
 		return NULL;
 
-	returnSize = cnt*3;
+	*returnSize = cnt*3;
 	return ret;
 }
 
