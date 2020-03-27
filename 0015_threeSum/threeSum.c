@@ -144,6 +144,9 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 					left++;
 				while (right > 0 && nums[right] == nums[right-1])
 					right--;
+
+				left++;
+				right--;
 			}else if (nums[i] + nums[left] + nums[right] < 0)
 			{
 				left++;
