@@ -98,9 +98,6 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 	quickSort(nums, 0, numsSize-1);
 
-	if (nums[0] > 0)
-		return NULL;
-
 	retNums = numsSize/2;
 
 	ret = (int **)malloc(sizeof(int *)*retNums);
@@ -112,6 +109,8 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 		returnColumnSizes[i] = (int *)malloc(sizeof(int)*1);
 		*(returnColumnSizes[i]) = 3;
 	}
+
+	printf("malloc done\n");
 
 	*returnSize = 0;
 
