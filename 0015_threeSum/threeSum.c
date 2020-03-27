@@ -105,7 +105,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 	for (i = 0; i < numsSize; i++)
 		printf("%d ", nums[i]);
 
-	retNums = numsSize/2;
+	retNums = numsSize;
 
 	ret = (int **)malloc(sizeof(int *)*retNums);
 	retColumnSizes = (int *)malloc(sizeof(int)*retNums);
