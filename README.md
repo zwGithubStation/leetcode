@@ -72,7 +72,10 @@ https://leetcode-cn.com/problems/3sum/
 **2.代码溢出点的排查注意：1.多个去重场景的考虑；2.存储结果内存与数组规模的关系**   
 **3.C标准的qsort/bsort的使用和自实现；可重入及线程安全性扩展理解**   
 
-**16 最接近的三数之和**  
+**16 最接近的三数之和**   
+https://leetcode-cn.com/problems/3sum-closest/  
+注意点：  
+和水桶问题相近似  
 
 **17 电话号码的字母组合**   
 
