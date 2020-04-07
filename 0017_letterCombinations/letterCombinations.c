@@ -29,6 +29,7 @@ void setArrayBasedByIndex(char *array, int *index, int *matrix_idx, int length)
 	int i;
 	for (i = 0; i < length; i++)
 	{
+		printf("matrix_idx:%d, idx:%d", matrix_idx[i],index[i]);
 		printf("element[%d] set to:%c", i, matrix[matrix_idx[i]][index[i]]);
 		array[i] = matrix[matrix_idx[i]][index[i]];
 	}
