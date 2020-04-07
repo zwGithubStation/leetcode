@@ -29,8 +29,6 @@ void setArrayBasedByIndex(char *array, int *index, int *matrix_idx, int length)
 	int i;
 	for (i = 0; i < length; i++)
 	{
-		printf("cur[%d] matrix_idx:%d, idx:%d\n", matrix_idx[i], index[i]);
-		printf("element[%d] set to:%c\n", i, matrix[matrix_idx[i]][index[i]]);
 		array[i] = matrix[matrix_idx[i]][index[i]];
 	}
 
@@ -75,8 +73,6 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	static_idx = (int *)malloc(sizeof(int)*length);
 	matrix_idx = (int *)malloc(sizeof(int)*length);
-
-	printf("1\n");
 	
 	while (tmp < length)
 	{
@@ -93,18 +89,13 @@ char ** letterCombinations(char * digits, int* returnSize){
 		}
 
 		matrix_idx[tmp] = digits[tmp] - '2';
-		printf("one index:%d\n", matrix_idx[tmp]);
 		tmp++;
-
-		printf("2\n");
 	}
 
 	cur_idx = (int *)malloc(sizeof(int)*length);
 	memset(cur_idx, 0, sizeof(int)*length);
 
 	*returnSize = total;
-
-	printf("3 total=%d\n", total);
 
 	ret = (char **)malloc(sizeof(char *)*total);
 	for (i = 0; i < total; i++)
@@ -113,22 +104,16 @@ char ** letterCombinations(char * digits, int* returnSize){
 		memset(ret[i], 0, sizeof(char)*(length+1));
 	}
 
-	printf("4\n");
-
 	while (total > 0)
 	{
-		printf("5\n");
 		setArrayBasedByIndex(ret[total-1], cur_idx, matrix_idx, length);
 		if (total != 1)  //!!!!!
 			increaseIndex(cur_idx, static_idx, length); 
 		total--;
-		printf("6\n");
 	}
 
 	free(cur_idx);
 	free(static_idx);
-
-	printf("7\n");
 
 	return ret;
 }
