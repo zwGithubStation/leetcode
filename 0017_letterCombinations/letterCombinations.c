@@ -116,6 +116,13 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 int main()
 {
+	char test[] = "2345";
+	char **ret;
+	int ret_cnt;
+
+	ret =  letterCombinations(test, &ret_cnt);
+
+	printf("cnt = %d", ret_cnt);
 	return 0;
 }
 
