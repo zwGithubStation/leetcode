@@ -44,6 +44,7 @@ void increaseIndex(int *cur_idx, int *static_idx, int length)
 	{
 		if (cur_idx[i] == static_idx[i]-1)
 		{
+			cur_idx[i] = 0; //!!!!!
 			i--;
 			continue;
 		}
