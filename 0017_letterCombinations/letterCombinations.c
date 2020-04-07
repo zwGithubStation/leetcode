@@ -70,6 +70,8 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	static_idx = (int *)malloc(sizeof(int)*length);
 	matrix_idx = (int *)malloc(sizeof(int)*length);
+
+	printf("1\n");
 	
 	while (tmp < length)
 	{
@@ -87,6 +89,8 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 		matrix_idx[tmp] = digits[tmp] - '2';
 		tmp++;
+
+		printf("2\n");
 	}
 
 	cur_idx = (int *)malloc(sizeof(int)*length);
@@ -94,12 +98,16 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	*returnSize = total;
 
+	printf("3\n");
+
 	ret = (char **)malloc(sizeof(char *)*total);
 	for (i = 0; i < length; i++)
 	{
 		ret[i] = (char *)malloc(sizeof(char)*(length+1));
 		memset(ret[i], 0, sizeof(char)*(length+1));
 	}
+
+	printf("4\n");
 
 	while (total > 0)
 	{
@@ -110,6 +118,8 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	free(cur_idx);
 	free(static_idx);
+
+	printf("5\n");
 
 	return ret;
 }
