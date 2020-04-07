@@ -119,7 +119,8 @@ char ** letterCombinations(char * digits, int* returnSize){
 	{
 		printf("5\n");
 		setArrayBasedByIndex(ret[total-1], cur_idx, matrix_idx, length);
-		increaseIndex(cur_idx, static_idx, length);
+		if (total != 1)  //!!!!!
+			increaseIndex(cur_idx, static_idx, length); 
 		total--;
 		printf("6\n");
 	}
