@@ -14,7 +14,7 @@
 #include <string.h>
 #include <limits.h>
 
-char matrix2[][] = {{'a','b','c'},
+char matrix2[8][] = {{'a','b','c'},
 				  	{'d','e','f'},
 				  	{'g','h','i'},
 				  	{'j','k','l'},
