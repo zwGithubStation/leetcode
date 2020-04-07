@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <stdbool.h>
 
 char matrix[8][4] = {  {'a','b','c','\0'},
 				  		{'d','e','f','\0'},
