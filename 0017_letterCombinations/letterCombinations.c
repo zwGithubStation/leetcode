@@ -29,7 +29,7 @@ void setArrayBasedByIndex(char *array, int *index, int *matrix_idx, int length)
 	int i;
 	for (i = 0; i < length; i++)
 	{
-		printf("matrix_idx:%d, idx:%d", matrix_idx[i],index[i]);
+		printf("matrix_idx:%d, idx:%d", matrix_idx[i], index[i]);
 		printf("element[%d] set to:%c", i, matrix[matrix_idx[i]][index[i]]);
 		array[i] = matrix[matrix_idx[i]][index[i]];
 	}
@@ -106,7 +106,7 @@ char ** letterCombinations(char * digits, int* returnSize){
 	printf("3\n");
 
 	ret = (char **)malloc(sizeof(char *)*total);
-	for (i = 0; i < length; i++)
+	for (i = 0; i < total; i++)
 	{
 		ret[i] = (char *)malloc(sizeof(char)*(length+1));
 		memset(ret[i], 0, sizeof(char)*(length+1));
