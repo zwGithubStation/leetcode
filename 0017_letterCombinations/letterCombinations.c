@@ -88,6 +88,7 @@ char ** letterCombinations(char * digits, int* returnSize){
 		}
 
 		matrix_idx[tmp] = digits[tmp] - '2';
+		printf("one index:%d\n", matrix_idx[tmp]);
 		tmp++;
 
 		printf("2\n");
