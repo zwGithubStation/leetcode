@@ -111,15 +111,17 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	while (total > 0)
 	{
+		printf("5\n");
 		setArrayBasedByIndex(ret[total-1], cur_idx, matrix_idx, length);
 		increaseIndex(cur_idx, static_idx, length);
 		total--;
+		printf("6\n");
 	}
 
 	free(cur_idx);
 	free(static_idx);
 
-	printf("5\n");
+	printf("7\n");
 
 	return ret;
 }
