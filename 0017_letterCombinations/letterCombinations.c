@@ -14,7 +14,7 @@
 #include <string.h>
 #include <limits.h>
 
-char matrix2[8][4] = {  {'a','b','c','\0'},
+char matrix[8][4] = {  {'a','b','c','\0'},
 				  		{'d','e','f','\0'},
 				  		{'g','h','i','\0'},
 				  		{'j','k','l','\0'},
@@ -23,14 +23,31 @@ char matrix2[8][4] = {  {'a','b','c','\0'},
  				  		{'t','u','v','\0'},
  				  		{'w','x','y','z'}};
 
-void setArrayBasedByIndex(char *array, int *index, int length)
+void setArrayBasedByIndex(char *array, int *index, int *matrix_idx, int length)
 {
-	
+	int i;
+	for (i = 0; i < length; i++)
+		array[i] = matrix[matrix_idx[i]][index[i]];
+
+	return;
 }
 
 void increaseIndex(int *cur_idx, int *static_idx, int length)
 {
-	
+	int i = length-1;
+	while (true)
+	{
+		if (cur_idx[i] == static_idx[i]-1)
+		{
+			i--;
+			continue;
+		}
+
+		cur_idx[i] = cur_idx[i]+1;
+		break;
+	}
+
+	return;
 }
 
 
@@ -40,7 +57,7 @@ void increaseIndex(int *cur_idx, int *static_idx, int length)
 char ** letterCombinations(char * digits, int* returnSize){
 	int length,i,total,tmp;
 	char *p;
-	int *cur_idx, *static_idx;
+	int *cur_idx, *static_idx, *matrix_idx;
 	char **ret;
 
 	if (!digits)
@@ -51,6 +68,7 @@ char ** letterCombinations(char * digits, int* returnSize){
 	total = 1;
 
 	static_idx = (int *)malloc(sizeof(int)*length);
+	matrix_idx = (int *)malloc(sizeof(int)*length);
 	
 	while (tmp < length)
 	{
@@ -63,8 +81,10 @@ char ** letterCombinations(char * digits, int* returnSize){
 		{
 			total *= 3;
 			static_idx[tmp] = 3;
+			
 		}
 
+		matrix_idx[tmp] = digits[tmp] - '2';
 		tmp++;
 	}
 
@@ -82,7 +102,7 @@ char ** letterCombinations(char * digits, int* returnSize){
 
 	while (total > 0)
 	{
-		setArrayBasedByIndex(ret[total-1], cur_idx, length);
+		setArrayBasedByIndex(ret[total-1], cur_idx, matrix_idx, length);
 		increaseIndex(cur_idx, static_idx, length);
 		total--;
 	}
