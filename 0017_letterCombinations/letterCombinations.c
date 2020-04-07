@@ -14,14 +14,14 @@
 #include <string.h>
 #include <limits.h>
 
-char matrix2[8][] = {{'a','b','c'},
-				  	{'d','e','f'},
-				  	{'g','h','i'},
-				  	{'j','k','l'},
- 				  	{'m','n','o'},
- 				  	{'p','q','r','s'},
- 				  	{'t','u','v'},
- 				  	{'w','x','y','z'}};
+char matrix2[8][4] = {  {'a','b','c','\0'},
+				  		{'d','e','f','\0'},
+				  		{'g','h','i','\0'},
+				  		{'j','k','l','\0'},
+ 				  		{'m','n','o','\0'},
+ 				  		{'p','q','r','s'},
+ 				  		{'t','u','v','\0'},
+ 				  		{'w','x','y','z'}};
 
 void setArrayBasedByIndex(char *array, int *index, int length)
 {
