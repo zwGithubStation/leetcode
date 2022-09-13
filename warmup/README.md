@@ -77,7 +77,12 @@ https://leetcode-cn.com/problems/3sum-closest/
 注意点：  
 和水桶问题相近似  
 
-**17 电话号码的字母组合**   
+**17 电话号码的字母组合**  
+https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/    
+注意点：  
+**1.快速debug的紧迫性，不要大量使用printf**  
+**2.失误点仍常犯：1.进位的时候，地位要变0；2.最后退出时不用走计算函数否则溢出**  
+3.其他算法的了解    
 
 **18 四数之和**  
 

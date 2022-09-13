@@ -64,8 +64,12 @@ char ** letterCombinations(char * digits, int* returnSize){
 	int *cur_idx, *static_idx, *matrix_idx;
 	char **ret;
 
-	if (!digits)
+	if (!digits || digits[0] == '\0')
+	{
+		*returnSize = 0; 
 		return NULL;
+	}
+		
 	
 	length = strlen(digits);
 	tmp = 0;

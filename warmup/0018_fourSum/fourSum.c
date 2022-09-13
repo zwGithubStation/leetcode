@@ -20,7 +20,7 @@
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** fourSum(int* nums, int numsSize, int target, int* returnSize, int** returnColumnSizes){
-
+	
 }
 
 int main()
