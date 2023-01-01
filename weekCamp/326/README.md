@@ -3,6 +3,8 @@
 5 分 - 将字符串分割成值不超过 K 的子字符串
 5 分 - 范围内最接近的两个质数
 
+赛事信息：
+https://leetcode.cn/contest/weekly-contest-326/
 
 https://leetcode.cn/problems/count-the-digits-that-divide-a-number/
 
