@@ -1,6 +1,7 @@
 package code
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -31,10 +32,10 @@ func countDigits(num int) int {
 			ret++
 		}
 		if left < 10 {
-			if left != 0 && num%left == 0 {
+			if num%left == 0 {
 				ret++
+				break
 			}
-			break
 		} else {
 			cur = left % 10
 			left = left / 10
@@ -77,7 +78,7 @@ s中每个数位 恰好属于一个子字符串。
 一个字符串的 值是这个字符串对应的整数。比方说，"123"的值为123，"1"的值是1。
 子字符串是字符串中一段连续的字符序列。
 */
-func minimumPartition(s string, k int) int {
+/*func minimumPartition(s string, k int) int {
 	var ret, curValue int
 	for _, c := range s {
 		curFigure := int(c - '0')
@@ -91,6 +92,23 @@ func minimumPartition(s string, k int) int {
 		}
 	}
 	return ret + 1
+}*/
+
+func minimumPartition(s string, k int) int {
+	var ret int = 1
+	var curValue, curFigure int
+	for _, c := range s {
+		curFigure = int(c - '0')
+		if curFigure > k {
+			return -1
+		}
+		curValue = curValue*10 + curFigure
+		if curValue > k { //不能写大于等于 走入这个循环相当于截取的子段不包含当前的curFigure,而在==的时候是应该包含curFigure作为最后一位的
+			ret++
+			curValue = curFigure
+		}
+	}
+	return ret
 }
 
 /*
@@ -133,4 +151,8 @@ func closestPrimes(left int, right int) []int {
 		}
 	}
 	return []int{p, q}
+}
+
+func TestExport() {
+	fmt.Println(primes[0])
 }

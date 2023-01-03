@@ -38,7 +38,6 @@ func Test_distinctPrimeFactors(t *testing.T) {
 		args args
 		want int
 	}{
-		// TODO: Add test cases.
 		{"test1", args{[]int{2, 4, 3, 7, 10, 6}}, 4},
 		{"test2", args{[]int{2, 4, 8, 16}}, 1},
 		{"test3", args{[]int{2, 4, 7, 13, 19}}, 4},
