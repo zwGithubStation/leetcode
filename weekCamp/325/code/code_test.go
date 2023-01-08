@@ -41,6 +41,8 @@ func Test_takeCharacters(t *testing.T) {
 		want int
 	}{
 		// TODO: Add test cases.
+		{"test1", args{"aabaaaacaabc", 2}, 8},
+		{"test2", args{"a", 1}, -1},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
