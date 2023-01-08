@@ -43,17 +43,28 @@ func min(i int, j int) int {
 	}
 	return j
 }
+
+//right初始设置为length-1 还是length，会影响用例的通过情况的喔（改成注释的那段代码，看看哪些用例跑不通！！）
 func takeCharacters(s string, k int) int {
 	length := len(s)
-	right, counter := length-1, [3]int{}
+	right, counter := length, [3]int{}
 	for counter[0] < k || counter[1] < k || counter[2] < k {
 		if right == 0 {
 			return -1
 		}
-		counter[s[right]-'a']++
 		right--
+		counter[s[right]-'a']++
 	}
-
+	/*
+		right, counter := length-1, [3]int{}
+		for counter[0] < k || counter[1] < k || counter[2] < k {
+			if right == 0 {
+				return -1
+			}
+			counter[s[right]-'a']++
+			right--
+		}
+	*/
 	ans := length - right
 	for left := 0; left < length && right < length; left++ {
 		counter[s[left]-'a']++
