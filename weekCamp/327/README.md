@@ -1,12 +1,7 @@
 # 题目：<br>
-3 分 - 2520 统计能整除数字的位数<br>
-https://leetcode.cn/problems/count-the-digits-that-divide-a-number/<br>
-4 分 - 2521 数组乘积中的不同质因数数目<br>
-https://leetcode.cn/problems/distinct-prime-factors-of-product-of-array/<br>
-5 分 - 2522 将字符串分割成值不超过 K 的子字符串<br>
-https://leetcode.cn/problems/partition-string-into-substrings-with-values-at-most-k/<br>
-5 分 - 2523 范围内最接近的两个质数<br>
-https://leetcode.cn/problems/closest-prime-numbers-in-range/<br>
+- [正整数和负整数的最大计数 3分](https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/)[执行 K 次操作后的最大分数 4分](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/)
+- [使字符串总不同字符的数目相等 4分](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/)
+- [过桥的时间 6分](https://leetcode.cn/problems/time-to-cross-a-bridge/)
 
 # 赛事信息：<br>
-https://leetcode.cn/contest/weekly-contest-326/<br>
+https://leetcode.cn/contest/weekly-contest-327/
