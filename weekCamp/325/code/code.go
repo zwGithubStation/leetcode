@@ -86,6 +86,11 @@ func takeCharacters(s string, k int) int {
 商店组合 k 类 不同 糖果打包成礼盒出售。礼盒的 甜蜜度 是礼盒中任意两种糖果 价格 绝对差的最小值。
 返回礼盒的 最大 甜蜜度。
 */
+//sort.Search(x int, f func(x int) bool) int
+//search to find and return the smallest index i in [0, n) at which f(i) is true.
+//means that f is false for some prefix of the input range [0, n) and then true for
+//the remainder.
+//https://pkg.go.dev/sort#Search
 func maximumTastiness(price []int, k int) int {
 	sort.Ints(price)
 	return sort.Search(price[len(price)-1], func(dist int) bool {
