@@ -1,5 +1,7 @@
 package code
 
+import "sort"
+
 //给你一个下标从 0 开始的 环形 字符串数组 words 和一个字符串 target 。环形数组 意味着数组首尾相连。
 //
 //形式上， words[i] 的下一个元素是 words[(i + 1) % n] ，而 words[i] 的前一个元素是 words[(i - 1 + n) % n] ，其中 n 是 words 的长度。
@@ -80,8 +82,22 @@ func takeCharacters(s string, k int) int {
 	return ans
 }
 
+/*给你一个正整数数组 price ，其中 price[i] 表示第 i 类糖果的价格，另给你一个正整数 k 。
+商店组合 k 类 不同 糖果打包成礼盒出售。礼盒的 甜蜜度 是礼盒中任意两种糖果 价格 绝对差的最小值。
+返回礼盒的 最大 甜蜜度。
+*/
 func maximumTastiness(price []int, k int) int {
-	return 1
+	sort.Ints(price)
+	return sort.Search(price[len(price)-1], func(dist int) bool {
+		cnt, x0 := 1, price[0]
+		for _, x := range price[1:] {
+			if x-x0 >= dist {
+				cnt++
+				x0 = x
+			}
+		}
+		return cnt < k
+	}) - 1
 }
 
 func countPartitions(nums []int, k int) int {
