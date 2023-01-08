@@ -105,6 +105,7 @@ func maximumTastiness(price []int, k int) int {
 	}) - 1
 }
 
+//pass暂时
 func countPartitions(nums []int, k int) int {
 	return 1
 }
