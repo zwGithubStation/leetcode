@@ -24,3 +24,7 @@ func (this *DataStream) Consec(num int) bool {
 func xorBeauty(nums []int) int {
 	return 1
 }
+
+func maxPower(stations []int, r int, k int) int64 {
+	return 1
+}
