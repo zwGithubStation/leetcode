@@ -45,3 +45,23 @@ func TestDataStream_Consec(t *testing.T) {
 		})
 	}
 }
+
+func Test_xorBeauty(t *testing.T) {
+	type args struct {
+		nums []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := xorBeauty(tt.args.nums); got != tt.want {
+				t.Errorf("xorBeauty() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
