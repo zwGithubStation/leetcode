@@ -20,3 +20,7 @@ func (this *DataStream) Consec(num int) bool {
  * obj := Constructor(value, k);
  * param_1 := obj.Consec(num);
  */
+
+func xorBeauty(nums []int) int {
+	return 1
+}
