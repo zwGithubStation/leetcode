@@ -8,7 +8,7 @@ type DataStream struct {
 }
 
 func Constructor(value int, k int) DataStream {
-
+	return DataStream{}
 }
 
 func (this *DataStream) Consec(num int) bool {
