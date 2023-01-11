@@ -24,3 +24,24 @@ func Test_categorizeBox(t *testing.T) {
 		})
 	}
 }
+
+func TestDataStream_Consec(t *testing.T) {
+	type args struct {
+		num int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			this := &DataStream{}
+			if got := this.Consec(tt.args.num); got != tt.want {
+				t.Errorf("Consec() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
