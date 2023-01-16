@@ -44,3 +44,21 @@ func rangeAddQueries(n int, queries [][]int) [][]int {
 	}
 	return ans
 }
+
+func countGood(nums []int, k int) (ans int64) {
+	cnt := map[int]int{}
+	left, pairs := 0, 0
+	for _, x := range nums {
+		pairs += cnt[x]
+		cnt[x]++ // 移入右端点
+		for pairs-cnt[nums[left]]+1 >= k {
+			cnt[nums[left]]-- // 移出左端点
+			pairs -= cnt[nums[left]]
+			left++
+		}
+		if pairs >= k {
+			ans += int64(left + 1)
+		}
+	}
+	return
+}
