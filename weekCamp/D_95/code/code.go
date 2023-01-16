@@ -28,7 +28,7 @@ func Constructor(value int, k int) DataStream {
 	return DataStream{value, k, 0}
 }
 
-func (this *DataStream) Consec(num int) bool {
+func (d *DataStream) Consec(num int) bool {
 	if num == d.value {
 		d.cnt++
 	} else {

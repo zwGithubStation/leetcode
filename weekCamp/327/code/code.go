@@ -1,6 +1,9 @@
 package code
 
-import "sort"
+import (
+	"container/heap"
+	"sort"
+)
 
 func maximumCount(nums []int) int {
 	negCnt, posCnt := 0, 0
@@ -32,9 +35,22 @@ func maximumCountBySearch(nums []int) int {
 	return max(negCnt, posCnt)
 }
 
-func maxKelements(nums []int, k int) int64 {
-	return 1
+func maxKelements(nums []int, k int) (ans int64) {
+	h := hp{nums}
+	heap.Init(&h)
+	for ; k > 0; k-- {
+		ans += int64(h.IntSlice[0])
+		h.IntSlice[0] = (h.IntSlice[0] + 2) / 3
+		heap.Fix(&h, 0)
+	}
+	return
 }
+
+type hp struct{ sort.IntSlice }
+
+func (h hp) Less(i, j int) bool { return h.IntSlice[i] > h.IntSlice[j] }
+func (hp) Push(interface{})     {}
+func (hp) Pop() (_ interface{}) { return }
 
 func isItPossible(word1 string, word2 string) bool {
 	return true
