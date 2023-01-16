@@ -43,5 +43,3 @@ func isItPossible(word1 string, word2 string) bool {
 func findCrossingTime(n int, k int, time [][]int) int {
 	return 1
 }
-
-type ansd = []int
