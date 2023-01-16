@@ -16,14 +16,20 @@ func categorizeBox(length, width, height, mass int) string {
 }
 
 type DataStream struct {
+	value, k, cnt int
 }
 
 func Constructor(value int, k int) DataStream {
-	return DataStream{}
+	return DataStream{value, k, 0}
 }
 
 func (this *DataStream) Consec(num int) bool {
-	return true
+	if num == d.value {
+		d.cnt++
+	} else {
+		d.cnt = 0
+	}
+	return d.cnt >= d.k
 }
 
 /**
