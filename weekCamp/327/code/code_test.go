@@ -85,3 +85,25 @@ func Test_findCrossingTime(t *testing.T) {
 		})
 	}
 }
+
+func Test_maxKelements1(t *testing.T) {
+	type args struct {
+		nums []int
+		k    int
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantAns int64
+	}{
+		// TODO: Add test cases.
+		{"test1", args{[]int{10, 10, 10, 10, 10}, 5}, 50},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if gotAns := maxKelements(tt.args.nums, tt.args.k); gotAns != tt.wantAns {
+				t.Errorf("maxKelements() = %v, want %v", gotAns, tt.wantAns)
+			}
+		})
+	}
+}

@@ -46,6 +46,7 @@ func maxKelements(nums []int, k int) (ans int64) {
 	return
 }
 
+//结构体中只有一个类型，没有参数名 是hp的anonymous fields
 type hp struct{ sort.IntSlice }
 
 func (h hp) Less(i, j int) bool { return h.IntSlice[i] > h.IntSlice[j] }
