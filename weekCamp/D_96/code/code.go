@@ -12,8 +12,17 @@ package code
 输出：2
 解释：两个数组中的公共元素是 2 和 3 ，2 是较小值，所以返回 2 。
 */
-func getCommon(nums1 []int, nums2 []int) int {
-	return 1
+func getCommon(nums1, nums2 []int) int {
+	j, m := 0, len(nums2)
+	for _, x := range nums1 {
+		for j < m && nums2[j] < x { // 找下一个 nums2[j] >= x
+			j++
+		}
+		if j < m && nums2[j] == x {
+			return x
+		}
+	}
+	return -1
 }
 
 /*
