@@ -17,14 +17,15 @@ import (
 输出：2
 解释：两个数组中的公共元素是 2 和 3 ，2 是较小值，所以返回 2 。
 */
-func getCommon(nums1, nums2 []int) int {
-	j, m := 0, len(nums2)
-	for _, x := range nums1 {
-		for j < m && nums2[j] < x { // 找下一个 nums2[j] >= x
+func getCommon(nums1 []int, nums2 []int) int {
+	i, j := 0, 0
+	for i < len(nums1) && j < len(nums2) {
+		if nums1[i] == nums2[j] {
+			return nums1[i]
+		} else if nums1[i] > nums2[j] {
 			j++
-		}
-		if j < m && nums2[j] == x {
-			return x
+		} else {
+			i++
 		}
 	}
 	return -1
