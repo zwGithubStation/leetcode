@@ -49,31 +49,22 @@ func getCommon(nums1 []int, nums2 []int) int {
 解释：无法使两个数组相等。
 提示：
 n == nums1.length == nums2.length
-2 <= n <= 105
-0 <= nums1[i], nums2[j] <= 109
-0 <= k <= 105
+2 <= n <= 10^5
+0 <= nums1[i], nums2[j] <= 10^9
+0 <= k <= 10^5
 */
 
 func minOperations(nums1, nums2 []int, k int) (ans int64) {
-	sum := 0
+
 	for i, x := range nums1 {
 		x -= nums2[i]
 		if k > 0 {
 			if x%k != 0 {
 				return -1
 			}
-			sum += x / k
-			if x > 0 {
-				ans += int64(x / k)
-			}
-		} else if x != 0 {
-			return -1
+
 		}
 	}
-	if sum != 0 {
-		return -1
-	}
-	return
 }
 
 /*
