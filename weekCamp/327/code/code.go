@@ -247,8 +247,8 @@ leftToRighti + rightToLefti == leftToRightj + rightToLeftj 且 i > j
 time.length == k
 time[i].length == 4
 1 <= leftToRighti, pickOldi, rightToLefti, putNewi <= 1000
-
 */
+//pass for now
 func findCrossingTime(n, k int, time [][]int) (cur int) {
 	sort.SliceStable(time, func(i, j int) bool {
 		a, b := time[i], time[j]
