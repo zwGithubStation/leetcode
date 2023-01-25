@@ -159,21 +159,22 @@ word1 和 word2 仅由小写英文字母组成。
 */
 func isItPossible(word1, word2 string) bool {
 	c1 := map[rune]int{}
-	for _, c := range word1 {
-		c1[c]++
-	}
 	c2 := map[rune]int{}
-	for _, c := range word2 {
-		c2[c]++
+	for _, x := range word1 {
+		c1[x]++
 	}
-	for x, c := range c1 {
-		for y, d := range c2 {
-			if y == x { // 无变化
+	for _, x := range word2 {
+		c2[x]++
+	}
+	for char1, count1 := range c1 {
+		for char2, count2 := range c2 {
+			if char1 == char2 {
+				//最简单的len方法 记得用喔
 				if len(c1) == len(c2) {
 					return true
 				}
-			} else if len(c1)-b2i(c == 1)+b2i(c1[y] == 0) ==
-				len(c2)-b2i(d == 1)+b2i(c2[x] == 0) { // 基于长度计算变化量
+			} else if (len(c1) - trueToOne(count1 == 1) + trueToOne(c1[char2] == 0)) ==
+				(len(c2) - trueToOne(count2 == 1) + trueToOne(c2[char1] == 0)) {
 				return true
 			}
 		}
@@ -181,7 +182,7 @@ func isItPossible(word1, word2 string) bool {
 	return false
 }
 
-func b2i(b bool) int {
+func trueToOne(b bool) int {
 	if b {
 		return 1
 	}
