@@ -81,6 +81,11 @@ func maximumCountBySearch(nums []int) int {
 1 <= nums[i] <= 10^9
 */
 func maxKelements(nums []int, k int) (ans int64) {
+	//借用go heap实现的如下官方注释，修改元素并调用fix操作，在时间复杂度上是优于先remove再push的
+	//最优解能这样写还是很吊喔
+	//Changing the value of the element at index i and then calling Fix is equivalent to,
+	//// but less expensive than, calling Remove(h, i) followed by a Push of the new value.
+	//// The complexity is O(log n) where n = h.Len().
 	h := hp{nums}
 	heap.Init(&h)
 	for ; k > 0; k-- {
@@ -92,11 +97,42 @@ func maxKelements(nums []int, k int) (ans int64) {
 }
 
 //结构体中只有一个类型，没有参数名 是hp的anonymous fields
+//anonymous fields的所有方法(包括为了实现某一interface的方法) 都直接被该父结构体继承 父结构体类型的变量可以直接调用这些方法，就像调用自己的func一样
+//所以 hp实现了完整的heap接口，其中一部分自定义，其中一部分继承自anonymous fields(sort.IntSlice)
 type hp struct{ sort.IntSlice }
 
+//默认是最小堆 为了实现最大堆需要这样修改
 func (h hp) Less(i, j int) bool { return h.IntSlice[i] > h.IntSlice[j] }
+
+//Push和Pop是heap中较为独立的接口 Init/Fix 两个接口只需要Less和Swap的实现 而Push和Pop则需要实现Push和Pop
 func (hp) Push(interface{})     {}
 func (hp) Pop() (_ interface{}) { return }
+
+func maxKelements2(nums []int, k int) (ans int64) {
+	//使用指针还是结构变量 对内存的节省还是很有说法的喔
+	h := &hp3{nums}
+	//h := hp3{nums}
+	heap.Init(h)
+	for ; k > 0; k-- {
+		ans += int64(h.IntSlice[0])
+		h.IntSlice[0] = (h.IntSlice[0] + 2) / 3 //向下取整
+		heap.Fix(h, 0)
+	}
+	return ans
+}
+
+type hp3 struct {
+	sort.IntSlice
+}
+
+func (hp3) Push(x interface{}) {} // add x as element Len()
+func (hp3) Pop() (x interface{}) {
+	return x
+}
+
+func (h hp3) Less(i, j int) bool {
+	return h.IntSlice[i] > h.IntSlice[j]
+}
 
 /*
 给你两个下标从 0 开始的字符串 word1 和 word2 。
