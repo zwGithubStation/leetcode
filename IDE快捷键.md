@@ -28,8 +28,12 @@
 
   `alt`+`shift`+`up`or`down`
   
-- 全局檢索
+- 全局检索
 
   `ctrl`+`shift`+`F`
+
+- 检索所有的调用处(view the list of all usages of a type, method or variable across the whole project, and quickly navigate to the selected item.)
+
+  `ctrl`+`alt`+`F7`
 
 - 
