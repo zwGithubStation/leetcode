@@ -100,8 +100,8 @@ nums1 中下标对应元素求和，乘以 nums2 中下标对应元素的 最小
 选择下标 2 最优：nums1[2] * nums2[2] = 3 * 10 = 30 是最大可能分数。
 提示：
 n == nums1.length == nums2.length
-1 <= n <= 105
-0 <= nums1[i], nums2[j] <= 105
+1 <= n <= 10^5
+0 <= nums1[i], nums2[j] <= 10^5
 1 <= k <= n
 */
 func maxScore(nums1, nums2 []int, k int) int64 {
