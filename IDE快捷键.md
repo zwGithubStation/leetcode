@@ -27,3 +27,9 @@
 - 拖拽当前行上下移动
 
   `alt`+`shift`+`up`or`down`
+  
+- 全局檢索
+
+  `ctrl`+`shift`+`F`
+
+- 

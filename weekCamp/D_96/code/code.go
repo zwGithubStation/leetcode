@@ -55,14 +55,16 @@ n == nums1.length == nums2.length
 */
 
 func minOperations(nums1, nums2 []int, k int) (ans int64) {
-
+	sum := 0
 	for i, x := range nums1 {
 		x -= nums2[i]
 		if k > 0 {
 			if x%k != 0 {
 				return -1
 			}
-
+			if x > 0 {
+				sum += x / k
+			}
 		}
 	}
 }
