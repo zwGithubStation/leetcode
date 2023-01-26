@@ -62,11 +62,18 @@ func minOperations(nums1, nums2 []int, k int) (ans int64) {
 			if x%k != 0 {
 				return -1
 			}
+			sum += x / k
 			if x > 0 {
-				sum += x / k
+				ans += int64(x / k)
 			}
+		} else if x != 0 {
+			return -1
 		}
 	}
+	if sum != 0 {
+		return -1
+	}
+	return ans
 }
 
 /*
