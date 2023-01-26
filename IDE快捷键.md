@@ -32,8 +32,16 @@
 
   `ctrl`+`shift`+`F`
 
-- 检索所有的调用处(view the list of all usages of a type, method or variable across the whole project, and quickly navigate to the selected item.)
+- 检索所有的调用处
+
+  view the list of all usages of a type, method or variable across the whole project, and quickly navigate to the selected item.
 
   `ctrl`+`alt`+`F7`
 
-- 
+- 所有定义/使用处 同时修改
+
+  rename any field, function, type, variable, package, or any other symbol at the caret. GoLand will update all references of the renamed symbol.
+
+  `shift`+`F6`
+
+  
