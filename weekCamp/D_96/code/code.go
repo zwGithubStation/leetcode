@@ -121,7 +121,7 @@ func maxScore(nums1, nums2 []int, k int) int64 {
 	ans := sum * a[k-1].y
 	heap.Init(&h)
 	for _, p := range a[k:] {
-		if p.x > h.IntSlice[0] {
+		if p.x > h.IntSlice[0] { //至少新换的元素能使sum变大，才有比较的意义
 			sum += p.x - h.replace(p.x)
 			ans = max(ans, sum*p.y)
 		}
@@ -133,7 +133,12 @@ type hp struct{ sort.IntSlice }
 
 func (hp) Pop() (_ interface{}) { return }
 func (hp) Push(interface{})     {}
-func (h hp) replace(v int) int  { top := h.IntSlice[0]; h.IntSlice[0] = v; heap.Fix(&h, 0); return top }
+func (h hp) replace(v int) int {
+	top := h.IntSlice[0] //多行写作一行时 加入分号在每行的末尾
+	h.IntSlice[0] = v
+	heap.Fix(&h, 0)
+	return top
+}
 func max(a, b int) int {
 	if b > a {
 		return b
