@@ -76,6 +76,8 @@ func minOperations(nums1, nums2 []int, k int) (ans int64) {
 	return ans
 }
 
+type hp struct{ sort.IntSlice }
+
 /*
 给你两个下标从 0 开始的整数数组 nums1 和 nums2 ，两者长度都是 n ，再给你一个正整数 k 。你必须从 nums1 中选一个长度为 k 的 子序列 对应的下标。
 对于选择的下标 i0 ，i1 ，...， ik - 1 ，你的 分数 定义如下：
@@ -104,47 +106,38 @@ n == nums1.length == nums2.length
 0 <= nums1[i], nums2[j] <= 10^5
 1 <= k <= n
 */
-func maxScore(nums1, nums2 []int, k int) int64 {
-	type pair struct{ x, y int }
-	a := make([]pair, len(nums1))
+func maxScore(nums1, nums2 []int, k int) (ans int64) {
+	type pair struct {
+		x, y int
+	}
 	sum := 0
+	pairs := make([]pair, len(nums1))
 	for i, x := range nums1 {
-		a[i] = pair{x, nums2[i]}
+		pairs[i].x, pairs[i].y = x, nums2[i]
 	}
-	sort.Slice(a, func(i, j int) bool { return a[i].y > a[j].y })
-
-	h := hp{nums2[:k]} // 复用内存
-	for i, p := range a[:k] {
-		sum += p.x
-		h.IntSlice[i] = p.x
+	sort.Slice(pairs, func(i, j int) bool { return pairs[i].y > pairs[j].y })
+	h := hp{nums2[:k]}
+	for i := 0; i < k; i++ {
+		h.IntSlice[i] = pairs[i].x
+		sum += h.IntSlice[i]
 	}
-	ans := sum * a[k-1].y
 	heap.Init(&h)
-	for _, p := range a[k:] {
-		if p.x > h.IntSlice[0] { //至少新换的元素能使sum变大，才有比较的意义
-			sum += p.x - h.replace(p.x)
-			ans = max(ans, sum*p.y)
+	ans = int64(h.IntSlice[0] * sum)
+	for _, x := range pairs[k:] {
+		if h.IntSlice[0] < x.x {
+			
 		}
 	}
-	return int64(ans)
 }
 
-type hp struct{ sort.IntSlice }
+type hp struct {
+	sort.IntSlice
+}
 
-func (hp) Pop() (_ interface{}) { return }
-func (hp) Push(interface{})     {}
-func (h hp) replace(v int) int {
-	top := h.IntSlice[0] //多行写作一行时 加入分号在每行的末尾
-	h.IntSlice[0] = v
-	heap.Fix(&h, 0)
-	return top
+func (h hp) Pop() (_ interface{}) {
+	return
 }
-func max(a, b int) int {
-	if b > a {
-		return b
-	}
-	return a
-}
+func (h hp) Push(_ interface{}) {}
 
 /*
 给你一个无穷大的网格图。一开始你在 (1, 1) ，你需要通过有限步移动到达点 (targetX, targetY) 。
