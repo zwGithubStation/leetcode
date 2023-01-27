@@ -50,3 +50,9 @@
   For example, the selection expands from a method name to the expression calling this method, then to the whole statement, then to the containing block, and so on.
 
   `ctrl`+`w`
+  
+- 函数声明/for/if语句 自动生成大括号闭包
+
+  You can create code constructs using statement completion. Start typing a method declaration, a method call or a statement such as   if  ,   for  ,   switch  , or   return  . Press   `Ctrl`   `Shift`    `Enter`   to complete the statement into a syntactically correct construct.
+
+  `Ctrl`+`Shift`+`Enter` 
