@@ -115,29 +115,44 @@ func maxScore(nums1, nums2 []int, k int) (ans int64) {
 	for i, x := range nums1 {
 		pairs[i].x, pairs[i].y = x, nums2[i]
 	}
+	//pairs是固定不变化的
+	//pairs.y 降序排列
+	//pairs.x 只维护x，y的一一对应关系
+	//当前候选的k个x维护在一个最小堆里
 	sort.Slice(pairs, func(i, j int) bool { return pairs[i].y > pairs[j].y })
-	h := hp{nums2[:k]}
+	h := hp3{nums2[:k]}
 	for i := 0; i < k; i++ {
 		h.IntSlice[i] = pairs[i].x
 		sum += h.IntSlice[i]
 	}
+	ans = int64(pairs[k-1].y * sum)
 	heap.Init(&h)
-	ans = int64(h.IntSlice[0] * sum)
 	for _, x := range pairs[k:] {
 		if h.IntSlice[0] < x.x {
-			
+			sum += x.x - h.replace(x.x)
+			if ans < int64(sum*x.y) {
+				ans = int64(sum * x.y)
+			}
 		}
 	}
+	return ans
 }
 
-type hp struct {
+type hp3 struct {
 	sort.IntSlice
 }
 
-func (h hp) Pop() (_ interface{}) {
+func (h hp3) replace(x int) int {
+	t := h.IntSlice[0]
+	h.IntSlice[0] = x
+	heap.Fix(&h, 0)
+	return t
+}
+
+func (h hp3) Pop() (_ interface{}) {
 	return
 }
-func (h hp) Push(_ interface{}) {}
+func (h hp3) Push(_ interface{}) {}
 
 /*
 给你一个无穷大的网格图。一开始你在 (1, 1) ，你需要通过有限步移动到达点 (targetX, targetY) 。
