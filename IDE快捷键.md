@@ -36,6 +36,10 @@
 
   `ctrl`+`shift`+`F`
 
+- (全局)替换
+
+  `ctrl`+`r`
+
 - 检索所有的调用处
 
   view the list of all usages of a type, method or variable across the whole project, and quickly navigate to the selected item.
