@@ -56,3 +56,9 @@
   You can create code constructs using statement completion. Start typing a method declaration, a method call or a statement such as   if  ,   for  ,   switch  , or   return  . Press   `Ctrl`   `Shift`    `Enter`   to complete the statement into a syntactically correct construct.
 
   `Ctrl`+`Shift`+`Enter` 
+
+- 浏览剪切板记录 可选取其中进行粘贴
+
+  `ctrl`+`shift`+`v`
+
+- 
