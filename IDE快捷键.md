@@ -12,6 +12,10 @@
 
   `alt`+`<-` or `alt`+`->`
 
+- 文件内函数级的快速跳转查询
+
+  `alt`+`up` or `alt`+`down`
+
 - 在当前行产生空行 原行下移
 
   `ctrl`+`alt`+`enter`
