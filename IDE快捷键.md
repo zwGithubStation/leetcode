@@ -49,4 +49,4 @@
   Press   `ctrl`   `w`  to expand code selection. Each time you press  `ctrl`   `w` , the selection expands to other areas of code.
   For example, the selection expands from a method name to the expression calling this method, then to the whole statement, then to the containing block, and so on.
 
-  
+  `ctrl`+`w`
