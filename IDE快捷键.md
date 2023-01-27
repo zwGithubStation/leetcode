@@ -28,7 +28,7 @@
 
   `alt`+`shift`+`up`or`down`
   
-- 全局检索
+- 全局检索(可以配合ctrl+w，先选取要检索的内容 然后进行检索)
 
   `ctrl`+`shift`+`F`
 
@@ -44,7 +44,7 @@
 
   `shift`+`F6`
 
-- 快速选取
+- 快速选取(多次重复可以逐步扩大选取的内容范围)
 
   Press   `ctrl`   `w`  to expand code selection. Each time you press  `ctrl`   `w` , the selection expands to other areas of code.
   For example, the selection expands from a method name to the expression calling this method, then to the whole statement, then to the containing block, and so on.
