@@ -173,6 +173,8 @@ func (h hp3) Push(_ interface{}) {}
 提示：
 1 <= targetX, targetY <= 109
 */
+
+//pass for now
 func isReachable(targetX, targetY int) bool {
 	g := gcd(targetX, targetY)
 	return g&(g-1) == 0
