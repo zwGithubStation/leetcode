@@ -56,13 +56,27 @@ dataStream.consec(3); // 最后 k 个整数分别是 [4,4,3] 。
 */
 
 type DataStream struct {
+	value, k, cnt int
 }
 
 func Constructor(value int, k int) DataStream {
+	return DataStream{value: value, k: k, cnt: 0}
 }
 
-func (d *DataStream) Consec(num int) bool {
+func (this *DataStream) Consec(num int) bool {
+	if this.value == num {
+		this.cnt++
+	} else {
+		this.cnt = 0
+	}
+	return this.k <= this.cnt
 }
+
+/**
+ * Your DataStream object will be instantiated and called as such:
+ * obj := Constructor(value, k);
+ * param_1 := obj.Consec(num);
+ */
 
 /**
  * Your DataStream object will be instantiated and called as such:
