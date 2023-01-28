@@ -109,6 +109,7 @@ val1 & val2 是 val1 和 val2 的按位与。
 1 <= nums[i] <= 10e9
 */
 func xorBeauty(nums []int) (ans int) {
+	//pass for now
 	return 1
 }
 
