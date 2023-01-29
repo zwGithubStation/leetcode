@@ -1,8 +1,8 @@
 # 题目：<br>
-- **[交替数字和 3分](https://leetcode.cn/problems/alternating-digit-sum/)**
-- **[根据第 K 场考试的分数排序 4分](https://leetcode.cn/problems/sort-the-students-by-their-kth-score/)**
-- **[执行逐位运算使字符串相等 5分](https://leetcode.cn/problems/apply-bitwise-operations-to-make-strings-equal/)**
-- **[拆分数组的最小代价 6分](https://leetcode.cn/problems/minimum-cost-to-split-an-array/)**
+- **[统计桌面上的不同数字 3分](https://leetcode.cn/problems/count-distinct-numbers-on-board/)**
+- **[猴子碰撞的方法数 4分](https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/)**
+- **[将珠子放入背包中 6分](https://leetcode.cn/problems/put-marbles-in-bags/)**
+- **[统计上升四元组 7分](https://leetcode.cn/problems/count-increasing-quadruplets/)**
 
 # 赛事信息：<br>
-https://leetcode.cn/contest/weekly-contest-329/
+https://leetcode.cn/contest/weekly-contest-330/
