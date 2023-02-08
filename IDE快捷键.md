@@ -46,6 +46,10 @@
 
   `ctrl`+`alt`+`F7`
 
+  `alt`+`F7`
+
+  `ctrl`+`alt`+`shift`+`F7`
+
 - 所有定义/使用处 同时修改
 
   rename any field, function, type, variable, package, or any other symbol at the caret. GoLand will update all references of the renamed symbol.
