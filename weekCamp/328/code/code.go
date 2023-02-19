@@ -98,7 +98,19 @@ func differenceOfSum2(nums []int) (ans int) {
 0 <= col1i <= col2i < n
 */
 func rangeAddQueries(n int, queries [][]int) [][]int {
-	return [][]int{{1}}
+	var ret [][]int
+	for i := 0; i < n; i++ {
+		cur := make([]int, n)
+		ret = append(ret, cur)
+	}
+	for i := 0; i < len(queries); i++ {
+		for j := queries[i][0]; j <= queries[i][2]; j++ {
+			for k := queries[i][1]; k <= queries[i][3]; k++ {
+				ret[j][k]++
+			}
+		}
+	}
+	return ret
 }
 
 /*
