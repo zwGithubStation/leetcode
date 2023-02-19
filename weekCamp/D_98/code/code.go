@@ -61,27 +61,24 @@ func minimizeSum(nums []int) int {
 }
 
 /*
-在 X轴 上有一些奖品。给你一个整数数组 prizePositions ，它按照 非递减 顺序排列，其中 prizePositions[i] 是第 i 件奖品的位置。数轴上一个位置可能会有多件奖品。再给你一个整数 k 。
-你可以选择两个端点为整数的线段。每个线段的长度都必须是 k 。你可以获得位置在任一线段上的所有奖品（包括线段的两个端点）。注意，两个线段可能会有相交。
-比方说 k = 2 ，你可以选择线段 [1, 3] 和 [2, 4] ，你可以获得满足 1 <= prizePositions[i] <= 3 或者 2 <= prizePositions[i] <= 4 的所有奖品 i 。
-请你返回在选择两个最优线段的前提下，可以获得的 最多 奖品数目。
+你一个下标从 0 开始的整数数组 nums 。
+如果存在一些整数满足 0 <= index1 < index2 < ... < indexk < nums.length ，得到 nums[index1] | nums[index2] | ... | nums[indexk] = x ，那么我们说 x 是 可表达的 。换言之，如果一个整数能由 nums 的某个子序列的或运算得到，那么它就是可表达的。
+请你返回 nums 不可表达的 最小非零整数 。
 示例 1：
-输入：prizePositions = [1,1,2,2,3,3,5], k = 2
-输出：7
-解释：这个例子中，你可以选择线段 [1, 3] 和 [3, 5] ，获得 7 个奖品。
+输入：nums = [2,1]
+输出：4
+解释：1 和 2 已经在数组中，因为 nums[0] | nums[1] = 2 | 1 = 3 ，所以 3 是可表达的。由于 4 是不可表达的，所以我们返回 4 。
 示例 2：
-输入：prizePositions = [1,2,3,4], k = 0
-输出：2
-解释：这个例子中，一个选择是选择线段 [3, 3] 和 [4, 4] ，获得 2 个奖品。
+输入：nums = [5,3,2]
+输出：1
+解释：1 是最小不可表达的数字。
 提示：
-1 <= prizePositions.length <= 10e5
-1 <= prizePositions[i] <= 10e9
-0 <= k <= 10e9
-prizePositions 有序非递减。
+1 <= nums.length <= 10e5
+1 <= nums[i] <= 10e9
 */
 
-func maximizeWin(prizePositions []int, k int) int {
-	return 1
+func minImpossibleOR(nums []int) int {
+	return 0
 }
 
 /*
