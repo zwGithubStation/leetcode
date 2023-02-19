@@ -171,7 +171,7 @@ func (h hp3) Push(_ interface{}) {}
 输出：true
 解释：你可以按照以下路径到达：(1,1) -> (1,2) -> (1,4) -> (1,8) -> (1,7) -> (2,7) -> (4,7) 。
 提示：
-1 <= targetX, targetY <= 109
+1 <= targetX, targetY <= 10e9
 */
 
 //pass for now
