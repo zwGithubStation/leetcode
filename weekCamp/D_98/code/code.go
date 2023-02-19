@@ -1,11 +1,11 @@
 package code
 
 /*
-给你一个整数 num 。你知道 Danny Mittal 会偷偷将 0 到 9 中的一个数字 替换 成另一个数字。
-请你返回将 num 中 恰好一个 数字进行替换后，得到的最大值和最小值的差位多少。
+给你一个整数 num 。你知道 Danny Mittal 会偷偷将 0 到 9 中的一个数字 替换 成另一个数字。
+请你返回将 num 中 恰好一个 数字进行替换后，得到的最大值和最小值的差位多少。
 注意：
-当 Danny 将一个数字 d1 替换成另一个数字 d2 时，Danny 需要将 nums 中所有 d1 都替换成 d2 。
-Danny 可以将一个数字替换成它自己，也就是说 num 可以不变。
+当 Danny 将一个数字 d1 替换成另一个数字 d2 时，Danny 需要将 nums 中所有 d1 都替换成 d2 。
+Danny 可以将一个数字替换成它自己，也就是说 num 可以不变。
 Danny 可以将数字分别替换成两个不同的数字分别得到最大值和最小值。
 替换后得到的数字可以包含前导 0 。
 Danny Mittal 获得周赛 326 前 10 名，让我们恭喜他。
@@ -31,34 +31,33 @@ func minMaxDifference(num int) int {
 }
 
 /*
-给你一个整数数组 banned 和两个整数 n 和 maxSum 。你需要按照以下规则选择一些整数：
-被选择整数的范围是 [1, n] 。
-每个整数 至多 选择 一次 。
-被选择整数不能在数组 banned 中。
-被选择整数的和不超过 maxSum 。
-请你返回按照上述规则 最多 可以选择的整数数目。
+给你一个下标从 0 开始的整数数组 nums 。
+nums 的 最小 得分是满足 0 <= i < j < nums.length 的 |nums[i] - nums[j]| 的最小值。
+nums的 最大 得分是满足 0 <= i < j < nums.length 的 |nums[i] - nums[j]| 的最大值。
+nums 的分数是 最大 得分与 最小 得分的和。
+我们的目标是最小化 nums 的分数。你 最多 可以修改 nums 中 2 个元素的值。
+请你返回修改 nums 中 至多两个 元素的值后，可以得到的 最小分数 。
+|x| 表示 x 的绝对值。
+
 示例 1：
-输入：banned = [1,6,5], n = 5, maxSum = 6
-输出：2
-解释：你可以选择整数 2 和 4 。
-2 和 4 在范围 [1, 5] 内，且它们都不在 banned 中，它们的和是 6 ，没有超过 maxSum 。
-示例 2：
-输入：banned = [1,2,3,4,5,6,7], n = 8, maxSum = 1
+输入：nums = [1,4,3]
 输出：0
-解释：按照上述规则无法选择任何整数。
-示例 3：
-输入：banned = [11], n = 7, maxSum = 50
-输出：7
-解释：你可以选择整数 1, 2, 3, 4, 5, 6 和 7 。
-它们都在范围 [1, 7] 中，且都没出现在 banned 中，它们的和是 28 ，没有超过 maxSum 。
+解释：将 nums[1] 和 nums[2] 的值改为 1 ，nums 变为 [1,1,1] 。|nums[i] - nums[j]| 的值永远为 0 ，所以我们返回 0 + 0 = 0 。
+示例 2：
+输入：nums = [1,4,7,8,5]
+输出：3
+解释：
+将 nums[0] 和 nums[1] 的值变为 6 ，nums 变为 [6,6,7,8,5] 。
+最小得分是 i = 0 且 j = 1 时得到的 |nums[i] - nums[j]| = |6 - 6| = 0 。
+最大得分是 i = 3 且 j = 4 时得到的 |nums[i] - nums[j]| = |8 - 5| = 3 。
+最大得分与最小得分之和为 3 。这是最优答案。
 提示：
-1 <= banned.length <= 10e4
-1 <= banned[i], n <= 10e4
-1 <= maxSum <= 10e9
+3 <= nums.length <= 10e5
+1 <= nums[i] <= 10e9
 */
 
-func maxCount(banned []int, n int, maxSum int) int {
-	return 1
+func minimizeSum(nums []int) int {
+	return 0
 }
 
 /*
