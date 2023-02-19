@@ -1,9 +1,9 @@
 # 题目：<br>
-- **[从数量最多的堆取走礼物 3分](https://leetcode.cn/problems/take-gifts-from-the-richest-pile/)**
-- **[统计范围内的元音字符串数 4分](https://leetcode.cn/problems/count-vowel-strings-in-ranges/)**
-- **[打家劫舍 IV 5分](https://leetcode.cn/problems/house-robber-iv/)**
-- **[重排水果 6分](https://leetcode.cn/problems/rearranging-fruits/)**
+- [找出数组的串联值 3分](https://leetcode.cn/problems/find-the-array-concatenation-value/)
+- [统计公平数对的数目 4分](https://leetcode.cn/problems/count-the-number-of-fair-pairs/)
+- [子字符串异或查询 5分](https://leetcode.cn/problems/substring-xor-queries/)
+- [最少得分子序列 6分](https://leetcode.cn/problems/subsequence-with-the-minimum-score/)
 
 # 赛事信息：<br>
-https://leetcode.cn/contest/weekly-contest-331/
+https://leetcode.cn/contest/weekly-contest-332/
 
