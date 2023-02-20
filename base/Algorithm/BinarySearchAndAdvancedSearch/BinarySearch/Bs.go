@@ -107,3 +107,27 @@ func searchRange(nums []int, target int) []int {
 	end := lowerBound(nums, target+1) - 1 //调用lowerBound or 调用lowerBound1 or 调用lowerBound2 都可以！
 	return []int{start, end}
 }
+
+//标准库中的sort.Search
+/*
+func Search(n int, f func(int) bool) int
+
+Search uses binary search to find and return the smallest index i in [0, n) at which f(i) is true,
+assuming that on the range [0, n), f(i) == true implies f(i+1) == true.
+
+That is, Search requires that f is false for some (possibly empty) prefix of the input range [0, n) and then true for the (possibly empty) remainder;
+
+Search returns the first true index.
+
+If there is no such index, Search returns n.
+
+(Note that the "not found" return value is not -1 as in, for instance, strings.Index.) Search calls f(i) only for i in the range [0, n).
+
+A common use of Search is to find the index i for a value x in a sorted, indexable data structure such as an array or slice.
+In this case, the argument f, typically a closure, captures the value to be searched for, and how the data structure is indexed and ordered.
+
+For instance, given a slice data sorted in ascending order(升序), the call Search(len(data), func(i int) bool { return data[i] >= 23 }) returns the smallest index i such that data[i] >= 23.
+If the caller wants to find whether 23 is in the slice, it must test data[i] == 23 separately.
+
+Searching data sorted in descending order would use the <= operator instead of the >= operator.
+*/
