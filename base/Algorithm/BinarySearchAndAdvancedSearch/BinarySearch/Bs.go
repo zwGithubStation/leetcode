@@ -108,7 +108,7 @@ func searchRange(nums []int, target int) []int {
 	return []int{start, end}
 }
 
-//标准库中的sort.Search
+//标准库中的sort.Search  https://pkg.go.dev/sort#Search
 /*
 func Search(n int, f func(int) bool) int
 
