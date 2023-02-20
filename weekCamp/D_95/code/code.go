@@ -180,8 +180,8 @@ if j < G-1(Nj不是N的最后一个元素)
 else (Nj不是N的最后一个元素)
 {// do nothing}
 
-在经过多次的如上操作后，计算M的前缀和(定义见上一个介绍)
+在经过多次的如上操作后，将M更新为其前缀和(定义见上一个介绍)，然后更新至N中的每个对应元素(Ni = Ni + Mi),即得到N在多次操作后的最终结果
 */
 func maxPower(stations []int, r int, k int) int64 {
-	return 1
+	
 }
