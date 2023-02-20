@@ -1,5 +1,10 @@
 package code
 
+import (
+	"math"
+	"sort"
+)
+
 /*
 给你四个整数 length ，width ，height 和 mass ，分别表示一个箱子的三个维度和质量，请你返回一个表示箱子 类别 的字符串。
 如果满足以下条件，那么箱子是 "Bulky" 的：
@@ -183,5 +188,55 @@ else (Nj不是N的最后一个元素)
 在经过多次的如上操作后，将M更新为其前缀和(定义见上一个介绍)，然后更新至N中的每个对应元素(Ni = Ni + Mi),即得到N在多次操作后的最终结果
 */
 func maxPower(stations []int, r int, k int) int64 {
-	
+	//1计算前缀和
+	n := len(stations)
+	pre := make([]int, n+1)
+	for i, x := range stations {
+		pre[i+1] = pre[i] + x
+	}
+	//2计算当前电量值, 并记录当前最小值
+	minPowerNow := math.MaxInt64
+	for i, _ := range stations {
+		stations[i] = pre[min(i+r+1, n)] - pre[max(0, i-r)]
+		minPowerNow = min(minPowerNow, stations[i])
+	}
+
+	return int64(minPowerNow + sort.Search(k, func(cur_min int) bool {
+		cur_min += minPowerNow + 1
+		diff := make([]int, n)
+		cur_pre, need := 0, 0
+		for i, x := range stations {
+			cur_pre += diff[i] //计算当前前缀和的过程 得到当前市的变更电站值 为正说明之前的变更使得这里的电站得到了增强
+			m := cur_min - x - cur_pre
+			if m > 0 {
+				need += m //累积式记录
+				if need > k {
+					return true
+				}
+				//新增的m个电厂 根据最优化的考量 建在距离该节点r的节点上，相当于在 [i, i+2r]的范围内触发了全部+m的操作
+				//因此需要更新差分数组，两个元素分别是i和i+2r+1
+				//i的变化直接用于最新的前缀和计算
+				cur_pre += m
+				//i+2r+1的差分更新确保不溢出
+				if i+2*r+1 < n {
+					diff[i+2*r+1] -= m
+				}
+			}
+		}
+		return false
+	}))
+}
+
+func min(i int, j int) int {
+	if i < j {
+		return i
+	}
+	return j
+}
+
+func max(i int, j int) int {
+	if i > j {
+		return i
+	}
+	return j
 }
