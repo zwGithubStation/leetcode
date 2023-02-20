@@ -11,6 +11,7 @@ package main
 // 如果数组为空，或者所有数都 < target，则返回 nums.length
 // 要求 nums 是非递减的，即 nums[i] <= nums[i + 1]
 
+//源码 ：https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-zong-shi-xie-bu-dui-yi-g-t9l9/
 //1. 闭区间 [ ]
 // *********循环不变量：***********
 //[left, right]区间表征当前还没有确定与target关系的区间，亦即：
@@ -27,8 +28,7 @@ func lowerBound(nums []int, target int) int {
 		}
 	}
 	//根据循环不变量，left前面的元素都确定比target小，最终返回left
-	//又最终跳出的条件是left>right[left = right + 1]
-	//所以也可以返回right+1
+	//right后面的元素都已经确定不比target==========> 最终返回right + 1
 	return left // OR right + 1
 }
 
@@ -39,7 +39,7 @@ func lowerBound(nums []int, target int) int {
 // nums[right] >= target    //right以及其后面的元素都已经确定不比target==========> 最终返回right
 func lowerBound2(nums []int, target int) int {
 	left, right := 0, len(nums)
-	for left < right {
+	for left < right { //当 left == right时， [left, right)区间为空 跳出
 		mid := left + (right-left)/2
 		if nums[mid] < target {
 			left = mid + 1
@@ -57,7 +57,7 @@ func lowerBound2(nums []int, target int) int {
 // nums[right] >= target    //right以及其后面的元素都已经确定不比target==========> 最终返回right
 func lowerBound3(nums []int, target int) int {
 	left, right := -1, len(nums)
-	for left+1 < right {
+	for left+1 < right { // 当left + 1 = right时， (left, right)区间为空 跳出
 		mid := left + (right-left)/2
 		if nums[mid] < target {
 			left = mid
@@ -67,3 +67,12 @@ func lowerBound3(nums []int, target int) int {
 	}
 	return left + 1 //OR right
 }
+
+//4. > 转换为 >=
+// > target的第一个数   等价于   >=(target+1)的第一个数， 也即lowerBound(target+1)
+
+//5. < 转换为 >=
+// < target的第一个数(升序序列中从后往前遍历的第一个) 等价于 >=target的第一个数的前面一个数， 也即lowerBound(target) - 1
+
+//6. <= 转换为 >=
+// <=target的第一个数(升序序列中从后往前遍历的第一个) 等价于 >target的第一个数前面的一个数， 也即lowerBound(target+1) - 1
