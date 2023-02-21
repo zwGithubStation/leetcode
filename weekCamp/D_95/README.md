@@ -9,3 +9,22 @@
 
 # 赛事信息：<br>
 https://leetcode.cn/contest/biweekly-contest-95
+
+# 知识点
+
+### 1
+
+### 2
+
+### 3
+
+### 4 
+
+- (一维)前缀和 
+
+  例题：https://leetcode.cn/problems/range-sum-query-immutable/
+
+- 差分数组 
+
+- 二分
+

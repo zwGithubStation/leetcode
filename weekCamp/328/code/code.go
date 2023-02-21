@@ -113,6 +113,106 @@ func rangeAddQueries(n int, queries [][]int) [][]int {
 	return ret
 }
 
+//二维差分数组
+func rangeAddQueries2(n int, queries [][]int) [][]int {
+	// 二维差分模板
+	diff := make([][]int, n+2)
+	for i := range diff {
+		diff[i] = make([]int, n+2)
+	}
+	//差分二维数组的更新原则：
+	//左上+x
+	//左下的下面元素-x
+	//右上的右侧元素-x
+	//右下的右下元素+x
+	//配合下面的复原二层循环的逻辑一起理解：
+	//每一个当前要恢复结果的元素(x, y),要基于四个值进行计算：
+	//(x-1, y) 已更新为结果值
+	//(x, y-1) 已更新为结果值
+	//(x-1, y-1) 已更新为结果值
+	//(x, y)上的diff值 目前记录着差分值
+	update := func(r1, c1, r2, c2, x int) {
+		diff[r1+1][c1+1] += x
+		diff[r1+1][c2+2] -= x //超过n的列上的计数在最终计算前缀和时 不起作用(见下面的复原二层循环) 这里将数组从(n+1，n+1)扩大为(n+2, n+2) 只是为了update里面少写判断语句
+		diff[r2+2][c1+1] -= x //超过n的行上的计数在最终计算前缀和时 不起作用(见下面的复原二层循环) 这里将数组从(n+1，n+1)扩大为(n+2, n+2) 只是为了update里面少写判断语句
+		diff[r2+2][c2+2] += x //超过n的行列上的计数在最终计算前缀和时 不起作用(见下面的复原二层循环) 这里将数组从(n+1，n+1)扩大为(n+2, n+2) 只是为了update里面少写判断语句
+	}
+	for _, q := range queries {
+		update(q[0], q[1], q[2], q[3], 1)
+	}
+
+	// 用二维前缀和复原（原地修改）
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= n; j++ {
+			diff[i][j] += diff[i][j-1] + diff[i-1][j] - diff[i-1][j-1]
+		}
+	}
+	// 保留中间 n*n 的部分，即为答案
+	diff = diff[1 : n+1]
+	for i, row := range diff {
+		diff[i] = row[1 : n+1] //注意这里的写法喔， 不能写成row = row[1: n+1]
+	}
+	return diff
+}
+
+//二维前缀和前置题目：https://leetcode.cn/problems/range-sum-query-2d-immutable/
+/*
+给定一个二维矩阵 matrix，以下类型的多个请求：
+计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下角 为 (row2, col2) 。
+实现 NumMatrix 类：
+NumMatrix(int[][] matrix) 给定整数矩阵 matrix 进行初始化
+int sumRegion(int row1, int col1, int row2, int col2) 返回 左上角 (row1, col1) 、右下角 (row2, col2) 所描述的子矩阵的元素 总和 。
+示例 1：
+输入:
+["NumMatrix","sumRegion","sumRegion","sumRegion"]
+[[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]
+输出:
+[null, 8, 11, 12]
+解释:
+NumMatrix numMatrix = new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]);
+numMatrix.sumRegion(2, 1, 4, 3); // return 8 (红色矩形框的元素总和)
+numMatrix.sumRegion(1, 1, 2, 2); // return 11 (绿色矩形框的元素总和)
+numMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和)
+提示：
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 200
+-105 <= matrix[i][j] <= 10e5
+0 <= row1 <= row2 < m
+0 <= col1 <= col2 < n
+最多调用 10e4 次 sumRegion 方法
+*/
+
+type NumMatrix struct {
+	diff [][]int
+}
+
+func Constructor(matrix [][]int) NumMatrix {
+	rowLen := len(matrix)
+	if rowLen == 0 {
+		return NumMatrix{}
+	}
+	colLen := len(matrix[0])
+	var ret NumMatrix
+	ret.diff = make([][]int, rowLen+1)
+	for i, _ := range ret.diff {
+		ret.diff[i] = make([]int, colLen+1)
+	}
+
+	for i := 1; i <= rowLen; i++ {
+		for j := 1; j <= colLen; j++ {
+			//构造前缀和的方式
+			ret.diff[i][j] = matrix[i-1][j-1] + ret.diff[i-1][j] + ret.diff[i][j-1] - ret.diff[i-1][j-1]
+		}
+	}
+	return ret
+}
+
+func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
+	//由前缀和求区域总和的方式
+	return this.diff[row2+1][col2+1] - this.diff[row2+1][col1] - this.diff[row1][col2+1] + this.diff[row1][col1]
+}
+
 /*
 给你一个整数数组 nums 和一个整数 k ，请你返回 nums 中 好 子数组的数目。
 一个子数组 arr 如果有 至少 k 对下标 (i, j) 满足 i < j 且 arr[i] == arr[j] ，那么称它是一个 好 子数组。

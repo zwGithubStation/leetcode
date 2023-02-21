@@ -6,3 +6,11 @@
 
 # 赛事信息：<br>
 https://leetcode.cn/contest/weekly-contest-328
+
+# 知识点
+
+### 2
+
+- (二维)前缀和 (二维)差分数组
+
+  例题：https://leetcode.cn/problems/range-sum-query-2d-immutable/
