@@ -196,6 +196,7 @@ func maxPower(stations []int, r int, k int) int64 {
 	}
 	//2计算当前电量值, 并记录当前最小值
 	minPowerNow := math.MaxInt64
+
 	for i, _ := range stations {
 		stations[i] = pre[min(i+r+1, n)] - pre[max(0, i-r)]
 		minPowerNow = min(minPowerNow, stations[i])
