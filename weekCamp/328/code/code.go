@@ -155,7 +155,7 @@ func rangeAddQueries2(n int, queries [][]int) [][]int {
 	return diff
 }
 
-//二维前缀和前置题目：https://leetcode.cn/problems/range-sum-query-2d-immutable/
+//二维前缀和 前置题目：https://leetcode.cn/problems/range-sum-query-2d-immutable/
 /*
 给定一个二维矩阵 matrix，以下类型的多个请求：
 计算其子矩形范围内元素的总和，该子矩阵的 左上角 为 (row1, col1) ，右下角 为 (row2, col2) 。
@@ -235,6 +235,31 @@ func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
 */
 func countGood(nums []int, k int) int64 {
 	return 1
+}
+
+/*
+同向双指针 滑动窗口 前置题目：
+https://leetcode.cn/problems/minimum-size-subarray-sum/
+给定一个含有 n 个正整数的数组和一个正整数 target 。
+找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+示例 1：
+输入：target = 7, nums = [2,3,1,2,4,3]
+输出：2
+解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+示例 2：
+输入：target = 4, nums = [1,4,4]
+输出：1
+示例 3：
+输入：target = 11, nums = [1,1,1,1,1,1,1,1]
+输出：0
+提示：
+1 <= target <= 10e9
+1 <= nums.length <= 10e5
+1 <= nums[i] <= 10e5
+*/
+
+func minSubArrayLen(target int, nums []int) int {
+
 }
 
 /*

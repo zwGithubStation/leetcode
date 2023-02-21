@@ -14,3 +14,11 @@ https://leetcode.cn/contest/weekly-contest-328
 - (二维)前缀和 (二维)差分数组
 
   例题：https://leetcode.cn/problems/range-sum-query-2d-immutable/
+
+### 3
+
+- 同向双指针 滑动窗口
+
+  算法精讲视频：
+
+  https://www.bilibili.com/video/BV1hd4y1r7Gq/?vd_source=b4d3a83d3a235cebe29e27ec23609d5e
