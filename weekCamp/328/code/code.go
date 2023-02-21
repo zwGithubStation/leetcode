@@ -259,7 +259,27 @@ https://leetcode.cn/problems/minimum-size-subarray-sum/
 */
 
 func minSubArrayLen(target int, nums []int) int {
+	n := len(nums)
+	left, sum, ans := 0, 0, n+1
+	for right, x := range nums {
+		sum += x
+		for sum >= target {
+			ans = min(ans, right-left+1)
+			sum -= nums[left]
+			left++
+		}
+	}
+	if ans <= n {
+		return ans
+	}
+	return 0
+}
 
+func min(i, j int) int {
+	if i < j {
+		return i
+	}
+	return j
 }
 
 /*
