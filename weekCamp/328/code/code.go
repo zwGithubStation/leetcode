@@ -233,12 +233,27 @@ func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
 1 <= nums.length <= 10e5
 1 <= nums[i], k <= 10e9
 */
-func countGood(nums []int, k int) int64 {
-	return 1
+func countGood(nums []int, k int) (ans int64) {
+	cnt := make(map[int]int)
+	left := 0
+	pairs := 0
+	for _, x := range nums {
+		pairs += cnt[x] //右侧每出现一个新的元素x，pairs的计数就增加cnt[x](前面已经有多少个x，就会多出多少个新的[x，x]对)
+		cnt[x]++
+		for pairs-cnt[nums[left]]+1 >= k { //左侧尝试去掉冗余元素
+			cnt[nums[left]]--
+			pairs -= cnt[nums[left]] // 每少一个y 就要减少(cnt[y]-1)个pairs
+			left++
+		}
+		if pairs >= k {
+			ans += int64(left + 1) //一个没法从左侧缩短的[left，right]字串，可以提供出left+1个答案
+		}
+	}
+	return ans
 }
 
 /*
-同向双指针 滑动窗口 前置题目：
+同向双指针 滑动窗口 前置题目1：
 https://leetcode.cn/problems/minimum-size-subarray-sum/
 给定一个含有 n 个正整数的数组和一个正整数 target 。
 找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
@@ -283,7 +298,7 @@ func min(i, j int) int {
 }
 
 /*
-同向双指针 滑动窗口 前置题目：
+同向双指针 滑动窗口 前置题目2：
 https://leetcode.cn/problems/subarray-product-less-than-k/
 给你一个整数数组 nums 和一个整数 k ，请你返回子数组内所有元素的乘积严格小于 k 的连续子数组的数目。
 示例 1：
@@ -299,6 +314,65 @@ https://leetcode.cn/problems/subarray-product-less-than-k/
 1 <= nums[i] <= 1000
 0 <= k <= 10e6
 */
+
+func numSubarrayProductLessThanK(nums []int, k int) int {
+	left, prod, ans := 0, 1, 0
+	if k <= 1 {
+		return 0
+	}
+	for right, x := range nums {
+		prod *= x
+		for prod >= k {
+			prod /= nums[left]
+			left++
+		}
+		ans += right - left + 1 //注意这里如何保持记录的不重复性：每次进行记录的right值是唯一的； [left， right]间的，以righ结尾的子数组数目为right-left+1
+	}
+	return ans
+}
+
+/*
+同向双指针 滑动窗口 前置题目3：
+https://leetcode.cn/problems/longest-substring-without-repeating-characters/
+给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1:
+输入: s = "abcabcbb"
+输出: 3
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+示例 2:
+输入: s = "bbbbb"
+输出: 1
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+示例 3:
+输入: s = "pwwkew"
+输出: 3
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+提示：
+0 <= s.length <= 5 * 10e4
+s 由英文字母、数字、符号和空格组成
+*/
+
+func lengthOfLongestSubstring(s string) int {
+	left, ans := 0, 0
+	cnt := make([]int, 128)
+	for right, x := range s {
+		cnt[x]++
+		for cnt[x] > 1 {
+			cnt[s[left]]--
+			left++
+		}
+		ans = max(ans, right-left+1)
+	}
+	return ans
+}
+
+func max(i, j int) int {
+	if i > j {
+		return i
+	}
+	return j
+}
 
 /*
 给你一个 n 个节点的无向无根图，节点编号为 0 到 n - 1 。给你一个整数 n 和一个长度为 n - 1 的二维整数数组 edges ，其中 edges[i] = [ai, bi] 表示树中节点 ai 和 bi 之间有一条边。
