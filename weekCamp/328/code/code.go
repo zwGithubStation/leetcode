@@ -261,7 +261,7 @@ https://leetcode.cn/problems/minimum-size-subarray-sum/
 func minSubArrayLen(target int, nums []int) int {
 	n := len(nums)
 	left, sum, ans := 0, 0, n+1
-	for right, x := range nums {
+	for right, x := range nums { //单调性， 由满足条件逐步到不满足条件
 		sum += x
 		for sum >= target {
 			ans = min(ans, right-left+1)
@@ -281,6 +281,24 @@ func min(i, j int) int {
 	}
 	return j
 }
+
+/*
+同向双指针 滑动窗口 前置题目：
+https://leetcode.cn/problems/subarray-product-less-than-k/
+给你一个整数数组 nums 和一个整数 k ，请你返回子数组内所有元素的乘积严格小于 k 的连续子数组的数目。
+示例 1：
+输入：nums = [10,5,2,6], k = 100
+输出：8
+解释：8 个乘积小于 100 的子数组分别为：[10]、[5]、[2],、[6]、[10,5]、[5,2]、[2,6]、[5,2,6]。
+需要注意的是 [10,5,2] 并不是乘积小于 100 的子数组。
+示例 2：
+输入：nums = [1,2,3], k = 0
+输出：0
+提示:
+1 <= nums.length <= 3 * 10e4
+1 <= nums[i] <= 1000
+0 <= k <= 10e6
+*/
 
 /*
 给你一个 n 个节点的无向无根图，节点编号为 0 到 n - 1 。给你一个整数 n 和一个长度为 n - 1 的二维整数数组 edges ，其中 edges[i] = [ai, bi] 表示树中节点 ai 和 bi 之间有一条边。
