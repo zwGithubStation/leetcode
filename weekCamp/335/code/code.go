@@ -57,6 +57,12 @@ func passThePillow(n int, time int) int {
  *     Right *TreeNode
  * }
  */
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 func kthLargestLevelSum(root *TreeNode, k int) int64 {
 	return 0
 }
