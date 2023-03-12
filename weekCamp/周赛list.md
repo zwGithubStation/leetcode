@@ -121,3 +121,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [修改两个元素的最小分数](https://leetcode.cn/problems/minimum-score-by-changing-two-elements/) |      |
 | [最小无法得到的或值](https://leetcode.cn/problems/minimum-impossible-or/) |      |
 | [更新数组后处理求和查询](https://leetcode.cn/problems/handling-sum-queries-after-update/) |      |
+
+## 333_2023_02_19
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [合并两个二维数组 - 求和法](https://leetcode.cn/problems/merge-two-2d-arrays-by-summing-values/) |      |
+| [将整数减少到零需要的最少操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-an-integer-to-0/) |      |
+| [无平方子集计数](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/) |      |
+| [找出对应 LCP 矩阵的字符串](https://leetcode.cn/problems/find-the-string-with-lcp/) |      |
