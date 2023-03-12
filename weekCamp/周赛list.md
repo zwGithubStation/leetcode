@@ -130,3 +130,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [将整数减少到零需要的最少操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-an-integer-to-0/) |      |
 | [无平方子集计数](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/) |      |
 | [找出对应 LCP 矩阵的字符串](https://leetcode.cn/problems/find-the-string-with-lcp/) |      |
+
+## 334_2023_02_26
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [左右元素和的差值](https://leetcode.cn/problems/left-and-right-sum-differences/) |      |
+| [找出字符串的可整除数组](https://leetcode.cn/problems/find-the-divisibility-array-of-a-string/) |      |
+| [求出最多标记下标](https://leetcode.cn/problems/find-the-maximum-number-of-marked-indices/) |      |
+| [在网格图中访问一个格子的最少时间](https://leetcode.cn/problems/minimum-time-to-visit-a-cell-in-a-grid/) |      |
