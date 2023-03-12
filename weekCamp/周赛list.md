@@ -85,3 +85,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [猴子碰撞的方法数](https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/) |      |
 | [将珠子放入背包中](https://leetcode.cn/problems/put-marbles-in-bags/) |      |
 | [统计上升四元组](https://leetcode.cn/problems/count-increasing-quadruplets/) |      |
+
+## B97_2023_02_04
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [分割数组中数字的数位](https://leetcode.cn/problems/separate-the-digits-in-an-array/) |      |
+| [从一个范围内选择最多整数 I](https://leetcode.cn/problems/maximum-number-of-integers-to-choose-from-a-range-i/) |      |
+| [两个线段获得的最多奖品](https://leetcode.cn/problems/maximize-win-from-two-segments/) |      |
+| [二进制矩阵中翻转最多一次使路径不连通](https://leetcode.cn/problems/disconnect-path-in-a-binary-matrix-by-at-most-one-flip/) |      |
