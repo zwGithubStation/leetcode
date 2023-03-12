@@ -32,6 +32,15 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [将字符串分割成值不超过 K 的子字符串](https://leetcode.cn/problems/partition-string-into-substrings-with-values-at-most-k/) |      |
 | [范围内最接近的两个质数](https://leetcode.cn/problems/closest-prime-numbers-in-range/) |      |
 
+## B95_2023_01_07
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [根据规则将箱子分类 3分](https://leetcode.cn/problems/categorize-box-according-to-criteria/) |      |
+| [找到数据流中的连续整数 4分](https://leetcode.cn/problems/find-consecutive-integers-from-a-data-stream/) |      |
+| [查询数组 Xor 美丽值 5分](https://leetcode.cn/problems/find-xor-beauty-of-array/) |      |
+| [最大化城市的最小供电站数目 6分](https://leetcode.cn/problems/maximize-the-minimum-powered-city/) |      |
+
 ## 327_2023_01_08
 
 | 题目                                                         | 类型 |
