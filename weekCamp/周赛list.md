@@ -16,12 +16,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 ## 325_2022_12_25
 
-| 题目                                                         | 类型 |
-| ------------------------------------------------------------ | ---- |
-| [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) |      |
-| [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) |      |
-| [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) |      |
-| [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) |      |
+| 题目                                                         | 类型           |
+| ------------------------------------------------------------ | -------------- |
+| [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) | 数组(基本操作) |
+| [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) | 双指针，遍历   |
+| [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) |                |
+| [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) |                |
 
 ## 326_2023_01_01
 
