@@ -103,3 +103,13 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [统计范围内的元音字符串数](https://leetcode.cn/problems/count-vowel-strings-in-ranges/) |      |
 | [打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/) |      |
 | [重排水果](https://leetcode.cn/problems/rearranging-fruits/) |      |
+
+## B332_2023_02_12
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [找出数组的串联值](https://leetcode.cn/problems/find-the-array-concatenation-value/) |      |
+| [统计公平数对的数目](https://leetcode.cn/problems/count-the-number-of-fair-pairs/) |      |
+| [子字符串异或查询](https://leetcode.cn/problems/substring-xor-queries/) |      |
+| [最少得分子序列](https://leetcode.cn/problems/subsequence-with-the-minimum-score/) |      |
+
