@@ -148,3 +148,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [统计染色格子数](https://leetcode.cn/problems/count-total-number-of-colored-cells/) |      |
 | [统计将重叠区间合并成组的方案数](https://leetcode.cn/problems/count-ways-to-group-overlapping-ranges/) |      |
 | [统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/) |      |
+
+## 335_2023_03_05
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [递枕头](https://leetcode.cn/problems/pass-the-pillow/)      |      |
+| [二叉树中的第 K 大层和](https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree/) |      |
+| [分割数组使乘积互质](https://leetcode.cn/problems/split-the-array-to-make-coprime-products/) |      |
+| [获得分数的方法数](https://leetcode.cn/problems/number-of-ways-to-earn-points/) |      |
