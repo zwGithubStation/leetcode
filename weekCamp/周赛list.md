@@ -36,10 +36,10 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
-| [根据规则将箱子分类 3分](https://leetcode.cn/problems/categorize-box-according-to-criteria/) |      |
-| [找到数据流中的连续整数 4分](https://leetcode.cn/problems/find-consecutive-integers-from-a-data-stream/) |      |
-| [查询数组 Xor 美丽值 5分](https://leetcode.cn/problems/find-xor-beauty-of-array/) |      |
-| [最大化城市的最小供电站数目 6分](https://leetcode.cn/problems/maximize-the-minimum-powered-city/) |      |
+| [根据规则将箱子分类](https://leetcode.cn/problems/categorize-box-according-to-criteria/) |      |
+| [找到数据流中的连续整数](https://leetcode.cn/problems/find-consecutive-integers-from-a-data-stream/) |      |
+| [查询数组 Xor 美丽值](https://leetcode.cn/problems/find-xor-beauty-of-array/) |      |
+| [最大化城市的最小供电站数目](https://leetcode.cn/problems/maximize-the-minimum-powered-city/) |      |
 
 ## 327_2023_01_08
 
@@ -54,8 +54,8 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
-| [正整数与负整数的最大计数](https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/) |      |
-| [执行 K 次操作后的最大分数](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/) |      |
-| [使字符串总不同字符的数目相等](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/) |      |
-| [过桥的时间](https://leetcode.cn/problems/time-to-cross-a-bridge/) |      |
+| [数组元素和与数字和的绝对差](https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/) |      |
+| [子矩阵元素加 1](https://leetcode.cn/problems/increment-submatrices-by-one/) |      |
+| [统计好子数组的数目](https://leetcode.cn/problems/count-the-number-of-good-subarrays/) |      |
+| [最大价值和与最小价值和的差值](https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/) |      |
 
