@@ -63,8 +63,25 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
-| [数组元素和与数字和的绝对差](https://leetcode.cn/problems/difference-between-element-sum-and-digit-sum-of-an-array/) |      |
-| [子矩阵元素加 1](https://leetcode.cn/problems/increment-submatrices-by-one/) |      |
-| [统计好子数组的数目](https://leetcode.cn/problems/count-the-number-of-good-subarrays/) |      |
-| [最大价值和与最小价值和的差值](https://leetcode.cn/problems/difference-between-maximum-and-minimum-price-sum/) |      |
+| [最小公共值](https://leetcode.cn/problems/minimum-common-value/) |      |
+| [使数组中所有元素相等的最小操作数 II](https://leetcode.cn/problems/minimum-operations-to-make-array-equal-ii/) |      |
+| [最大子序列的分数](https://leetcode.cn/problems/maximum-subsequence-score/) |      |
+| [判断一个点是否可以到达](https://leetcode.cn/problems/check-if-point-is-reachable/) |      |
 
+## 329_2023_01_22
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [交替数字和](https://leetcode.cn/problems/alternating-digit-sum/) |      |
+| [根据第 K 场考试的分数排序](https://leetcode.cn/problems/sort-the-students-by-their-kth-score/) |      |
+| [执行逐位运算使字符串相等](https://leetcode.cn/problems/apply-bitwise-operations-to-make-strings-equal/) |      |
+| [拆分数组的最小代价](https://leetcode.cn/problems/minimum-cost-to-split-an-array/) |      |
+
+## 330_2023_01_29
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [统计桌面上的不同数字](https://leetcode.cn/problems/count-distinct-numbers-on-board/) |      |
+| [猴子碰撞的方法数](https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/) |      |
+| [将珠子放入背包中](https://leetcode.cn/problems/put-marbles-in-bags/) |      |
+| [统计上升四元组](https://leetcode.cn/problems/count-increasing-quadruplets/) |      |
