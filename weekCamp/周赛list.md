@@ -94,3 +94,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [从一个范围内选择最多整数 I](https://leetcode.cn/problems/maximum-number-of-integers-to-choose-from-a-range-i/) |      |
 | [两个线段获得的最多奖品](https://leetcode.cn/problems/maximize-win-from-two-segments/) |      |
 | [二进制矩阵中翻转最多一次使路径不连通](https://leetcode.cn/problems/disconnect-path-in-a-binary-matrix-by-at-most-one-flip/) |      |
+
+## B331_2023_02_05
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [从数量最多的堆取走礼物](https://leetcode.cn/problems/take-gifts-from-the-richest-pile/) |      |
+| [统计范围内的元音字符串数](https://leetcode.cn/problems/count-vowel-strings-in-ranges/) |      |
+| [打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/) |      |
+| [重排水果](https://leetcode.cn/problems/rearranging-fruits/) |      |
