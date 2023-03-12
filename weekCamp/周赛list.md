@@ -32,3 +32,21 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [将字符串分割成值不超过 K 的子字符串](https://leetcode.cn/problems/partition-string-into-substrings-with-values-at-most-k/) |      |
 | [范围内最接近的两个质数](https://leetcode.cn/problems/closest-prime-numbers-in-range/) |      |
 
+## 327_2023_01_08
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [正整数与负整数的最大计数](https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/) |      |
+| [执行 K 次操作后的最大分数](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/) |      |
+| [使字符串总不同字符的数目相等](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/) |      |
+| [过桥的时间](https://leetcode.cn/problems/time-to-cross-a-bridge/) |      |
+
+## 328_2023_01_15
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [正整数与负整数的最大计数](https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/) |      |
+| [执行 K 次操作后的最大分数](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/) |      |
+| [使字符串总不同字符的数目相等](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/) |      |
+| [过桥的时间](https://leetcode.cn/problems/time-to-cross-a-bridge/) |      |
+
