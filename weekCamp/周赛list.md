@@ -95,7 +95,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [两个线段获得的最多奖品](https://leetcode.cn/problems/maximize-win-from-two-segments/) |      |
 | [二进制矩阵中翻转最多一次使路径不连通](https://leetcode.cn/problems/disconnect-path-in-a-binary-matrix-by-at-most-one-flip/) |      |
 
-## B331_2023_02_05
+## 331_2023_02_05
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
@@ -104,7 +104,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [打家劫舍 IV](https://leetcode.cn/problems/house-robber-iv/) |      |
 | [重排水果](https://leetcode.cn/problems/rearranging-fruits/) |      |
 
-## B332_2023_02_12
+## 332_2023_02_12
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
@@ -113,3 +113,11 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [子字符串异或查询](https://leetcode.cn/problems/substring-xor-queries/) |      |
 | [最少得分子序列](https://leetcode.cn/problems/subsequence-with-the-minimum-score/) |      |
 
+## B98_2023_02_18
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [替换一个数字后的最大差值](https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/) |      |
+| [修改两个元素的最小分数](https://leetcode.cn/problems/minimum-score-by-changing-two-elements/) |      |
+| [最小无法得到的或值](https://leetcode.cn/problems/minimum-impossible-or/) |      |
+| [更新数组后处理求和查询](https://leetcode.cn/problems/handling-sum-queries-after-update/) |      |
