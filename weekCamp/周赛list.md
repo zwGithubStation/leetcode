@@ -157,3 +157,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [二叉树中的第 K 大层和](https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree/) |      |
 | [分割数组使乘积互质](https://leetcode.cn/problems/split-the-array-to-make-coprime-products/) |      |
 | [获得分数的方法数](https://leetcode.cn/problems/number-of-ways-to-earn-points/) |      |
+
+## 336_2023_03_12
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [统计范围内的元音字符串数](https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/) |      |
+| [重排数组以得到最大前缀分数](https://leetcode.cn/problems/rearrange-array-to-maximize-prefix-score/) |      |
+| [统计美丽子数组数目](https://leetcode.cn/problems/count-the-number-of-beautiful-subarrays/) |      |
+| [完成所有任务的最少时间](https://leetcode.cn/problems/minimum-time-to-complete-all-tasks/) |      |
