@@ -1,13 +1,21 @@
 # 周赛列表
 
-收录每周的周赛/双周赛题目完整内容。
+本md文件收录每周的周赛/双周赛题目完整内容。
+
+## 注意项
 
 在[这里](https://space.bilibili.com/206214)算法大神 ***灵茶山艾府*** 会稳定的更新优质的视频题解，根据周赛编号即可对应搜索。
 
+周赛XXX(**XXX为周赛的编号**)的主页网站链接：
+
+https://leetcode.cn/contest/weekly-contest-XXX
+
+ 双周赛XXX(**XXX为双周赛的编号**)的主页网站链接：
+
+https://leetcode.cn/contest/biweekly-contest-XXX
+
 ## 325_2022_12_25
 
-https://leetcode.cn/contest/weekly-contest-325/
-
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
 | [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) |      |
@@ -15,14 +23,12 @@ https://leetcode.cn/contest/weekly-contest-325/
 | [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) |      |
 | [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) |      |
 
-## 326_2022_12_25
-
-https://leetcode.cn/contest/weekly-contest-325/
+## 326_2023_01_01
 
 | 题目                                                         | 类型 |
 | ------------------------------------------------------------ | ---- |
-| [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) |      |
-| [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) |      |
-| [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) |      |
-| [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) |      |
+| [统计能整除数字的位数](https://leetcode.cn/problems/count-the-digits-that-divide-a-number/) |      |
+| [数组乘积中的不同质因数数目](https://leetcode.cn/problems/distinct-prime-factors-of-product-of-array/) |      |
+| [将字符串分割成值不超过 K 的子字符串](https://leetcode.cn/problems/partition-string-into-substrings-with-values-at-most-k/) |      |
+| [范围内最接近的两个质数](https://leetcode.cn/problems/closest-prime-numbers-in-range/) |      |
 
