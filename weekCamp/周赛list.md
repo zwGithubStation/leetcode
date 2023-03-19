@@ -173,7 +173,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [将钱分给最多的儿童](https://leetcode.cn/problems/distribute-money-to-maximum-children/) | 巧思                       |
 | [最大化数组的伟大值](https://leetcode.cn/problems/maximize-greatness-of-an-array/) | 双指针，排序               |
 | [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) | 带下标排序，排序，稳定排序 |
-| [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) |                            |
+| [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) | 二分查找(满足单调性)       |
 
 ## 337_2023_03_19_19
 | 题目                                                         | 类型 |
