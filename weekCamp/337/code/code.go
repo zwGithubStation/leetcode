@@ -22,7 +22,12 @@ package code
 */
 
 func evenOddBit(n int) []int {
-	return []int{}
+	ans := make([]int, 2)
+	for i := 0; n > 0; i ^= 1 {
+		ans[i] += n & 1
+		n >>= 1
+	}
+	return ans
 }
 
 /*
@@ -46,7 +51,36 @@ grid 中的所有整数 互不相同
 */
 
 func checkValidGrid(grid [][]int) bool {
-	return false
+	//左上出发规则
+	if grid[0][0] != 0 {
+		return false
+	}
+	//1. 带下标排序
+	type point struct {
+		rId, cId int
+	}
+	points := make([]point, len(grid[0])*len(grid[0]))
+	for i := 0; i < len(grid[0]); i++ {
+		for j := 0; j < len(grid[0]); j++ {
+			points[grid[i][j]] = point{i, j}
+		}
+	}
+
+	//2. legal规则(剪枝？) 顺序判断规则是否成立
+	for i := 0; i < len(points)-1; i++ {
+		if !(abs(points[i].cId, points[i+1].cId) == 1 && abs(points[i].rId, points[i+1].rId) == 2 ||
+			abs(points[i].cId, points[i+1].cId) == 2 && abs(points[i].rId, points[i+1].rId) == 1) {
+			return false
+		}
+	}
+	return true
+}
+
+func abs(x, y int) int {
+	if x > y {
+		return x - y
+	}
+	return y - x
 }
 
 /*

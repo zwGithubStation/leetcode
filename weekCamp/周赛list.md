@@ -176,9 +176,9 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) | 二分查找(满足单调性)       |
 
 ## 337_2023_03_19_19
-| 题目                                                         | 类型 |
-| ------------------------------------------------------------ | ---- |
-| [奇偶位数](https://leetcode.cn/problems/number-of-even-and-odd-bits/) |      |
-| [检查骑士巡视方案](https://leetcode.cn/problems/check-knight-tour-configuration/) |      |
-| [美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/) |      |
-| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) |      |
+| 题目                                                         | 类型             |
+| ------------------------------------------------------------ | ---------------- |
+| [奇偶位数](https://leetcode.cn/problems/number-of-even-and-odd-bits/) | 位操作(简洁代码) |
+| [检查骑士巡视方案](https://leetcode.cn/problems/check-knight-tour-configuration/) |                  |
+| [美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/) |                  |
+| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) |                  |
