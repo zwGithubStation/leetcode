@@ -1,5 +1,7 @@
 package code
 
+import "sort"
+
 /*
 给你一个整数 money ，表示你总共有的钱数（单位为美元）和另一个整数 children ，表示你要将钱分配给多少个儿童。
 你需要按照如下规则分配：
@@ -70,7 +72,18 @@ func distMoney(money int, children int) int {
 */
 
 func maximizeGreatness(nums []int) int {
-	return 0
+	sort.Ints(nums)
+	i, j, lens, ret := 0, 1, len(nums), 0
+	for i < lens && j < lens {
+		if nums[i] < nums[j] {
+			i++
+			j++
+			ret++
+		} else {
+			j++
+		}
+	}
+	return ret
 }
 
 /*
@@ -102,8 +115,34 @@ func maximizeGreatness(nums []int) int {
 1 <= nums[i] <= 10e6
 */
 
-func findScore(nums []int) int64 {
-	return 0
+func findScore(nums []int) (ans int64) {
+	type pair struct {
+		x, i int
+	}
+	a := make([]pair, len(nums))
+	for i, x := range nums {
+		a[i] = pair{x, i}
+	}
+
+	sort.Slice(a, func(i, j int) bool {
+		return a[i].x < a[j].x || (a[i].x == a[j].x && a[i].i < a[j].i)
+	})
+
+	target := make([]bool, len(nums))
+
+	for _, x := range a {
+		if target[x.i] == false {
+			target[x.i] = true
+			if x.i > 0 {
+				target[x.i-1] = true
+			}
+			if x.i < len(nums)-1 {
+				target[x.i+1] = true
+			}
+			ans += int64(x.x)
+		}
+	}
+	return ans
 }
 
 /*
