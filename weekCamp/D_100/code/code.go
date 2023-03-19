@@ -26,7 +26,28 @@ package code
 */
 
 func distMoney(money int, children int) int {
-	return 0
+	var count int
+	if money < children { //无法保证每人一块钱
+		return -1
+	}
+
+	if money < 8 { //无法保证有人能得到8块钱
+		return 0
+	}
+
+	//在每个人至少有1块钱的基础上 计算得到8块的人数最大值
+	for children > 0 && money >= children+7 {
+		children--
+		money = money - 8
+		count++
+	}
+
+	//基于剩余的人数/钱数  避免出现有人分到4块 || 钱没有分完的 情况出现
+	if (children == 1 && money == 4) || (children == 0 && money != 0) {
+		return count - 1
+	}
+
+	return count
 }
 
 /*
