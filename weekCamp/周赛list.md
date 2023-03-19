@@ -168,12 +168,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [完成所有任务的最少时间](https://leetcode.cn/problems/minimum-time-to-complete-all-tasks/) |      |
 
 ## B100_2023_03_18_18
-| 题目                                                         | 类型             |
-| ------------------------------------------------------------ | ---------------- |
-| [将钱分给最多的儿童](https://leetcode.cn/problems/distribute-money-to-maximum-children/) | 巧思             |
-| [最大化数组的伟大值](https://leetcode.cn/problems/maximize-greatness-of-an-array/) | 双指针，排序     |
-| [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) | 带下标排序，排序 |
-| [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) |                  |
+| 题目                                                         | 类型                       |
+| ------------------------------------------------------------ | -------------------------- |
+| [将钱分给最多的儿童](https://leetcode.cn/problems/distribute-money-to-maximum-children/) | 巧思                       |
+| [最大化数组的伟大值](https://leetcode.cn/problems/maximize-greatness-of-an-array/) | 双指针，排序               |
+| [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) | 带下标排序，排序，稳定排序 |
+| [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) |                            |
 
 ## 337_2023_03_19_19
 | 题目                                                         | 类型 |

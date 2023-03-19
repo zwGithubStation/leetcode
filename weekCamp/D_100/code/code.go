@@ -1,6 +1,9 @@
 package code
 
-import "sort"
+import (
+	"math"
+	"sort"
+)
 
 /*
 给你一个整数 money ，表示你总共有的钱数（单位为美元）和另一个整数 children ，表示你要将钱分配给多少个儿童。
@@ -146,7 +149,7 @@ func findScore(nums []int) (ans int64) {
 }
 
 /*
-给你一个整数数组 ranks ，表示一些机械工的 能力值 。ranksi 是第 i 位机械工的能力值。能力值为 r 的机械工可以在 r * n2 分钟内修好 n 辆车。
+给你一个整数数组 ranks ，表示一些机械工的 能力值 。ranksi 是第 i 位机械工的能力值。能力值为 r 的机械工可以在 r * ne2 分钟内修好 n 辆车。
 同时给你一个整数 cars ，表示总共需要修理的汽车数目。
 请你返回修理所有汽车 最少 需要多少时间。
 注意：所有机械工可以同时修理汽车。
@@ -174,5 +177,17 @@ func findScore(nums []int) (ans int64) {
 */
 
 func repairCars(ranks []int, cars int) int64 {
-	return 0
+	minRank := 100
+	for _, x := range ranks {
+		if x < minRank {
+			minRank = x
+		}
+	}
+	return int64(sort.Search(minRank*cars*cars, func(t int) bool {
+		fixCount := 0
+		for _, x := range ranks {
+			fixCount += int(math.Sqrt(float64(t / x)))
+		}
+		return fixCount >= cars
+	}))
 }
