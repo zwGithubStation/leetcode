@@ -166,3 +166,11 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [重排数组以得到最大前缀分数](https://leetcode.cn/problems/rearrange-array-to-maximize-prefix-score/) |      |
 | [统计美丽子数组数目](https://leetcode.cn/problems/count-the-number-of-beautiful-subarrays/) |      |
 | [完成所有任务的最少时间](https://leetcode.cn/problems/minimum-time-to-complete-all-tasks/) |      |
+
+## B100_2023_03_18_18
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [将钱分给最多的儿童](https://leetcode.cn/problems/distribute-money-to-maximum-children/) |      |
+| [最大化数组的伟大值](https://leetcode.cn/problems/maximize-greatness-of-an-array/) |      |
+| [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) |      |
+| [修车的最少时间](https://leetcode.cn/problems/minimum-time-to-repair-cars/) |      |
