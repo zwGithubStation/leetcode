@@ -181,4 +181,4 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | [奇偶位数](https://leetcode.cn/problems/number-of-even-and-odd-bits/) | 位操作(简洁代码) |
 | [检查骑士巡视方案](https://leetcode.cn/problems/check-knight-tour-configuration/) | 带下标排序       |
 | [美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/) | 2                |
-| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) | 3                |
+| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) | 33               |
