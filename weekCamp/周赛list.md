@@ -180,5 +180,59 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | ------------------------------------------------------------ | ---------------- |
 | [奇偶位数](https://leetcode.cn/problems/number-of-even-and-odd-bits/) | 位操作(简洁代码) |
 | [检查骑士巡视方案](https://leetcode.cn/problems/check-knight-tour-configuration/) | 带下标排序       |
-| [美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/) | 2                |
-| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) | 33               |
+| [美丽子集的数目](https://leetcode.cn/problems/the-number-of-beautiful-subsets/) |                  |
+| [执行操作后的最大 MEX](https://leetcode.cn/problems/smallest-missing-non-negative-integer-after-operations/) |                  |
+
+## 338_2023_03_26_20
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [K 件物品的最大和](https://leetcode.cn/problems/k-items-with-the-maximum-sum/) |      |
+| [质数减法运算](https://leetcode.cn/problems/prime-subtraction-operation/) |      |
+| [使数组元素全部相等的最少操作次数](https://leetcode.cn/problems/minimum-operations-to-make-all-array-elements-equal/) |      |
+| [收集树中金币](https://leetcode.cn/problems/collect-coins-in-a-tree/) |      |
+
+## B101_2023_04_01_21
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [从两个数字数组里生成最小数字](https://leetcode.cn/problems/form-smallest-number-from-two-digit-arrays/) |      |
+| [找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/) |      |
+| [使子数组元素和相等](https://leetcode.cn/problems/make-k-subarray-sums-equal/) |      |
+| [图中的最短环](https://leetcode.cn/problems/shortest-cycle-in-a-graph/) |      |
+
+## 339_2023_04_02_22
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [最长平衡子字符串](https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/) |      |
+| [转换二维数组](https://leetcode.cn/problems/convert-an-array-into-a-2d-array-with-conditions/) |      |
+| [老鼠和奶酪](https://leetcode.cn/problems/mice-and-cheese/)  |      |
+| [最少翻转操作数](https://leetcode.cn/problems/minimum-reverse-operations/) |      |
+
+## 340_2023_04_09_23
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [对角线上的质数](https://leetcode.cn/problems/prime-in-diagonal/) |      |
+| [等值距离和](https://leetcode.cn/problems/sum-of-distances/) |      |
+| [最小化数对的最大差值](https://leetcode.cn/problems/minimize-the-maximum-difference-of-pairs/) |      |
+| [网格图中最少访问的格子数](https://leetcode.cn/problems/minimum-number-of-visited-cells-in-a-grid/) |      |
+
+## B102_2023_04_15_24
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [查询网格图中每一列的宽度](https://leetcode.cn/problems/find-the-width-of-columns-of-a-grid/) |      |
+| [一个数组所有前缀的分数](https://leetcode.cn/problems/find-the-score-of-all-prefixes-of-an-array/) |      |
+| [二叉树的堂兄弟节点 II](https://leetcode.cn/problems/cousins-in-binary-tree-ii/) |      |
+| [设计可以求最短路径的图类](https://leetcode.cn/problems/design-graph-with-shortest-path-calculator/) |      |
+
+## 341_2023_04_16_25
+
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [一最多的行](https://leetcode.cn/problems/row-with-maximum-ones/) |      |
+| [找出可整除性得分最大的整数](https://leetcode.cn/problems/find-the-maximum-divisibility-score/) |      |
+| [构造有效字符串的最少插入数](https://leetcode.cn/problems/minimum-additions-to-make-valid-string/) |      |
+| [最小化旅行的价格总和](https://leetcode.cn/problems/minimize-the-total-price-of-the-trips/) |      |
