@@ -108,8 +108,9 @@ s 由英文字母、数字、符号和空格组成
 func lengthOfLongestSubstring(s string) (ans int) {
 	left := 0
 	cnt := [128]int{} // 也可以用 map[byte]int，这里为了方便用的数组
-	//下面的博客介绍了for range string 时每个元素的类型(rune=int32)
+	//下面的博客介绍了for range string 时每个元素的类型(rune=int32；根据实际的字符类型【UTF-8规范中一个字符可以用1-4个字节表示】)
 	//https://berryjam.github.io/2018/03/%E4%BB%8Egolang%E5%AD%97%E7%AC%A6%E4%B8%B2string%E9%81%8D%E5%8E%86%E8%AF%B4%E8%B5%B7/
+	//https://golangbyexample.com/length-of-string-golang/
 	for right, c := range s {
 		cnt[c]++
 		for cnt[c] > 1 { // 不满足要求
@@ -187,8 +188,37 @@ s.length 是 4 的倍数
 s 中只含有 'Q', 'W', 'E', 'R' 四种字符
 */
 
-func balancedString(s string) int {
-	return 0
+/*
+根据题意，如果在待替换子串之外的任意字符的出现次数超过 m(len/4)，那么无论怎么替换，都无法使这个字符的出现次数等于 m。
+
+反过来说，如果在待替换子串之外的任意字符的出现次数都不超过 m，那么必然可以通过一定地替换，使 s 为平衡字符串，即每个字符的出现次数均为 m。
+
+对于本题，设子串的左右端点为 left 和 right，枚举 right，如果子串外的任意字符的出现次数都不超过 m，则说明从 left 到 right 的这段子串可以是待替换子串，用其长度
+right−left+1 更新答案的最小值，并向右移动 left，缩小子串长度。
+*/
+
+func balancedString(s string) (ans int) {
+	m := len(s) / 4
+	cnt, left := ['X']int{}, 0
+
+	for _, x := range s {
+		cnt[x]++
+	}
+
+	if cnt['Q'] == m && cnt['W'] == m && cnt['E'] == m && cnt['R'] == m {
+		return
+	}
+
+	ans = len(s) //ans预设值要是最大值，因为求最小！！！！！！！
+	for right, x := range s {
+		cnt[x]--
+		for cnt['Q'] <= m && cnt['W'] <= m && cnt['E'] <= m && cnt['R'] <= m {
+			ans = min(ans, right-left+1)
+			cnt[s[left]]++
+			left++
+		}
+	}
+	return
 }
 
 /*
