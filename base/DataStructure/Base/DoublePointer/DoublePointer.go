@@ -115,6 +115,8 @@ s 由英文字母、数字、符号和空格组成
 func lengthOfLongestSubstring(s string) (ans int) {
 	left := 0
 	cnt := [128]int{} // 也可以用 map[byte]int，这里为了方便用的数组
+	//下面的博客介绍了for range string 时每个元素的类型(rune=int32)
+	//https://berryjam.github.io/2018/03/%E4%BB%8Egolang%E5%AD%97%E7%AC%A6%E4%B8%B2string%E9%81%8D%E5%8E%86%E8%AF%B4%E8%B5%B7/
 	for right, c := range s {
 		cnt[c]++
 		for cnt[c] > 1 { // 不满足要求
