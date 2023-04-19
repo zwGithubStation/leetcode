@@ -72,8 +72,20 @@ https://leetcode.cn/problems/subarray-product-less-than-k/
 0 <= k <= 10e6
 */
 
-func numSubarrayProductLessThanK(nums []int, k int) int {
-	return 0
+func numSubarrayProductLessThanK(nums []int, k int) (ans int) {
+	if k <= 1 {
+		return
+	}
+	prob, left := 1, 0
+	for right, x := range nums {
+		prob *= x
+		for prob >= k {
+			prob /= nums[left]
+			left++
+		}
+		ans += right - left + 1 //记录right固定，left变化的子数字个数 不会重复
+	}
+	return
 }
 
 /*
@@ -100,8 +112,25 @@ https://leetcode.cn/problems/longest-substring-without-repeating-characters/
 0 <= s.length <= 5 * 104
 s 由英文字母、数字、符号和空格组成
 */
-func lengthOfLongestSubstring(s string) int {
-	return 0
+func lengthOfLongestSubstring(s string) (ans int) {
+	left := 0
+	cnt := [128]int{} // 也可以用 map[byte]int，这里为了方便用的数组
+	for right, c := range s {
+		cnt[c]++
+		for cnt[c] > 1 { // 不满足要求
+			cnt[s[left]]--
+			left++
+		}
+		ans = max(ans, right-left+1)
+	}
+	return
+}
+
+func max(a, b int) int {
+	if b > a {
+		return b
+	}
+	return a
 }
 
 /*
