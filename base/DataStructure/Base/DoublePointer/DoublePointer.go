@@ -1,5 +1,7 @@
 package DoublePointer
 
+import "sort"
+
 //使用双指针的条件：
 //
 // 单调性(从满足要求到不满足要求 or 从不满足要求到满足要求)
@@ -289,4 +291,162 @@ func max(a, b int) int {
 		return b
 	}
 	return a
+}
+
+/*
+167. 两数之和 II - 输入有序数组
+https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/
+
+给你一个下标从 1 开始的整数数组  numbers ，该数组已按 非递减顺序排列   ，请你从数组中找出满足相加之和等于目标数  target 的两个数。
+如果设这两个数分别是 numbers[index1] 和 numbers[index2] ，则 1 <= index1 < index2 <= numbers.length 。
+以长度为 2 的整数数组 [index1, index2] 的形式返回这两个整数的下标 index1 和 index2。
+你可以假设每个输入 只对应唯一的答案 ，而且你 不可以 重复使用相同的元素。
+你所设计的解决方案必须只使用常量级的额外空间。
+示例 1：
+输入：numbers = [2,7,11,15], target = 9
+输出：[1,2]
+解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。
+示例 2：
+输入：numbers = [2,3,4], target = 6
+输出：[1,3]
+解释：2 与 4 之和等于目标数 6 。因此 index1 = 1, index2 = 3 。返回 [1, 3] 。
+示例 3：
+输入：numbers = [-1,0], target = -1
+输出：[1,2]
+解释：-1 与 0 之和等于目标数 -1 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。
+提示：
+2 <= numbers.length <= 3 * 10e4
+-1000 <= numbers[i] <= 1000
+numbers 按 非递减顺序 排列
+-1000 <= target <= 1000
+仅存在一个有效答案
+*/
+
+func twoSum(numbers []int, target int) []int {
+	left, right := 0, len(numbers)-1
+	for {
+		if numbers[left]+numbers[right] == target {
+			return []int{left + 1, right + 1}
+		} else if numbers[left]+numbers[right] < target {
+			left++
+		} else {
+			right--
+		}
+	}
+}
+
+/*
+15. 三数之和
+https://leetcode.cn/problems/3sum/
+
+给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
+你返回所有和为 0 且不重复的三元组。
+注意：答案中不可以包含重复的三元组。
+示例 1：
+输入：nums = [-1,0,1,2,-1,-4]
+输出：[[-1,-1,2],[-1,0,1]]
+解释：
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0 。
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0 。
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
+不同的三元组是 [-1,0,1] 和 [-1,-1,2] 。
+注意，输出的顺序和三元组的顺序并不重要。
+示例 2：
+输入：nums = [0,1,1]
+输出：[]
+解释：唯一可能的三元组和不为 0 。
+示例 3：
+输入：nums = [0,0,0]
+输出：[[0,0,0]]
+解释：唯一可能的三元组和为 0 。
+提示：
+3 <= nums.length <= 3000
+-10e5 <= nums[i] <= 10e5
+*/
+
+func threeSum(nums []int) (ans [][]int) {
+	sort.Ints(nums)
+	s := len(nums)
+	for i, x := range nums[:s-2] {
+		if i > 0 && x == nums[i-1] {
+			continue
+		}
+		if x+nums[i+1]+nums[i+2] > 0 {
+			break
+		}
+		if x+nums[s-2]+nums[s-1] < 0 {
+			continue
+		}
+		j, k := i+1, s-1
+		for j < k {
+			sum := x + nums[j] + nums[k]
+			if sum < 0 {
+				j++
+			} else if sum > 0 {
+				k--
+			} else {
+				ans = append(ans, []int{x, nums[j], nums[k]})
+				for j++; j < k && nums[j] == nums[j-1]; j++ {
+				}
+				for k--; j < k && nums[k] == nums[k+1]; k-- {
+				}
+			}
+		}
+	}
+	return
+}
+
+/*
+11. 盛最多水的容器
+https://leetcode.cn/problems/container-with-most-water/
+
+给定一个长度为 n 的整数数组  height  。有  n  条垂线，第 i 条线的两个端点是  (i, 0)  和  (i, height[i])  。
+找出其中的两条线，使得它们与  x  轴共同构成的容器可以容纳最多的水。
+返回容器可以储存的最大水量。
+说明：你不能倾斜容器。
+示例 1：
+输入：[1,8,6,2,5,4,8,3,7]
+输出：49
+解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为  49。
+示例 2：
+输入：height = [1,1]
+输出：1
+提示：
+n == height.length
+2 <= n <= 10e5
+0 <= height[i] <= 10e4
+*/
+
+func maxArea(height []int) (ans int) {
+	left, right := 0, len(height)-1
+	for left < right {
+		ans = max(ans, (right-left)*min(height[left], height[right]))
+		if height[left] < height[right] {
+			left++
+		} else {
+			right--
+		}
+	}
+	return
+}
+
+/*
+42. 接雨水
+https://leetcode.cn/problems/trapping-rain-water/
+
+给定  n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+示例 1：
+输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+输出：6
+解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。
+示例 2：
+输入：height = [4,2,0,3,2,5]
+输出：9
+提示：
+n == height.length
+1 <= n <= 2 * 10e4
+0 <= height[i] <= 10e5
+*/
+func trap(height []int) int {
+	return 0
 }
