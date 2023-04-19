@@ -47,13 +47,6 @@ func minSubArrayLen(target int, nums []int) int {
 	return 0
 }
 
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}
-
 /*
 713 乘积小于 K 的子数组
 https://leetcode.cn/problems/subarray-product-less-than-k/
@@ -128,13 +121,6 @@ func lengthOfLongestSubstring(s string) (ans int) {
 	return
 }
 
-func max(a, b int) int {
-	if b > a {
-		return b
-	}
-	return a
-}
-
 /*
 1004. 最大连续1的个数 III
 https://leetcode.cn/problems/max-consecutive-ones-iii/
@@ -156,8 +142,17 @@ nums[i] 不是 0 就是 1
 0 <= k <= nums.length
 */
 
-func longestOnes(nums []int, k int) int {
-	return 0
+func longestOnes(nums []int, k int) (ans int) {
+	left, cntZero := 0, 0
+	for right, x := range nums {
+		cntZero += 1 - x
+		for cntZero > k {
+			cntZero -= 1 - nums[left]
+			left++
+		}
+		ans = max(ans, right-left+1)
+	}
+	return ans
 }
 
 /*
@@ -221,4 +216,18 @@ https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/
 
 func minOperations(nums []int, x int) int {
 	return 0
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func max(a, b int) int {
+	if b > a {
+		return b
+	}
+	return a
 }
