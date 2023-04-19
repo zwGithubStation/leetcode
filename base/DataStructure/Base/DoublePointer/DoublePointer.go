@@ -1,5 +1,9 @@
 package DoublePointer
 
+//使用双指针的条件：
+//
+// 单调性(从满足要求到不满足要求 or 从不满足要求到满足要求)
+
 /*
 209 长度最小的子数组
 https://leetcode.cn/problems/minimum-size-subarray-sum/
@@ -24,7 +28,30 @@ https://leetcode.cn/problems/minimum-size-subarray-sum/
 */
 
 func minSubArrayLen(target int, nums []int) int {
+	length := len(nums)
+	left, ans, sum := 0, length+1, 0
+
+	//时间复杂度为0(N)的二重循环！！！！！！！！！！！！！！！！！！！！！！
+	for right, x := range nums {
+		sum += x //加右
+		for sum >= target {
+			ans = min(ans, right-left+1)
+			sum -= nums[left] //去左
+			left++
+		}
+	}
+
+	if ans <= length {
+		return ans
+	}
 	return 0
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
 }
 
 /*
