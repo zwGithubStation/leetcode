@@ -5,7 +5,7 @@ package main
 //涉及范围：闭区间[]，左闭右开区间[ )，开区间( )
 //涉及判断条件：>=   >   <=   <
 
-//问题：返回有序数组中第一个>= target 的数的位置；如果所有数都<target，返回数组长度
+//问题：返回有序(非降序)数组中第一个>= target 的数的位置；如果所有数都<target，返回数组长度
 
 // lowerBound 返回最小的满足 nums[i] >= target 的 i
 // 如果数组为空，或者所有数都 < target，则返回 nums.length
@@ -68,13 +68,13 @@ func lowerBound3(nums []int, target int) int {
 	return left + 1 //OR right
 }
 
-//4. > 转换为 >=
+//4. >= 转换为 >
 // > target的第一个数   等价于   >=(target+1)的第一个数， 也即lowerBound(target+1)
 
-//5. < 转换为 >=
+//5. >= 转换为 <
 // < target的第一个数(升序序列中从后往前遍历的第一个) 等价于 >=target的第一个数的前面一个数， 也即lowerBound(target) - 1
 
-//6. <= 转换为 >=
+//6. >= 转换为 <=
 // <=target的第一个数(升序序列中从后往前遍历的第一个) 等价于 >target的第一个数前面的一个数， 也即lowerBound(target+1) - 1
 
 //例题
