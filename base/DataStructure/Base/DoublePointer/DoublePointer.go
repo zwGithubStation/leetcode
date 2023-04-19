@@ -1,6 +1,8 @@
 package DoublePointer
 
-import "sort"
+import (
+	"sort"
+)
 
 //使用双指针的条件：
 //
@@ -421,7 +423,7 @@ func maxArea(height []int) (ans int) {
 	left, right := 0, len(height)-1
 	for left < right {
 		ans = max(ans, (right-left)*min(height[left], height[right]))
-		if height[left] < height[right] {
+		if height[left] < height[right] { //移动短板 后续面积可能增大 移动长板 则后续面积一定变小
 			left++
 		} else {
 			right--
@@ -447,6 +449,41 @@ n == height.length
 1 <= n <= 2 * 10e4
 0 <= height[i] <= 10e5
 */
-func trap(height []int) int {
-	return 0
+
+func trap(height []int) (ans int) {
+	length := len(height)
+	preMax := make([]int, length)
+	preMax[0] = height[0]
+	for i := 1; i < length; i++ {
+		preMax[i] = max(height[i], preMax[i-1])
+	}
+
+	sufMax := make([]int, length)
+	sufMax[length-1] = height[length-1] //位次不要乱了
+	for i := length - 1; i >= 0; i-- {
+		sufMax[i] = max(height[i], sufMax[i+1])
+	}
+
+	for i, v := range height {
+		ans += min(sufMax[i], preMax[i]) - v
+	}
+	return ans
+}
+
+// 节省数组空间
+func trap2(height []int) (ans int) {
+	preMax, sufMax, left, right := 0, 0, 0, len(height)-1
+
+	for left < right {
+		preMax = max(preMax, height[left])  //对于当前的left指针， 其左边界木板高度是确定的
+		sufMax = max(sufMax, height[right]) //对于当前的right指针，其右边界木板的高度是确定的
+		if preMax < sufMax {
+			ans += preMax - height[left] //left指针位置的水位最大可能高度确定
+			left++
+		} else {
+			ans += sufMax - height[right] //right指针位置的水位最大可能高度确定
+			right--
+		}
+	}
+	return
 }

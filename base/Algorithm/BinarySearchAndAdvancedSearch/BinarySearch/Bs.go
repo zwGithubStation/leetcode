@@ -11,10 +11,10 @@ package main
 // 如果数组为空，或者所有数都 < target，则返回 nums.length
 // 要求 nums 是非递减的，即 nums[i] <= nums[i + 1]
 
-//源码 ：https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-zong-shi-xie-bu-dui-yi-g-t9l9/
-//1. 闭区间 [ ]
+// 源码 ：https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/solution/er-fen-cha-zhao-zong-shi-xie-bu-dui-yi-g-t9l9/
+// 1. 闭区间 [ ]
 // *********循环不变量：***********
-//[left, right]区间表征当前还没有确定与target关系的区间，亦即：
+// [left, right]区间表征当前还没有确定与target关系的区间，亦即：
 // nums[left-1] < target   //left前面的元素都已经确定比target小  ==========> 最终返回left
 // nums[right+1] >= target    //right后面的元素都已经确定不比target==========> 最终返回right + 1
 func lowerBound(nums []int, target int) int {
@@ -32,9 +32,9 @@ func lowerBound(nums []int, target int) int {
 	return left // OR right + 1
 }
 
-//2. 半开半闭区间 [  )
+// 2. 半开半闭区间 [  )
 // *********循环不变量：***********
-//[left, right)区间表征当前还没有确定与target关系的区间，亦即：
+// [left, right)区间表征当前还没有确定与target关系的区间，亦即：
 // nums[left-1] < target   //left前面的元素都已经确定比target小  ==========> 最终返回left
 // nums[right] >= target    //right以及其后面的元素都已经确定不比target==========> 最终返回right
 func lowerBound2(nums []int, target int) int {
@@ -50,9 +50,9 @@ func lowerBound2(nums []int, target int) int {
 	return left //OR right
 }
 
-//3. 开区间 (  )
+// 3. 开区间 (  )
 // *********循环不变量：***********
-//(left, right)区间表征当前还没有确定与target关系的区间，亦即：
+// (left, right)区间表征当前还没有确定与target关系的区间，亦即：
 // nums[left] < target   //left以及其前面的元素都已经确定比target小  ==========> 最终返回left+1
 // nums[right] >= target    //right以及其后面的元素都已经确定不比target==========> 最终返回right
 func lowerBound3(nums []int, target int) int {
