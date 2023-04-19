@@ -244,8 +244,37 @@ https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/
 1 <= x <= 10e9
 */
 
+/*
+把问题转换成「从 nums 中移除一个最长的子数组，使得剩余元素的和为 x」。
+
+换句话说，要从 nums 中找最长的子数组，其元素和等于 s−x，这里 s 为 nums 所有元素之和。
+*/
+
 func minOperations(nums []int, x int) int {
-	return 0
+	curSum, sum, left := 0, 0, 0
+	for _, v := range nums {
+		sum += v
+	}
+
+	if sum < x {
+		return -1
+	}
+
+	ans := -1 //ans 不能等于0喔！！！
+	for right, v := range nums {
+		curSum += v
+		for curSum > sum-x {
+			curSum -= nums[left]
+			left++
+		}
+		if curSum == sum-x {
+			ans = max(ans, right-left+1)
+		}
+	}
+	if ans < 0 { //ans是可以为0的喔！！！ 就是sum == x的情形
+		return -1
+	}
+	return len(nums) - ans
 }
 
 func min(a, b int) int {
