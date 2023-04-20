@@ -23,7 +23,7 @@ func lowerBound(nums []int, target int) int {
 		mid := left + (right-left)/2 //注意写法
 		if nums[mid] < target {      //也即 left ---- mid 这段区间的元素都已经确定小于target，所以下一轮的区间缩减至[mid+1, right]
 			left = mid + 1 //
-		} else { //也即 mid ---- right 这段区间的元素都已经确定大于等于target， 所以下一轮的区间缩减至[left, mid+1]
+		} else { //也即 mid ---- right 这段区间的元素都已经确定大于等于target， 所以下一轮的区间缩减至[left, mid-1]
 			right = mid - 1 //注意不变量的语义
 		}
 	}
