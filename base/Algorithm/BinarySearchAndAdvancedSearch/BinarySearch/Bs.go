@@ -155,8 +155,51 @@ https://leetcode.cn/problems/find-peak-element/
 对于所有有效的 i 都有 nums[i] != nums[i + 1]
 */
 
+/* 核心问题：如果s[m] > s[m+1] 则 m 左侧必然存在峰值； 如果s[m] < s[m+1] 则 m 右侧必然存在峰值， m的取值范围：[0, len-2] */
+/* 仍使用三种方案解决问题 */
+/* [left, right] */
 func findPeakElement(nums []int) int {
-	return 0
+	if len(nums) == 1 { //无法在len = 1时使用左右都闭的写法，因为可能会越界
+		return 0
+	}
+	left, right := 0, len(nums)-2 // [left, right]
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[mid+1] {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+
+/* [left, right) */
+func findPeakElement2(nums []int) int {
+	left, right := 0, len(nums)-1 //
+	for left < right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[mid+1] {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+
+/* (left, right) */
+func findPeakElement3(nums []int) int {
+	left, right := -1, len(nums)-1 // (left, right)
+	for left+1 < right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[mid+1] {
+			right = mid
+		} else {
+			left = mid
+		}
+	}
+	return left + 1
 }
 
 /*
