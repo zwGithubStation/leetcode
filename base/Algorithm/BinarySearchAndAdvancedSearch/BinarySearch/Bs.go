@@ -155,7 +155,7 @@ https://leetcode.cn/problems/find-peak-element/
 对于所有有效的 i 都有 nums[i] != nums[i + 1]
 */
 
-/* 核心问题：如果s[m] > s[m+1] 则 m 左侧必然存在峰值； 如果s[m] < s[m+1] 则 m 右侧必然存在峰值， m的取值范围：[0, len-2] */
+/* 核心问题！！！！：如果s[m] > s[m+1] 则 m 左侧必然存在峰值(递归可证)； 如果s[m] < s[m+1] 则 m 右侧必然存在峰值， 注意m有效的取值范围(防止越界)：[0, len-2] */
 /* 仍使用三种方案解决问题 */
 /* [left, right] */
 func findPeakElement(nums []int) int {
@@ -234,7 +234,45 @@ nums 原来是一个升序排序的数组，并进行了 1 至 n 次旋转
 */
 
 func findMin(nums []int) int {
-	return 0
+	left, right := -1, len(nums)-1 //(left, right)
+	for left+1 < right {
+		mid := left + (right-left)/2
+		if nums[mid] < nums[len(nums)-1] {
+			right = mid
+		} else {
+			left = mid
+		}
+	}
+	return nums[left+1]
+}
+
+func findMin2(nums []int) int {
+	left, right := 0, len(nums)-1 // [left, right)
+	for left < right {
+		mid := left + (right-left)/2
+		if nums[mid] < nums[len(nums)-1] {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+	}
+	return nums[left]
+}
+
+func findMin3(nums []int) int {
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	left, right := 0, len(nums)-2 //[left, right]
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] < nums[len(nums)-1] {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return nums[left]
 }
 
 /*
@@ -289,6 +327,6 @@ n == nums.length
 nums 原来是一个升序排序的数组，并进行了 1 至 n 次旋转
 */
 
-func findMin2(nums []int) int {
+func findMin(nums []int) int {
 	return 0
 }
