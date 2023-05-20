@@ -93,12 +93,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 ## 325_2022_12_25_1
 
-| 题目                                                         | 类型         |
-| ------------------------------------------------------------ | ------------ |
-| [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) | 数组         |
-| [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) | 双指针，遍历 |
-| [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) | 二分查找     |
-| [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) | 0-1背包      |
+| 题目                                                         | 类型    |
+| ------------------------------------------------------------ | ------- |
+| [到目标字符串的最短距离](https://leetcode.cn/problems/shortest-distance-to-target-string-in-a-circular-array/) | 数组    |
+| [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) | 双指针  |
+| [礼盒的最大甜蜜度](https://leetcode.cn/problems/maximum-tastiness-of-candy-basket/) | 二分    |
+| [好分区的数目](https://leetcode.cn/problems/number-of-great-partitions/) | 0-1背包 |
 
 ## 326_2023_01_01_2
 
@@ -115,7 +115,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | ------------------------------------------------------------ | ------------------------ |
 | [根据规则将箱子分类](https://leetcode.cn/problems/categorize-box-according-to-criteria/) |                          |
 | [找到数据流中的连续整数](https://leetcode.cn/problems/find-consecutive-integers-from-a-data-stream/) | 数组                     |
-| [查询数组 Xor 美丽值](https://leetcode.cn/problems/find-xor-beauty-of-array/) | 位运算                   |
+| [查询数组 Xor 美丽值](https://leetcode.cn/problems/find-xor-beauty-of-array/) | 数组                     |
 | [最大化城市的最小供电站数目](https://leetcode.cn/problems/maximize-the-minimum-powered-city/) | 二分答案 前缀和 差分数组 |
 
 ## 327_2023_01_08_4
@@ -124,7 +124,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | ------------------------------------------------------------ | -------- |
 | [正整数与负整数的最大计数](https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/) | 二分查找 |
 | [执行 K 次操作后的最大分数](https://leetcode.cn/problems/maximal-score-after-applying-k-operations/) | 最大堆   |
-| [使字符串总不同字符的数目相等](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/) | 枚举     |
+| [使字符串总不同字符的数目相等](https://leetcode.cn/problems/make-number-of-distinct-characters-equal/) | 数组     |
 | [过桥的时间](https://leetcode.cn/problems/time-to-cross-a-bridge/) | 复杂模拟 |
 
 ## 328_2023_01_15_5
@@ -147,21 +147,21 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 ## 329_2023_01_22_7
 
-| 题目                                                         | 类型   |
-| ------------------------------------------------------------ | ------ |
-| [交替数字和](https://leetcode.cn/problems/alternating-digit-sum/) | 数位   |
-| [根据第 K 场考试的分数排序](https://leetcode.cn/problems/sort-the-students-by-their-kth-score/) | 排序   |
-| [执行逐位运算使字符串相等](https://leetcode.cn/problems/apply-bitwise-operations-to-make-strings-equal/) | 字符串 |
-| [拆分数组的最小代价](https://leetcode.cn/problems/minimum-cost-to-split-an-array/) | DP     |
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [交替数字和](https://leetcode.cn/problems/alternating-digit-sum/) | 数位 |
+| [根据第 K 场考试的分数排序](https://leetcode.cn/problems/sort-the-students-by-their-kth-score/) | 排序 |
+| [执行逐位运算使字符串相等](https://leetcode.cn/problems/apply-bitwise-operations-to-make-strings-equal/) | 数组 |
+| [拆分数组的最小代价](https://leetcode.cn/problems/minimum-cost-to-split-an-array/) | DP   |
 
 ## 330_2023_01_29_8
 
-| 题目                                                         | 类型     |
-| ------------------------------------------------------------ | -------- |
-| [统计桌面上的不同数字](https://leetcode.cn/problems/count-distinct-numbers-on-board/) | 数学     |
-| [猴子碰撞的方法数](https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/) | 正难则反 |
-| [将珠子放入背包中](https://leetcode.cn/problems/put-marbles-in-bags/) | 思维转化 |
-| [统计上升四元组](https://leetcode.cn/problems/count-increasing-quadruplets/) | 枚举     |
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [统计桌面上的不同数字](https://leetcode.cn/problems/count-distinct-numbers-on-board/) | 数学 |
+| [猴子碰撞的方法数](https://leetcode.cn/problems/count-collisions-of-monkeys-on-a-polygon/) | 巧思 |
+| [将珠子放入背包中](https://leetcode.cn/problems/put-marbles-in-bags/) | 巧思 |
+| [统计上升四元组](https://leetcode.cn/problems/count-increasing-quadruplets/) | 枚举 |
 
 ## B97_2023_02_04_9
 
@@ -187,7 +187,7 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | ------------------------------------------------------------ | ---------- |
 | [找出数组的串联值](https://leetcode.cn/problems/find-the-array-concatenation-value/) | 数组       |
 | [统计公平数对的数目](https://leetcode.cn/problems/count-the-number-of-fair-pairs/) | 二分查找   |
-| [子字符串异或查询](https://leetcode.cn/problems/substring-xor-queries/) | 二进制     |
+| [子字符串异或查询](https://leetcode.cn/problems/substring-xor-queries/) | 数组       |
 | [最少得分子序列](https://leetcode.cn/problems/subsequence-with-the-minimum-score/) | 前后缀分解 |
 
 ## B98_2023_02_18_12
@@ -195,18 +195,18 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | 题目                                                         | 类型        |
 | ------------------------------------------------------------ | ----------- |
 | [替换一个数字后的最大差值](https://leetcode.cn/problems/maximum-difference-by-remapping-a-digit/) |             |
-| [修改两个元素的最小分数](https://leetcode.cn/problems/minimum-score-by-changing-two-elements/) | 脑筋急转弯  |
-| [最小无法得到的或值](https://leetcode.cn/problems/minimum-impossible-or/) | 脑筋急转弯  |
+| [修改两个元素的最小分数](https://leetcode.cn/problems/minimum-score-by-changing-two-elements/) | 巧思        |
+| [最小无法得到的或值](https://leetcode.cn/problems/minimum-impossible-or/) | 巧思        |
 | [更新数组后处理求和查询](https://leetcode.cn/problems/handling-sum-queries-after-update/) | lazy 线段树 |
 
 ## 333_2023_02_19_13
 
-| 题目                                                         | 类型       |
-| ------------------------------------------------------------ | ---------- |
-| [合并两个二维数组 - 求和法](https://leetcode.cn/problems/merge-two-2d-arrays-by-summing-values/) | 双指针     |
-| [将整数减少到零需要的最少操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-an-integer-to-0/) | 记忆化搜索 |
-| [无平方子集计数](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/) | 0-1背包    |
-| [找出对应 LCP 矩阵的字符串](https://leetcode.cn/problems/find-the-string-with-lcp/) | 贪心 DP    |
+| 题目                                                         | 类型    |
+| ------------------------------------------------------------ | ------- |
+| [合并两个二维数组 - 求和法](https://leetcode.cn/problems/merge-two-2d-arrays-by-summing-values/) | 双指针  |
+| [将整数减少到零需要的最少操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-an-integer-to-0/) | 数学    |
+| [无平方子集计数](https://leetcode.cn/problems/count-the-number-of-square-free-subsets/) | 0-1背包 |
+| [找出对应 LCP 矩阵的字符串](https://leetcode.cn/problems/find-the-string-with-lcp/) | 贪心 DP |
 
 ## 334_2023_02_26_14
 
@@ -219,12 +219,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 ## B99_2023_03_04_15
 
-| 题目                                                         | 类型     |
-| ------------------------------------------------------------ | -------- |
-| [最小和分割](https://leetcode.cn/problems/split-with-minimum-sum/) | 贪心     |
-| [统计染色格子数](https://leetcode.cn/problems/count-total-number-of-colored-cells/) | 数学     |
-| [统计将重叠区间合并成组的方案数](https://leetcode.cn/problems/count-ways-to-group-overlapping-ranges/) | 合并区间 |
-| [统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/) | DP       |
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [最小和分割](https://leetcode.cn/problems/split-with-minimum-sum/) | 贪心 |
+| [统计染色格子数](https://leetcode.cn/problems/count-total-number-of-colored-cells/) | 数学 |
+| [统计将重叠区间合并成组的方案数](https://leetcode.cn/problems/count-ways-to-group-overlapping-ranges/) | 数组 |
+| [统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/) | DP   |
 
 ## 335_2023_03_05_16
 
@@ -271,12 +271,12 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 
 ## B101_2023_04_01_21
 
-| 题目                                                         | 类型         |
-| ------------------------------------------------------------ | ------------ |
-| [从两个数字数组里生成最小数字](https://leetcode.cn/problems/form-smallest-number-from-two-digit-arrays/) |              |
-| [找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/) | 最大子数组和 |
-| [使子数组元素和相等](https://leetcode.cn/problems/make-k-subarray-sums-equal/) | 中位数贪心   |
-| [图中的最短环](https://leetcode.cn/problems/shortest-cycle-in-a-graph/) | BFS 最小环   |
+| 题目                                                         | 类型       |
+| ------------------------------------------------------------ | ---------- |
+| [从两个数字数组里生成最小数字](https://leetcode.cn/problems/form-smallest-number-from-two-digit-arrays/) |            |
+| [找到最大开销的子字符串](https://leetcode.cn/problems/find-the-substring-with-maximum-cost/) | 数组       |
+| [使子数组元素和相等](https://leetcode.cn/problems/make-k-subarray-sums-equal/) | 中位数贪心 |
+| [图中的最短环](https://leetcode.cn/problems/shortest-cycle-in-a-graph/) | BFS 最小环 |
 
 ## 339_2023_04_02_22
 
@@ -319,36 +319,36 @@ https://leetcode.cn/contest/biweekly-contest-XXX
 | 题目                                                         | 类型     |
 | ------------------------------------------------------------ | -------- |
 | [计算列车到站时间](https://leetcode.cn/problems/calculate-delayed-arrival-time/) | 太简单   |
-| [倍数求和](https://leetcode.cn/problems/sum-multiples/)      | 容斥原理 |
-| [滑动子数组的美丽值](https://leetcode.cn/problems/sliding-subarray-beauty/) | 滑动窗口 |
+| [倍数求和](https://leetcode.cn/problems/sum-multiples/)      | 数学     |
+| [滑动子数组的美丽值](https://leetcode.cn/problems/sliding-subarray-beauty/) | 数组     |
 | [使数组所有元素变成 1 的最少操作次数](https://leetcode.cn/problems/minimum-number-of-operations-to-make-all-array-elements-equal-to-1/) | 暴力枚举 |
 
 ## B103_2023_04_29_27
 
-| 题目                                                         | 类型          |
-| ------------------------------------------------------------ | ------------- |
-| [K 个元素的最大和](https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/) |               |
-| [找到两个数组的前缀公共数组](https://leetcode.cn/problems/find-the-prefix-common-array-of-two-arrays/) | 哈希表/位运算 |
-| [网格图中鱼的最大数目](https://leetcode.cn/problems/maximum-number-of-fish-in-a-grid/) | 网格图 DFS    |
-| [将数组清空](https://leetcode.cn/problems/make-array-empty/) | 树状数组      |
+| 题目                                                         | 类型       |
+| ------------------------------------------------------------ | ---------- |
+| [K 个元素的最大和](https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/) |            |
+| [找到两个数组的前缀公共数组](https://leetcode.cn/problems/find-the-prefix-common-array-of-two-arrays/) | 数组       |
+| [网格图中鱼的最大数目](https://leetcode.cn/problems/maximum-number-of-fish-in-a-grid/) | 网格图 DFS |
+| [将数组清空](https://leetcode.cn/problems/make-array-empty/) | 树状数组   |
 
 ## 343_2023_04_30_28
 
-| 题目                                                         | 类型     |
-| ------------------------------------------------------------ | -------- |
-| [保龄球游戏的获胜者](https://leetcode.cn/problems/determine-the-winner-of-a-bowling-game/) | 数组     |
-| [找出叠涂元素](https://leetcode.cn/problems/first-completely-painted-row-or-column/) | 数组     |
-| [前往目标的最小代价](https://leetcode.cn/problems/minimum-cost-of-a-path-with-special-roads/) | Dijkstra |
-| [字典序最小的美丽字符串](https://leetcode.cn/problems/lexicographically-smallest-beautiful-string/) | 贪心     |
+| 题目                                                         | 类型 |
+| ------------------------------------------------------------ | ---- |
+| [保龄球游戏的获胜者](https://leetcode.cn/problems/determine-the-winner-of-a-bowling-game/) | 数组 |
+| [找出叠涂元素](https://leetcode.cn/problems/first-completely-painted-row-or-column/) | 数组 |
+| [前往目标的最小代价](https://leetcode.cn/problems/minimum-cost-of-a-path-with-special-roads/) | 图   |
+| [字典序最小的美丽字符串](https://leetcode.cn/problems/lexicographically-smallest-beautiful-string/) | 贪心 |
 
 ## 344_2023_05_07_29
 
-| 题目                                                         | 类型         |
-| ------------------------------------------------------------ | ------------ |
-| [找出不同元素数目差数组](https://leetcode.cn/problems/find-the-distinct-difference-array/) | 前后缀分解   |
-| [频率跟踪器](https://leetcode.cn/problems/frequency-tracker/) | 新建数据结构 |
-| [有相同颜色的相邻元素数目](https://leetcode.cn/problems/number-of-adjacent-elements-with-the-same-color/) | 数组         |
-| [使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/) | 贪心         |
+| 题目                                                         | 类型       |
+| ------------------------------------------------------------ | ---------- |
+| [找出不同元素数目差数组](https://leetcode.cn/problems/find-the-distinct-difference-array/) | 前后缀分解 |
+| [频率跟踪器](https://leetcode.cn/problems/frequency-tracker/) | 数组       |
+| [有相同颜色的相邻元素数目](https://leetcode.cn/problems/number-of-adjacent-elements-with-the-same-color/) | 数组       |
+| [使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/) | 贪心       |
 
 ## B104_2023_05_13_30
 
